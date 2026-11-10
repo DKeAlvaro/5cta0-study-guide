@@ -49,6 +49,8 @@ nav:
   - Part 2 · Estimation:
       - U5 · Maximum likelihood: u05-mle.md
       - U6 · Posterior and MAP: u06-map.md
+      - U7 · MMSE: u07-mmse.md
+      - U8 · Fisher information and CRLB: u08-crlb.md
   - Part 4 · Detection:
       - U16 · Likelihood ratio test: u16-lrt.md
       - U17 · P_FA, P_D, P_M: u17-pfa-pd.md
