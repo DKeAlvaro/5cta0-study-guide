@@ -5,7 +5,7 @@
 // the page context.
 (function () {
   // EDIT ME: course name used in the AI tutor's system prompt
-  const SUBJECT = "COURSE NAME (University)";
+  const SUBJECT = "5CTA0 Statistical Signal Processing (TU/e): probability, estimation theory, spectral estimation, detection theory";
   "use strict";
   if (window.__sspAskLoaded) return; // instant navigation may re-run scripts
   window.__sspAskLoaded = true;

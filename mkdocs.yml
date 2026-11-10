@@ -1,9 +1,9 @@
-site_name: Course guide
-site_description: One-line description of the guide.
-site_url: https://USER.github.io/REPO/
+site_name: 5CTA0 · pass the exam
+site_description: Active study guide and cheat sheet for 5CTA0 Statistical Signal Processing (TU/e), built from every past exam.
+site_url: https://dkealvaro.github.io/5cta0-study-guide/
 use_directory_urls: false
-repo_url: https://github.com/USER/REPO
-repo_name: REPO
+repo_url: https://github.com/DKeAlvaro/5cta0-study-guide
+repo_name: DKeAlvaro/5cta0-study-guide
 
 theme:
   name: material
@@ -44,8 +44,10 @@ plugins: []
 # Top-level sections starting with "New" / "Old" get the collapsible behaviour of navsections.js.
 nav:
   - Start here: index.md
-  - Lessons:
-      - Example lesson: example-lesson.md
+  - Every exam question + ranking: inventory.md
+  - M · Maths the course assumes: maths.md
+  - Part 4 · Detection:
+      - U17 · P_FA, P_D, P_M: u17-pfa-pd.md
 
 markdown_extensions:
   - admonition
