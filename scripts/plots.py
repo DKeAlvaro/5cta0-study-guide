@@ -77,3 +77,35 @@ ax.set_xlabel("$P_{fa}$"); ax.set_ylabel("$P_d$"); ax.legend(frameon=False, font
 save(fig, "u17_oct21_roc.svg")
 
 print("ok", len(os.listdir(OUT)), "files in", OUT)
+
+# ---------------- Part 3: PSD plots ----------------
+th = np.linspace(-np.pi, np.pi, 721)
+
+
+def psd_plot(name, curves, ylim=None, ylabel="PSD"):
+    fig, ax = plt.subplots(figsize=(6.2, 3.2))
+    styles = ["-", "--", ":", "-."]
+    for (lab, f), st in zip(curves, styles):
+        ax.plot(th, f(th), st, color=INK, lw=1.8, label=lab)
+    ax.set_xticks([-np.pi, -np.pi / 2, 0, np.pi / 2, np.pi])
+    ax.set_xticklabels(["$-\pi$", "$-\pi/2$", "0", "$\pi/2$", "$\pi$"])
+    ax.set_xlabel("$\theta$"); ax.set_ylabel(ylabel); ax.axhline(0, color="#999", lw=.6)
+    if ylim: ax.set_ylim(*ylim)
+    ax.legend(frameon=False, fontsize=8)
+    save(fig, name)
+
+
+def ar_psd(sig, a):
+    return lambda t: sig / np.abs(1 + sum(ak * np.exp(-1j * (k + 1) * t) for k, ak in enumerate(a))) ** 2
+
+
+psd_plot("u11_jun26_3c.svg", [("correlogram", lambda t: 3 + 4 * np.cos(t) + 2 * np.cos(2 * t))])
+psd_plot("u12_jun26_3d.svg", [("correlogram", lambda t: 3 + 4 * np.cos(t) + 2 * np.cos(2 * t)), ("AR(2)", ar_psd(1.6, [-0.8, 0.2]))])
+psd_plot("u12_apr25.svg", [("correlogram", lambda t: 2 - .5 * np.cos(t) - .375 * np.cos(2 * t)), ("AR(1)", ar_psd(63 / 32, [1 / 8])),
+                           ("MA(1)", lambda t: 2 - .5 * np.cos(t))], ylim=(0, 3))
+psd_plot("u12_apr24.svg", [("correlogram", lambda t: 25 / 16 - 1.5 * np.cos(t) + np.cos(2 * t) - np.cos(3 * t)), ("AR(2)", ar_psd(9129 / 7696, [204 / 481, -56 / 481]))])
+psd_plot("u12_nov19.svg", [("correlogram", lambda t: 1 + 1.4 * np.cos(t) + np.cos(2 * t) + .6 * np.cos(3 * t)), ("AR(2)", ar_psd(0.5098, [-0.6863, -0.0196]))])
+psd_plot("u13_jan20.svg", [("correlogram = MA(1)", lambda t: 1 / 21 + 4 / 105 * np.cos(t))])
+psd_plot("u14_nov22.svg", [("ARMA(1,1) true PSD", lambda t: 28 * (1 - np.cos(t)) / (25 - 24 * np.cos(t))), ("AR(1) fit", ar_psd(63 / 64, [1 / 8])),
+                           ("MA(1) fit", lambda t: 1 - .25 * np.cos(t))])
+print("ok part3")
