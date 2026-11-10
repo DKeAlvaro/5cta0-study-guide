@@ -47,6 +47,7 @@ nav:
   - Every exam question + ranking: inventory.md
   - M · Maths the course assumes: maths.md
   - Part 4 · Detection:
+      - U16 · Likelihood ratio test: u16-lrt.md
       - U17 · P_FA, P_D, P_M: u17-pfa-pd.md
 
 markdown_extensions:
