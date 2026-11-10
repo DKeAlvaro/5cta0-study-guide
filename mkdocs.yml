@@ -1,0 +1,104 @@
+site_name: Course guide
+site_description: One-line description of the guide.
+site_url: https://USER.github.io/REPO/
+use_directory_urls: false
+repo_url: https://github.com/USER/REPO
+repo_name: REPO
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  font:
+    text: Source Serif 4
+    code: JetBrains Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+  icon:
+    logo: material/book-open-variant
+    repo: fontawesome/brands/github
+  features:
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - navigation.instant
+    - navigation.instant.progress
+    - toc.follow
+    - content.tooltips
+
+plugins: []
+
+# Top-level sections starting with "New" / "Old" get the collapsible behaviour of navsections.js.
+nav:
+  - Start here: index.md
+  - Lessons:
+      - Example lesson: example-lesson.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - def_list
+  - abbr
+  - toc:
+      permalink: "#"
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.critic
+  - pymdownx.mark
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.smartsymbols:
+      copyright: false
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0.16.11/dist/katex.min.js
+  - https://unpkg.com/katex@0.16.11/dist/contrib/auto-render.min.js
+  - javascripts/quiz.js
+  - javascripts/ask.js
+  - javascripts/video.js
+  - javascripts/layout.js
+  - javascripts/keypoints.js
+  - javascripts/progress.js
+  - javascripts/widgets.js
+  - javascripts/navsections.js
+extra_css:
+  - https://unpkg.com/katex@0.16.11/dist/katex.min.css
+  - https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap
+  - stylesheets/extra.css
+  - stylesheets/ask.css
+  - stylesheets/layout.css
+  - stylesheets/keypoints.css
+  - stylesheets/widgets.css
+
+extra:
+  generator: false
+
+hooks:
+  - hooks/cachebust.py
