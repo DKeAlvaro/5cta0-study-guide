@@ -47,6 +47,9 @@ nav:
   - Every exam question + ranking: inventory.md
   - M · Maths the course assumes: maths.md
   - Part 1 · Probability and random signals:
+      - U1 · Total probability and Bayes: u01-bayes.md
+      - U2 · Joint pdf: u02-joint.md
+      - U3 · Random variables and processes (MC): u03-process-mc.md
       - U4 · Spectral factorisation: u04-factorisation.md
   - Part 2 · Estimation:
       - U5 · Maximum likelihood: u05-mle.md
