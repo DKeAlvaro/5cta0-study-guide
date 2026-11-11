@@ -56,6 +56,8 @@ nav:
   - Part 3 · Spectral estimation:
       - U11 · Correlogram: u11-correlogram.md
       - U12 · AR model (Yule–Walker): u12-ar.md
+      - U13 · MA model: u13-ma.md
+      - U14 · From a difference equation: u14-model-autocorr.md
   - Part 4 · Detection:
       - U16 · Likelihood ratio test: u16-lrt.md
       - U17 · P_FA, P_D, P_M: u17-pfa-pd.md
