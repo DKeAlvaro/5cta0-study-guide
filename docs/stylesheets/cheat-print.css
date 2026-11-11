@@ -1,6 +1,6 @@
 /* Print layout of docs/cheatsheet.md: one A4, front and back, three columns.
    scripts/mkpdf.py rewrites --cheat-scale to make the sheet exactly two pages. */
-:root { --cheat-scale: 0.99; }
+:root { --cheat-scale: 1.0; }
 
 /* on screen: readable, two columns on wide screens */
 .md-typeset .cheat { font-size: .78rem; line-height: 1.35; }

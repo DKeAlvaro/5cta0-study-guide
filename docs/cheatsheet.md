@@ -193,12 +193,10 @@ IF YOU SEE "$x[k] = i[k] - i[k-1] + \frac34x[k-1]$ … which kind of process / P
 IF YOU SEE "which statement is TRUE/FALSE about the periodogram / windows / zero padding", "fill the table of PSD estimators", "energy or power signal", "Welch: how many segments", "AR model order":
 {: .see }
 
-| Method | Idea | Bias | Variance |
-|---|---|---|---|
-| Periodogram (= correlogram, FT of the biased $\hat r$) | $\frac1N\lvert\sum x[n]e^{-jn\theta}\rvert^2$ | asymptotically unbiased (FT of the biased $\hat r$) | $\propto P^2$, does not fall with $N$: NOT consistent |
-| Bartlett | $K$ non-overlapping segments, average periodograms | increases (shorter segments) | $/K$ |
-| Welch (WOSA) | overlapping (50 %) windowed segments, average | like Bartlett | roughly $/K$ but not exactly (correlated segments); lower than Bartlett for the same $N$ |
-| Blackman–Tukey | window the autocorrelation (lag window $M<N$), then FT | more with shorter $M$ | less; consistent |
+- **Periodogram** $= \frac1N\lvert\sum x[n]e^{-jn\theta}\rvert^2$ ($\lvert$DFT$\rvert^2/N$) = correlogram with the biased $\hat r$. Bias: asymptotically unbiased (smeared by a triangular window for finite $N$). Variance: $\propto P^2$, does NOT fall with $N$: not consistent.
+- **Bartlett**: $K$ non-overlapping segments, average their periodograms. Bias increases (shorter segments). Variance $/K$.
+- **Welch (WOSA)**: overlapping (50 %) windowed segments, averaged. Bias like Bartlett. Variance roughly $/K$ but not exactly (correlated segments); lower than Bartlett for the same $N$.
+- **Blackman–Tukey**: window the estimated autocorrelation (lag window $M<N$), then FT. Shorter $M$: more bias, less variance. Consistent.
 
 - Consistent: Bartlett, Welch, Blackman–Tukey, parametric. FT of autocorrelation: correlogram, Blackman–Tukey. Averages periodograms: Bartlett, Welch. Overlap: Welch. "Variance ∝ square of the true spectrum": periodogram (if the table says "bias", the intended answer is still periodogram).
 - Welch segments: $K = \frac{N-L}{L(1-\text{overlap})} + 1$; variance ratio $1/K$ if independent. *Jun26 3b: $N = 1000$, $L = 200$, 50 %: $K = 800/100+1 = 9$, ratio $1/9$.* Bartlett: $K = N/L$.
