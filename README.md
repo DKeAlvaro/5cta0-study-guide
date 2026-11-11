@@ -1,19 +1,20 @@
-# Study guide template
+# 5CTA0 · pass the exam
 
-MkDocs Material template for a "pass the exam" guide: lesson pages with exam/solution/trap/recipe boxes, KaTeX maths, step-by-step reveals, true/false cards, progress bar, collapsible nav, dark mode, and an optional AI tutor panel (reader's own API key).
+Active, from-zero study guide and cheat sheet for **5CTA0 Statistical Signal Processing (TU/e)**, built from every past exam in the course folder (January 2019 to June 2026). Published at https://dkealvaro.github.io/5cta0-study-guide/ (GitHub Pages from `gh-pages`, deployed by `.github/workflows/deploy.yml` on every push to `master`).
 
-Derived from [5cta0-exam-guide](https://github.com/DKeAlvaro/5cta0-exam-guide), with all course content removed.
-
-## Use it
+- `docs/inventory.md`: every exam question, grouped into 19 question types, ranked by points × frequency × difficulty.
+- `docs/maths.md`: the maths the course assumes, taught from zero.
+- `docs/u01-*.md` … `docs/u19-*.md`: one page per question type. Order inside a page: idea in plain words → tiny numeric example → formula with every symbol named → "IF YOU SEE" exam wording → recipe → one exam question in a stepper (do each step before revealing) → "Do it cold" questions → traps → true/false cards → exit checklist.
+- `docs/cheatsheet.md`: the two A4 sides allowed in the exam, same U1–U19 numbering. `scripts/mkpdf.py` prints it to `cheatsheet.pdf` (headless Chrome; the sheet is extracted into a standalone page because KaTeX does not render from `file://`) and reports the page count and column fill. Print the PDF at 100 %.
+- `docs/battle.md`: every past question → which sheet box → how → answer.
+- `scripts/verify.py`: recomputes every number in the guide (numpy / sympy / scipy) and prints PASS/FAIL per question.
+- `scripts/plots.py`: regenerates every figure (`docs/img/*.svg`).
 
 ```bash
-pip install mkdocs==1.6.1 mkdocs-material==9.7.7 pymdown-extensions==12.3
-mkdocs serve        # http://127.0.0.1:8000
+pip install mkdocs==1.6.1 mkdocs-material==9.7.7 pymdown-extensions==12.3 numpy scipy sympy matplotlib pymupdf
+python scripts/plots.py && python scripts/verify.py && mkdocs build   # zero warnings expected
+python scripts/mkpdf.py            # cheatsheet.pdf, 2 pages
+mkdocs serve                       # http://127.0.0.1:8000
 ```
 
-1. Edit `mkdocs.yml`: `site_name`, `site_url`, `repo_url`, `repo_name`, and `nav` (one entry per `.md` in `docs/`).
-2. Put your `.md` files in `docs/`. `docs/example-lesson.md` shows every box and widget; `STYLE.md` is the writing checklist.
-3. Set the course name in `docs/javascripts/ask.js` (`SUBJECT`) for the AI tutor.
-4. Push to `master`; `.github/workflows/deploy.yml` publishes to GitHub Pages (enable Pages from the `gh-pages` branch).
-
-Custom figures: add `W.name = (root, preset) => {...}` in `docs/javascripts/widgets.js`, use with `<div class="widget" data-w="name"></div>`.
+Template: [DKeAlvaro/study-guide-template](https://github.com/DKeAlvaro/study-guide-template). Writing rules in `STYLE.md`.

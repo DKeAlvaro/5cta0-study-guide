@@ -46,6 +46,8 @@ nav:
   - Start here: index.md
   - Every exam question + ranking: inventory.md
   - M · Maths the course assumes: maths.md
+  - Cheat sheet (2 A4 sides): cheatsheet.md
+  - Battle table (every question with the sheet): battle.md
   - Part 1 · Probability and random signals:
       - U1 · Total probability and Bayes: u01-bayes.md
       - U2 · Joint pdf: u02-joint.md
@@ -119,6 +121,7 @@ extra_css:
   - stylesheets/layout.css
   - stylesheets/keypoints.css
   - stylesheets/widgets.css
+  - stylesheets/cheat-print.css
 
 extra:
   generator: false

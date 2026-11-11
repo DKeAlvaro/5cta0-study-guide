@@ -150,3 +150,17 @@ YOUR TURN strip with a countdown, then the answer comes. Keep that pattern in an
 - `prefetch.py` synthesises every line in parallel first (sequential TTS is slow).
 - `render.py [--test|--dry] Scene` → `docs/video/pod_<snake>.mp4` + `.jpg`; `run_all.py` renders all and mails each.
 - `docs/podcast.md` lists them; each lesson embeds its episode (`<figure class="pod">`, sound, no autoplay).
+
+
+## This guide (5cta0-study-guide, 2026-11)
+
+The pages here were written for a zero-knowledge reader and are organised by exam question type (U1 to U19), not by chapter. Rules that go beyond the template contract above:
+
+- Order inside a unit, never broken: plain-words idea -> tiny example with real numbers -> formula with every symbol in a table -> "IF YOU SEE" table of exam wording -> `!!! recipe key` -> one exam question in a `<div class="stepper">` where each step ends with "Now do step k yourself: ..." before the reveal -> "Do it cold" exam questions (`!!! exam` + `???+ solution`) -> `!!! trap key` table (wrong line | right line) -> `<div class="tf">` cards taken from real MC options -> "You can leave this page when you can" tasklist.
+- Never more than about eight lines of explanation without a `!!! question "Your turn"` whose answer is a hidden `???+ solution`. The question must be answerable from what was just explained and must demand a number or a sentence.
+- Every arithmetic step beyond differentiation, integral limits, fractions and matrix products is written out: the ln rule used, the antiderivative, the value at each limit, the subtraction. No "clearly", "obviously", "it follows".
+- The hardest and most frequent question types get the most text (ranking in `docs/inventory.md`), not the easiest.
+- Every number in a page is recomputed by `scripts/verify.py`; add a `check(...)` line when you add a number.
+- The cheat sheet (`docs/cheatsheet.md`) uses the same U-numbers; triggers are full sentences ("IF YOU SEE <exam words>: <what it means and what to do>"), never "-> step 6". It must print to exactly two A4 sides (`scripts/mkpdf.py`); when space is short, delete whole rare topics (2019 and 2020 outliers), never clarity.
+- `docs/battle.md` must contain every past question with the sheet box that solves it; a question the sheet cannot solve is a sheet bug.
+- The template files this file mentions above that do not exist here (`scripts/theory_plots.py`, Manim videos, podcast, `p0-foundations.md`, `toolbox.md`, the "sheet-anchored" lesson template with `!!! sheet` boxes) are not used; the box vocabulary table and the page-level rules still apply.
