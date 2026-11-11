@@ -1,0 +1,1883 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Active study guide and cheat sheet for 5CTA0 Statistical Signal Processing (TU/e), built from every past exam.">
+      
+      
+      
+        <link rel="canonical" href="https://dkealvaro.github.io/5cta0-study-guide/u11-correlogram.html">
+      
+      
+        <link rel="prev" href="u10-estimation-mc.html">
+      
+      
+        <link rel="next" href="u12-ar.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>U11 · Correlogram - 5CTA0 · pass the exam</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css?v=1794380413">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css?v=1794380413">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+4:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Serif 4";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.11/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap">
+    
+      <link rel="stylesheet" href="stylesheets/extra.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/ask.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/layout.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/keypoints.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/widgets.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/cheat-print.css?v=1794380413">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#u11-correlogram-from-a-few-autocorrelation-lags-to-a-psd-in-cosines" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="5CTA0 · pass the exam" class="md-header__button md-logo" aria-label="5CTA0 · pass the exam" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            5CTA0 · pass the exam
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              U11 · Correlogram
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DKeAlvaro/5cta0-study-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DKeAlvaro/5cta0-study-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="5CTA0 · pass the exam" class="md-nav__button md-logo" aria-label="5CTA0 · pass the exam" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    5CTA0 · pass the exam
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DKeAlvaro/5cta0-study-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DKeAlvaro/5cta0-study-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inventory.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Every exam question + ranking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="maths.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M · Maths the course assumes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cheatsheet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat sheet (2 A4 sides)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="battle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battle table (every question with the sheet)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 · Probability and random signals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 · Probability and random signals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u01-bayes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U1 · Total probability and Bayes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u02-joint.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U2 · Joint pdf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u03-process-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U3 · Random variables and processes (MC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u04-factorisation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U4 · Spectral factorisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 · Estimation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 · Estimation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u05-mle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U5 · Maximum likelihood
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u06-map.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U6 · Posterior and MAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u07-mmse.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U7 · MMSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u08-crlb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U8 · Fisher information and CRLB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u09-ls.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U9 · Least squares
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u10-estimation-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U10 · Estimation theory MC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 · Spectral estimation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 · Spectral estimation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U11 · Correlogram
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="u11-correlogram.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U11 · Correlogram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-idea-in-plain-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea in plain words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-tiny-example-with-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A tiny example with numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-formula-every-symbol-named" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The formula, every symbol named
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-exam-asks-in-its-own-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the exam asks, in its own words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-exam-question-one-step-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked exam question, one step at a time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-5-single-lag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 5 (single lag)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-points-get-lost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where points get lost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#true-or-false-from-real-mc-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        True or false (from real MC options)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u12-ar.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U12 · AR model (Yule–Walker)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u13-ma.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U13 · MA model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u14-model-autocorr.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U14 · From a difference equation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u15-spectral-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U15 · Spectral estimation theory (MC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4 · Detection
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 4 · Detection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u16-lrt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U16 · Likelihood ratio test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u17-pfa-pd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U17 · P_FA, P_D, P_M
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u18-bayes-detector.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U18 · Bayesian detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u19-detection-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U19 · Detection theory MC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-idea-in-plain-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea in plain words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-tiny-example-with-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A tiny example with numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-formula-every-symbol-named" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The formula, every symbol named
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-exam-asks-in-its-own-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the exam asks, in its own words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-exam-question-one-step-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked exam question, one step at a time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-5-single-lag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 5 (single lag)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-points-get-lost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where points get lost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#true-or-false-from-real-mc-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        True or false (from real MC options)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="u11-correlogram-from-a-few-autocorrelation-lags-to-a-psd-in-cosines">U11 · Correlogram: from a few <abbr title="r[k] = E[x[n] x[n−k]]: the similarity of the signal with a copy shifted by k samples.">autocorrelation</abbr> lags to a <abbr title="power spectral density: how the power of a random signal is distributed over frequency.">PSD</abbr> in cosines<a class="headerlink" href="#u11-correlogram-from-a-few-autocorrelation-lags-to-a-psd-in-cosines" title="Permanent link">#</a></h1>
+<div class="meta"><span class="hot">Rank 13 · 4.7 points over 7 sittings</span><span>0.4 to 1 p every exam, pure mechanics</span><span>35 min</span></div>
+
+<div class="admonition need">
+<p class="admonition-title">Before this page</p>
+<p><a href="maths.html#m3-complex-exponentials-and-cosine-identities">M3 rule 1</a>: <span class="arithmatex">\(re^{jk\theta} + re^{-jk\theta} = 2r\cos k\theta\)</span>. That is the whole page.</p>
+</div>
+<h2 id="the-idea-in-plain-words">The idea in plain words<a class="headerlink" href="#the-idea-in-plain-words" title="Permanent link">#</a></h2>
+<p>The <strong><abbr title="r[k] = E[x[n] x[n−k]]: the similarity of the signal with a copy shifted by k samples.">autocorrelation</abbr></strong> <span class="arithmatex">\(r[k]\)</span> says how much a signal resembles itself shifted by <span class="arithmatex">\(k\)</span> samples. The <strong>power spectral density (<abbr title="power spectral density: how the power of a random signal is distributed over frequency.">PSD</abbr>)</strong> says how the signal's power is spread over frequency. They are two views of the same thing: the <abbr title="power spectral density: how the power of a random signal is distributed over frequency.">PSD</abbr> is the Fourier transform of the <abbr title="r[k] = E[x[n] x[n−k]]: the similarity of the signal with a copy shifted by k samples.">autocorrelation</abbr>. The <strong><abbr title="PSD estimate obtained by Fourier-transforming a truncated autocorrelation estimate.">correlogram</abbr></strong> is simply that transform computed from the few lags you were given, treating all other lags as zero.</p>
+<div class="admonition idea">
+<p class="admonition-title">The thing that confused me</p>
+<p>The sum runs over negative and positive <span class="arithmatex">\(k\)</span>, but the exam only gives <span class="arithmatex">\(r[0], r[1], r[2]\)</span>. Autocorrelation is symmetric, <span class="arithmatex">\(r[-k] = r[k]\)</span>, so each positive <abbr title="the shift k in r[k].">lag</abbr> appears twice (once as <span class="arithmatex">\(e^{-jk\theta}\)</span>, once as <span class="arithmatex">\(e^{+jk\theta}\)</span>) and the pair collapses to <span class="arithmatex">\(2r[k]\cos k\theta\)</span>. The <abbr title="the shift k in r[k].">lag</abbr> <span class="arithmatex">\(0\)</span> appears once.</p>
+</div>
+<h2 id="a-tiny-example-with-numbers">A tiny example with numbers<a class="headerlink" href="#a-tiny-example-with-numbers" title="Permanent link">#</a></h2>
+<p><span class="arithmatex">\(r[0] = 1\)</span>, <span class="arithmatex">\(r[\pm1] = 0.5\)</span>, everything else zero.
+<span class="arithmatex">\(P(e^{j\theta}) = r[0] + r[1]e^{-j\theta} + r[-1]e^{j\theta} = 1 + 0.5(e^{-j\theta} + e^{j\theta}) = 1 + \cos\theta\)</span>.
+At <span class="arithmatex">\(\theta = 0\)</span>: <span class="arithmatex">\(2\)</span>. At <span class="arithmatex">\(\theta = \pm\pi\)</span>: <span class="arithmatex">\(0\)</span>. Positive correlation at <abbr title="the shift k in r[k].">lag</abbr> 1 means a smooth signal: power at low frequency.</p>
+<div class="admonition question">
+<p class="admonition-title">Your turn</p>
+<p><span class="arithmatex">\(r[0] = 1\)</span>, <span class="arithmatex">\(r[\pm1] = -0.5\)</span>. <abbr title="power spectral density: how the power of a random signal is distributed over frequency.">PSD</abbr>? Value at <span class="arithmatex">\(\theta = 0\)</span> and at <span class="arithmatex">\(\pi\)</span>? What kind of signal is it?</p>
+<details class="solution" open="open">
+<summary>Answer</summary>
+<p><span class="arithmatex">\(1 - \cos\theta\)</span>; <span class="arithmatex">\(0\)</span> at <span class="arithmatex">\(\theta=0\)</span>, <span class="arithmatex">\(2\)</span> at <span class="arithmatex">\(\pi\)</span>. Negative <abbr title="the shift k in r[k].">lag</abbr>-1 correlation means the sign flips every sample: a fast, high-frequency signal.</p>
+</details>
+</div>
+<h2 id="the-formula-every-symbol-named">The formula, every symbol named<a class="headerlink" href="#the-formula-every-symbol-named" title="Permanent link">#</a></h2>
+<div class="key">
+<div class="arithmatex">\[\hat P_{corr}(e^{j\theta}) = \sum_{k=-M}^{M}r[k]\,e^{-jk\theta} = r[0] + 2\sum_{k=1}^{M}r[k]\cos(k\theta)\]</div>
+</div>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(r[k]\)</span></td>
+<td><abbr title="r[k] = E[x[n] x[n−k]]: the similarity of the signal with a copy shifted by k samples.">autocorrelation</abbr> at <abbr title="the shift k in r[k].">lag</abbr> <span class="arithmatex">\(k\)</span>: <span class="arithmatex">\(E[x[n]x[n-k]]\)</span>; symmetric, <span class="arithmatex">\(r[-k] = r[k]\)</span>; <span class="arithmatex">\(r[0]\)</span> is the power and is the largest</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\theta\)</span></td>
+<td>normalised frequency in radians per sample, from <span class="arithmatex">\(-\pi\)</span> to <span class="arithmatex">\(\pi\)</span> (<span class="arithmatex">\(0\)</span> = DC, <span class="arithmatex">\(\pi\)</span> = the fastest possible alternation)</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(M\)</span></td>
+<td>the largest <abbr title="the shift k in r[k].">lag</abbr> you know; the exam says "assume <span class="arithmatex">\(r[k] = 0\)</span> for <span class="arithmatex">\(\lvert k\rvert &gt; M\)</span>"</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(e^{-jk\theta}\)</span></td>
+<td>the Fourier kernel; you never evaluate it, you pair it with <span class="arithmatex">\(e^{+jk\theta}\)</span> into a cosine</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Where the second form comes from.</strong> Split the sum into <span class="arithmatex">\(k = 0\)</span>, <span class="arithmatex">\(k&gt;0\)</span> and <span class="arithmatex">\(k&lt;0\)</span>; substitute <span class="arithmatex">\(k\to-k\)</span> in the last and use <span class="arithmatex">\(r[-k] = r[k]\)</span>: <span class="arithmatex">\(r[k](e^{-jk\theta} + e^{jk\theta}) = 2r[k]\cos k\theta\)</span> (<a href="maths.html#m3-complex-exponentials-and-cosine-identities">M3</a>).</p>
+<h2 id="what-the-exam-asks-in-its-own-words">What the exam asks, in its own words<a class="headerlink" href="#what-the-exam-asks-in-its-own-words" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>IF YOU SEE</th>
+<th>It means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"calculate the non-parametric <abbr title="PSD estimate obtained by Fourier-transforming a truncated autocorrelation estimate.">correlogram</abbr> estimate … using only the given lags"</td>
+<td>plug the lags into <span class="arithmatex">\(r[0] + 2\sum r[k]\cos k\theta\)</span>; nothing else</td>
+</tr>
+<tr>
+<td>"express it as a function of <span class="arithmatex">\(\cos(\theta)\)</span> / of cosines"</td>
+<td>the answer is <span class="arithmatex">\(a + b\cos\theta + c\cos2\theta + \ldots\)</span> with numbers <span class="arithmatex">\(a, b, c\)</span></td>
+</tr>
+<tr>
+<td>"use the <abbr title="PSD estimate obtained by Fourier-transforming a truncated autocorrelation estimate.">correlogram</abbr> method to calculate the <abbr title="power spectral density: how the power of a random signal is distributed over frequency.">PSD</abbr>" after a model question</td>
+<td>first get <span class="arithmatex">\(r[k]\)</span> from the model (<a href="u14-model-autocorr.html">U14</a>), then this page</td>
+</tr>
+<tr>
+<td>"assume <span class="arithmatex">\(r[k] = 0\)</span> for <span class="arithmatex">\(\lvert k\rvert &gt; 2\)</span>"</td>
+<td>sum stops at <span class="arithmatex">\(M = 2\)</span></td>
+</tr>
+<tr>
+<td>"determine and plot" / "sketch in the fundamental range <span class="arithmatex">\(-\pi\le\theta\le\pi\)</span>"</td>
+<td>evaluate at <span class="arithmatex">\(\theta = 0, \pm\pi/2, \pm\pi\)</span> (and where a cosine term peaks), mark those values, draw a symmetric curve</td>
+</tr>
+<tr>
+<td>"which plot shows the correct <abbr title="power spectral density: how the power of a random signal is distributed over frequency.">PSD</abbr>"</td>
+<td>compute the values at <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(\pm\pi\)</span> and match (<a href="u15-spectral-mc.html">U15</a>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recipe">Recipe<a class="headerlink" href="#recipe" title="Permanent link">#</a></h2>
+<div class="admonition recipe key">
+<p class="admonition-title">U11 · Lags to cosines</p>
+<ol>
+<li>List <span class="arithmatex">\(r[0], r[1], \ldots, r[M]\)</span> (use the hint "zero beyond <span class="arithmatex">\(M\)</span>").</li>
+<li>Write <span class="arithmatex">\(P = r[0] + 2r[1]\cos\theta + 2r[2]\cos2\theta + \cdots + 2r[M]\cos M\theta\)</span>. Double every <abbr title="the shift k in r[k].">lag</abbr> except <span class="arithmatex">\(0\)</span>.</li>
+<li>Multiply out the numbers; keep fractions.</li>
+<li>Evaluate at <span class="arithmatex">\(\theta = 0\)</span> (<span class="arithmatex">\(\cos k\theta = 1\)</span> for all <span class="arithmatex">\(k\)</span>: sum of <span class="arithmatex">\(r[0] + 2r[1] + 2r[2] + \ldots\)</span>) and at <span class="arithmatex">\(\theta = \pi\)</span> (<span class="arithmatex">\(\cos k\pi = (-1)^k\)</span>: alternate signs). If asked, also <span class="arithmatex">\(\pm\pi/2\)</span> (<span class="arithmatex">\(\cos\frac\pi2 = 0\)</span>, <span class="arithmatex">\(\cos\pi = -1\)</span>, <span class="arithmatex">\(\cos\frac{3\pi}{2} = 0\)</span>).</li>
+<li>Note if the value goes negative somewhere: a true <abbr title="power spectral density: how the power of a random signal is distributed over frequency.">PSD</abbr> cannot, but a truncated <abbr title="PSD estimate obtained by Fourier-transforming a truncated autocorrelation estimate.">correlogram</abbr> can; mention it, it is a known flaw of the method.</li>
+</ol>
+</div>
+<h2 id="worked-exam-question-one-step-at-a-time">Worked exam question, one step at a time<a class="headerlink" href="#worked-exam-question-one-step-at-a-time" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">June 2026 resit · 3c · 0.5 p</p>
+<p>Consider a wide-sense stationary, real-valued random process <span class="arithmatex">\(x[n]\)</span> whose first three <abbr title="r[k] = E[x[n] x[n−k]]: the similarity of the signal with a copy shifted by k samples.">autocorrelation</abbr> values have been estimated as <span class="arithmatex">\(r_x[0] = 3\)</span>, <span class="arithmatex">\(r_x[1] = 2\)</span>, <span class="arithmatex">\(r_x[2] = 1\)</span>. Calculate the non-parametric <abbr title="PSD estimate obtained by Fourier-transforming a truncated autocorrelation estimate.">correlogram</abbr> estimate of the power spectral density, <span class="arithmatex">\(\hat{P}_{Corr}(e^{j\theta})\)</span>, using only the given <abbr title="r[k] = E[x[n] x[n−k]]: the similarity of the signal with a copy shifted by k samples.">autocorrelation</abbr> lags. Assume <span class="arithmatex">\(r_x[k] = 0\)</span> for <span class="arithmatex">\(|k| &gt; 2\)</span>. Derive <span class="arithmatex">\(\hat{P}_{Corr}(e^{j\theta})\)</span> as a function of <span class="arithmatex">\(\cos(\theta)\)</span>.</p>
+</div>
+<div class="stepper">
+<p><strong>Step 1 · Lags.</strong> <span class="arithmatex">\(r[0] = 3\)</span>, <span class="arithmatex">\(r[\pm1] = 2\)</span>, <span class="arithmatex">\(r[\pm2] = 1\)</span>, zero beyond.</p>
+<p><strong>Now do step 2 yourself:</strong> write the five-term sum with exponentials, then pair them.</p>
+<hr />
+<p><strong>Step 2 · Sum and pair.</strong> <span class="arithmatex">\(\hat P = r[-2]e^{j2\theta} + r[-1]e^{j\theta} + r[0] + r[1]e^{-j\theta} + r[2]e^{-j2\theta} = 3 + 2(e^{j\theta} + e^{-j\theta}) + 1\cdot(e^{j2\theta} + e^{-j2\theta})\)</span>. Pairs: <span class="arithmatex">\(e^{j\theta} + e^{-j\theta} = 2\cos\theta\)</span>; <span class="arithmatex">\(e^{j2\theta} + e^{-j2\theta} = 2\cos2\theta\)</span>.</p>
+<p><strong>Now do step 3 yourself:</strong> multiply out.</p>
+<hr />
+<p><strong>Step 3 · Numbers.</strong> <span class="arithmatex">\(\hat P_{corr}(e^{j\theta}) = 3 + 4\cos\theta + 2\cos2\theta\)</span>.</p>
+<p><strong>Now do step 4 yourself:</strong> values at <span class="arithmatex">\(\theta = 0\)</span>, <span class="arithmatex">\(\pi/2\)</span>, <span class="arithmatex">\(\pi\)</span>.</p>
+<hr />
+<p><strong>Step 4 · Values.</strong> <span class="arithmatex">\(\theta = 0\)</span>: <span class="arithmatex">\(3 + 4 + 2 = 9\)</span>. <span class="arithmatex">\(\theta = \pi/2\)</span>: <span class="arithmatex">\(\cos\frac\pi2 = 0\)</span>, <span class="arithmatex">\(\cos\pi = -1\)</span>: <span class="arithmatex">\(3 + 0 - 2 = 1\)</span>. <span class="arithmatex">\(\theta = \pi\)</span>: <span class="arithmatex">\(\cos\pi = -1\)</span>, <span class="arithmatex">\(\cos2\pi = 1\)</span>: <span class="arithmatex">\(3 - 4 + 2 = 1\)</span>. Between <span class="arithmatex">\(\pi/2\)</span> and <span class="arithmatex">\(\pi\)</span> it dips: at <span class="arithmatex">\(\theta = 2\pi/3\)</span>, <span class="arithmatex">\(\cos = -\frac12\)</span>, <span class="arithmatex">\(\cos2\theta = -\frac12\)</span>: <span class="arithmatex">\(3 - 2 - 1 = 0\)</span>. Never negative here. Low-pass shape: strong positive lags → power at low frequency.</p>
+<figure>
+<p><img alt="Correlogram 3 + 4cos + 2cos2" src="img/u11_jun26_3c.svg" /></p>
+<figcaption><b>How to read it.</b> Horizontal axis $\theta$ from $-\pi$ to $\pi$. Peak 9 at 0, value 1 at $\pm\pi/2$ and at $\pm\pi$, touching 0 at $\pm2\pi/3$.</figcaption>
+</figure>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(\hat P_{corr}(e^{j\theta}) = 3 + 4\cos\theta + 2\cos2\theta\)</span>.</p>
+</div>
+</div>
+<h2 id="do-it-cold-1">Do it cold · 1<a class="headerlink" href="#do-it-cold-1" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">April 2025 · 3d · 0.5 p</p>
+<p>Autocorrelation at lags <span class="arithmatex">\(0, \pm1, \pm2\)</span>: <span class="arithmatex">\(r[0] = 2\)</span>, <span class="arithmatex">\(r[\pm1] = -\frac14\)</span>, <span class="arithmatex">\(r[\pm2] = -\frac{3}{16}\)</span>. Use the <abbr title="PSD estimate obtained by Fourier-transforming a truncated autocorrelation estimate.">correlogram</abbr> method to calculate the <abbr title="power spectral density: how the power of a random signal is distributed over frequency.">PSD</abbr> in a non-parametric fashion. Express <span class="arithmatex">\(P_{corr}(e^{j\theta})\)</span> as a function of cosines.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><span class="arithmatex">\(P = 2 + 2\left(-\frac14\right)\cos\theta + 2\left(-\frac{3}{16}\right)\cos2\theta = 2 - \frac12\cos\theta - \frac38\cos2\theta\)</span>. At <span class="arithmatex">\(0\)</span>: <span class="arithmatex">\(2 - 0.5 - 0.375 = 1.125\)</span>. At <span class="arithmatex">\(\pi\)</span>: <span class="arithmatex">\(2 + 0.5 - 0.375 = 2.125\)</span>. At <span class="arithmatex">\(\pi/2\)</span>: <span class="arithmatex">\(2 - 0 + 0.375 = 2.375\)</span>. Maximum about <span class="arithmatex">\(2.46\)</span> near <span class="arithmatex">\(\theta\approx0.61\pi\)</span> (the official key quotes these numbers). Needed in 3g to pick plot D.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(P_{corr}(e^{j\theta}) = 2 - \frac12\cos\theta - \frac38\cos2\theta\)</span>.</p>
+</div>
+</details>
+<h2 id="do-it-cold-2">Do it cold · 2<a class="headerlink" href="#do-it-cold-2" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">April 2024 · 3d · 0.4 p</p>
+<p>(From 3c, the MA(3) signal <span class="arithmatex">\(x[n] = i[n] - \frac12 i[n-1] + \frac14 i[n-2] - \frac12 i[n-3]\)</span> has <span class="arithmatex">\(r[0] = \frac{25}{16}\)</span>, <span class="arithmatex">\(r[\pm1] = -\frac34\)</span>, <span class="arithmatex">\(r[\pm2] = \frac12\)</span>, <span class="arithmatex">\(r[\pm3] = -\frac12\)</span>; derived in <a href="u14-model-autocorr.html">U14</a>.) Using the <abbr title="PSD estimate obtained by Fourier-transforming a truncated autocorrelation estimate.">correlogram</abbr> method, give an estimate of the power spectral density. Express it as a function of cosines.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><span class="arithmatex">\(P = \frac{25}{16} + 2\left(-\frac34\right)\cos\theta + 2\cdot\frac12\cos2\theta + 2\left(-\frac12\right)\cos3\theta = \frac{25}{16} - \frac32\cos\theta + \cos2\theta - \cos3\theta\)</span>. At <span class="arithmatex">\(0\)</span>: <span class="arithmatex">\(1.5625 - 1.5 + 1 - 1 = 0.0625\)</span>. At <span class="arithmatex">\(\pi\)</span> (<span class="arithmatex">\(\cos\pi = -1\)</span>, <span class="arithmatex">\(\cos2\pi = 1\)</span>, <span class="arithmatex">\(\cos3\pi = -1\)</span>): <span class="arithmatex">\(1.5625 + 1.5 + 1 + 1 = 5.0625\)</span>. At <span class="arithmatex">\(\pi/2\)</span> (<span class="arithmatex">\(0, -1, 0\)</span>): <span class="arithmatex">\(1.5625 - 1 = 0.5625\)</span>. High-pass: almost zero at DC, 5 at <span class="arithmatex">\(\pi\)</span>. That is how you pick plot B in 3f.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(P_{corr}(e^{j\theta}) = \frac{25}{16} - \frac32\cos\theta + \cos2\theta - \cos3\theta\)</span>.</p>
+</div>
+</details>
+<h2 id="do-it-cold-3">Do it cold · 3<a class="headerlink" href="#do-it-cold-3" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">January 2022 resit · 3c · 1 p</p>
+<p>MA(2) process <span class="arithmatex">\(x[n] = i[n] + ai[n-1] + bi[n-2]\)</span>, unit-variance white <span class="arithmatex">\(i[n]\)</span>, with <span class="arithmatex">\(a = -\frac34\)</span>, <span class="arithmatex">\(b = \frac14\)</span> (from 3b) so that <span class="arithmatex">\(r[\pm1] = -\frac{15}{16}\)</span>, <span class="arithmatex">\(r[\pm2] = \frac14\)</span>. Calculate the <abbr title="power spectral density: how the power of a random signal is distributed over frequency.">PSD</abbr> using the <abbr title="PSD estimate obtained by Fourier-transforming a truncated autocorrelation estimate.">correlogram</abbr> method. <strong>Hint:</strong> the <abbr title="r[k] = E[x[n] x[n−k]]: the similarity of the signal with a copy shifted by k samples.">autocorrelation</abbr> of a MA process is of finite length.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p>First <span class="arithmatex">\(r[0]\)</span> (U14): <span class="arithmatex">\(r[0] = 1 + a^2 + b^2 = 1 + \frac{9}{16} + \frac1{16} = \frac{26}{16} = \frac{13}{8}\)</span>. Then <span class="arithmatex">\(P = \frac{13}{8} + 2\left(-\frac{15}{16}\right)\cos\theta + 2\cdot\frac14\cos2\theta = \frac{13}{8} - \frac{15}{8}\cos\theta + \frac12\cos2\theta\)</span>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(P(e^{j\theta}) = \frac{13}{8} - \frac{15}{8}\cos\theta + \frac12\cos2\theta\)</span>. (With the fallback values <span class="arithmatex">\(a = \frac14\)</span>, <span class="arithmatex">\(b = \frac54\)</span>: <span class="arithmatex">\(r[0] = \frac{21}{8}\)</span>, <span class="arithmatex">\(r[1] = a + ab = \frac{9}{16}\)</span>, <span class="arithmatex">\(r[2] = b = \frac54\)</span>, <span class="arithmatex">\(P = \frac{21}{8} + \frac98\cos\theta + \frac52\cos2\theta\)</span>.)</p>
+</div>
+</details>
+<h2 id="do-it-cold-4">Do it cold · 4<a class="headerlink" href="#do-it-cold-4" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">November 2019 · 2a · 1 p</p>
+<p><span class="arithmatex">\(r_x[0] = 1\)</span>, <span class="arithmatex">\(r_x[\pm1] = 0.7\)</span>, <span class="arithmatex">\(r_x[\pm2] = 0.5\)</span>, <span class="arithmatex">\(r_x[\pm3] = 0.3\)</span>, <span class="arithmatex">\(r_x[\pm4] = 0\)</span>. Determine and plot the <abbr title="PSD estimate obtained by Fourier-transforming a truncated autocorrelation estimate.">correlogram</abbr> power spectrum estimate.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><span class="arithmatex">\(P = 1 + 1.4\cos\theta + 1.0\cos2\theta + 0.6\cos3\theta\)</span>. At <span class="arithmatex">\(0\)</span>: <span class="arithmatex">\(4.0\)</span>. At <span class="arithmatex">\(\pi\)</span>: <span class="arithmatex">\(1 - 1.4 + 1 - 0.6 = 0\)</span>. At <span class="arithmatex">\(\pi/2\)</span>: <span class="arithmatex">\(1 + 0 - 1 + 0 = 0\)</span>. Peak 4 at DC, zero at <span class="arithmatex">\(\pm\pi/2\)</span> and <span class="arithmatex">\(\pm\pi\)</span>, with small bumps in between.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(P_{corr}(e^{j\theta}) = 1 + 1.4\cos\theta + \cos2\theta + 0.6\cos3\theta\)</span>.</p>
+</div>
+</details>
+<h2 id="do-it-cold-5-single-lag">Do it cold · 5 (single <abbr title="the shift k in r[k].">lag</abbr>)<a class="headerlink" href="#do-it-cold-5-single-lag" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">January 2020 retake · 3a · 0.8 p (and October 2021 · 3c · 0.5 p)</p>
+<p><span class="arithmatex">\(r_x[0] = \frac{1}{21}\)</span>, <span class="arithmatex">\(r_x[\pm1] = \frac{2}{105}\)</span>, zero else. Determine and plot the <abbr title="PSD estimate obtained by Fourier-transforming a truncated autocorrelation estimate.">correlogram</abbr> estimate. (Oct 2021 3c: same with <span class="arithmatex">\(\rho[0] = \frac{28}{27}\)</span>, <span class="arithmatex">\(\rho[\pm1] = -\frac{4}{27}\)</span>, treating the signal as MA(1) so only lags <span class="arithmatex">\(0,\pm1\)</span> count.)</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p>Jan 2020: <span class="arithmatex">\(P = \frac1{21} + 2\cdot\frac{2}{105}\cos\theta = \frac1{21} + \frac4{105}\cos\theta\)</span>. At <span class="arithmatex">\(0\)</span>: <span class="arithmatex">\(\frac{5}{105} + \frac4{105} = \frac{9}{105} = 0.0857\)</span>. At <span class="arithmatex">\(\pi\)</span>: <span class="arithmatex">\(\frac1{105} = 0.0095\)</span>. Oct 2021: <span class="arithmatex">\(P = \frac{28}{27} - \frac{8}{27}\cos\theta\)</span>; <span class="arithmatex">\(\frac{20}{27} = 0.741\)</span> at <span class="arithmatex">\(0\)</span>, <span class="arithmatex">\(\frac{36}{27} = 1.333\)</span> at <span class="arithmatex">\(\pi\)</span>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(\frac{1}{21} + \frac{4}{105}\cos\theta\)</span> (Jan 2020); <span class="arithmatex">\(\frac{28}{27} - \frac{8}{27}\cos\theta\)</span> (Oct 2021).</p>
+</div>
+</details>
+<h2 id="where-points-get-lost">Where points get lost<a class="headerlink" href="#where-points-get-lost" title="Permanent link">#</a></h2>
+<div class="admonition trap key">
+<p class="admonition-title">Where points get lost</p>
+<table>
+<thead>
+<tr>
+<th>Wrong line</th>
+<th>Right line</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(P = r[0] + r[1]\cos\theta + r[2]\cos2\theta\)</span></td>
+<td>Every <abbr title="the shift k in r[k].">lag</abbr> except 0 is <strong>doubled</strong>: <span class="arithmatex">\(2r[1]\cos\theta\)</span>.</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(P = 2r[0] + 2r[1]\cos\theta\)</span></td>
+<td><span class="arithmatex">\(r[0]\)</span> appears once.</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\cos2\theta\)</span> evaluated as <span class="arithmatex">\(2\cos\theta\)</span> at <span class="arithmatex">\(\theta = \pi\)</span></td>
+<td><span class="arithmatex">\(\cos(2\pi) = +1\)</span>, <span class="arithmatex">\(\cos(3\pi) = -1\)</span>: alternate signs for the <abbr title="the shift k in r[k].">lag</abbr>-<span class="arithmatex">\(k\)</span> term at <span class="arithmatex">\(\pi\)</span>.</td>
+</tr>
+<tr>
+<td>Leaving <span class="arithmatex">\(e^{-j\theta}\)</span> in the answer when "as a function of cosines" is demanded</td>
+<td>Pair them. Marks are for the cosine form.</td>
+</tr>
+<tr>
+<td>Treating a negative value as an arithmetic error</td>
+<td>A truncated <abbr title="PSD estimate obtained by Fourier-transforming a truncated autocorrelation estimate.">correlogram</abbr> can go negative; note it.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="true-or-false-from-real-mc-options">True or false (from real MC options)<a class="headerlink" href="#true-or-false-from-real-mc-options" title="Permanent link">#</a></h2>
+<div class="tf">
+<table>
+<thead>
+<tr>
+<th>statement</th>
+<th>T or F</th>
+<th>why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The <abbr title="PSD estimate obtained by Fourier-transforming a truncated autocorrelation estimate.">correlogram</abbr> estimates the power spectrum as the Fourier transform of the <abbr title="r[k] = E[x[n] x[n−k]]: the similarity of the signal with a copy shifted by k samples.">autocorrelation</abbr> function.</td>
+<td>True</td>
+<td>Apr 2024 3a row 4 (<abbr title="PSD estimate obtained by Fourier-transforming a truncated autocorrelation estimate.">correlogram</abbr>, Blackman–Tukey).</td>
+</tr>
+<tr>
+<td>The "raw" periodogram achieves better performance in bias but worse in variance than the "raw" <abbr title="PSD estimate obtained by Fourier-transforming a truncated autocorrelation estimate.">correlogram</abbr>.</td>
+<td>False</td>
+<td>Apr 2025 3b (c): the raw periodogram and raw <abbr title="PSD estimate obtained by Fourier-transforming a truncated autocorrelation estimate.">correlogram</abbr> are the same estimator (periodogram = FT of the biased <abbr title="r[k] = E[x[n] x[n−k]]: the similarity of the signal with a copy shifted by k samples.">autocorrelation</abbr> estimate).</td>
+</tr>
+<tr>
+<td>The <abbr title="r[k] = E[x[n] x[n−k]]: the similarity of the signal with a copy shifted by k samples.">autocorrelation</abbr> function of an MA model with <span class="arithmatex">\(Q\)</span> zeros is a finite sequence of length <span class="arithmatex">\(Q\)</span>.</td>
+<td>False</td>
+<td>Jan 2019 1d (A): nonzero lags are <span class="arithmatex">\(-Q..Q\)</span>, i.e. <span class="arithmatex">\(2Q+1\)</span> values, <span class="arithmatex">\(Q+1\)</span> distinct.</td>
+</tr>
+<tr>
+<td>A legitimate <abbr title="r[k] = E[x[n] x[n−k]]: the similarity of the signal with a copy shifted by k samples.">autocorrelation</abbr> sequence is symmetric with its maximum at <abbr title="the shift k in r[k].">lag</abbr> 0.</td>
+<td>True</td>
+<td>Jan 2020 1a: the test to pick valid <span class="arithmatex">\(r[l]\)</span> plots.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>You can leave this page when you can:</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> turn three lags into <span class="arithmatex">\(a + b\cos\theta + c\cos2\theta\)</span> in one line.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> evaluate it at <span class="arithmatex">\(0\)</span>, <span class="arithmatex">\(\pi/2\)</span>, <span class="arithmatex">\(\pi\)</span> without a calculator.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> sketch the curve with those three values and symmetry.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="u10-estimation-mc.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: U10 · Estimation theory MC">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                U10 · Estimation theory MC
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="u12-ar.html" class="md-footer__link md-footer__link--next" aria-label="Next: U12 · AR model (Yule–Walker)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                U12 · AR model (Yule–Walker)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.top", "navigation.footer", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "toc.follow", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js?v=1794380413"></script>
+      
+        <script src="javascripts/katex.js?v=1794380413"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="javascripts/quiz.js?v=1794380413"></script>
+      
+        <script src="javascripts/ask.js?v=1794380413"></script>
+      
+        <script src="javascripts/video.js?v=1794380413"></script>
+      
+        <script src="javascripts/layout.js?v=1794380413"></script>
+      
+        <script src="javascripts/keypoints.js?v=1794380413"></script>
+      
+        <script src="javascripts/progress.js?v=1794380413"></script>
+      
+        <script src="javascripts/widgets.js?v=1794380413"></script>
+      
+        <script src="javascripts/navsections.js?v=1794380413"></script>
+      
+    
+  </body>
+</html>

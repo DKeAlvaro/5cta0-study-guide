@@ -1,0 +1,2056 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Active study guide and cheat sheet for 5CTA0 Statistical Signal Processing (TU/e), built from every past exam.">
+      
+      
+      
+        <link rel="canonical" href="https://dkealvaro.github.io/5cta0-study-guide/u06-map.html">
+      
+      
+        <link rel="prev" href="u05-mle.html">
+      
+      
+        <link rel="next" href="u07-mmse.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>U6 · Posterior and MAP - 5CTA0 · pass the exam</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css?v=1794380413">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css?v=1794380413">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+4:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Serif 4";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.11/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap">
+    
+      <link rel="stylesheet" href="stylesheets/extra.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/ask.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/layout.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/keypoints.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/widgets.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/cheat-print.css?v=1794380413">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#u6-posterior-and-map-prior-likelihood-then-maximise" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="5CTA0 · pass the exam" class="md-header__button md-logo" aria-label="5CTA0 · pass the exam" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            5CTA0 · pass the exam
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              U6 · Posterior and MAP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DKeAlvaro/5cta0-study-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DKeAlvaro/5cta0-study-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="5CTA0 · pass the exam" class="md-nav__button md-logo" aria-label="5CTA0 · pass the exam" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    5CTA0 · pass the exam
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DKeAlvaro/5cta0-study-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DKeAlvaro/5cta0-study-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inventory.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Every exam question + ranking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="maths.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M · Maths the course assumes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cheatsheet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat sheet (2 A4 sides)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="battle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battle table (every question with the sheet)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 · Probability and random signals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 · Probability and random signals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u01-bayes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U1 · Total probability and Bayes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u02-joint.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U2 · Joint pdf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u03-process-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U3 · Random variables and processes (MC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u04-factorisation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U4 · Spectral factorisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 · Estimation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 · Estimation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u05-mle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U5 · Maximum likelihood
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U6 · Posterior and MAP
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="u06-map.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U6 · Posterior and MAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-idea-in-plain-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea in plain words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-tiny-example-with-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A tiny example with numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-formulas-every-symbol-named" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The formulas, every symbol named
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-exam-asks-in-its-own-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the exam asks, in its own words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-exam-question-one-step-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked exam question, one step at a time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-2-the-15-point-sigmoid-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 2 (the 1.5-point sigmoid one)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-5-no-closed-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 5 (no closed form)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-6-discrete-x-posterior-probabilities-and-a-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 6 (discrete \(X\): posterior probabilities and a threshold)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-7-uniform-prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 7 (uniform prior)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-points-get-lost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where points get lost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#true-or-false-from-real-mc-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        True or false (from real MC options)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u07-mmse.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U7 · MMSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u08-crlb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U8 · Fisher information and CRLB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u09-ls.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U9 · Least squares
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u10-estimation-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U10 · Estimation theory MC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 · Spectral estimation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 · Spectral estimation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u11-correlogram.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U11 · Correlogram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u12-ar.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U12 · AR model (Yule–Walker)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u13-ma.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U13 · MA model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u14-model-autocorr.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U14 · From a difference equation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u15-spectral-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U15 · Spectral estimation theory (MC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4 · Detection
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 4 · Detection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u16-lrt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U16 · Likelihood ratio test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u17-pfa-pd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U17 · P_FA, P_D, P_M
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u18-bayes-detector.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U18 · Bayesian detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u19-detection-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U19 · Detection theory MC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-idea-in-plain-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea in plain words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-tiny-example-with-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A tiny example with numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-formulas-every-symbol-named" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The formulas, every symbol named
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-exam-asks-in-its-own-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the exam asks, in its own words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-exam-question-one-step-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked exam question, one step at a time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-2-the-15-point-sigmoid-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 2 (the 1.5-point sigmoid one)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-5-no-closed-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 5 (no closed form)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-6-discrete-x-posterior-probabilities-and-a-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 6 (discrete \(X\): posterior probabilities and a threshold)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-7-uniform-prior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 7 (uniform prior)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-points-get-lost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where points get lost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#true-or-false-from-real-mc-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        True or false (from real MC options)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="u6-posterior-and-map-prior-likelihood-then-maximise">U6 · Posterior and <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr>: <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> × likelihood, then maximise<a class="headerlink" href="#u6-posterior-and-map-prior-likelihood-then-maximise" title="Permanent link">#</a></h1>
+<div class="meta"><span class="hot">Rank 2 · 7.6 points over 8 sittings</span><span>2 p in Jun 2026, 1.5 p in Apr 2024</span><span>90 min</span></div>
+
+<div class="admonition need">
+<p class="admonition-title">Before this page</p>
+<p><a href="u05-mle.html">U5 MLE</a> (the six steps are reused unchanged), <a href="maths.html#m1-exponents-and-logarithms">M1 ln rules</a>, <a href="maths.html#m9-integrals-the-exam-hands-out-and-evaluating-at-0-and-infty">M9 integrals</a> only if you must normalise.</p>
+</div>
+<h2 id="the-idea-in-plain-words">The idea in plain words<a class="headerlink" href="#the-idea-in-plain-words" title="Permanent link">#</a></h2>
+<p>Maximum likelihood listens only to the data. <strong>Bayesian</strong> estimation also listens to what you believed before the data arrived: the <strong><abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr></strong> pdf of <span class="arithmatex">\(\theta\)</span>. Multiply "how plausible is <span class="arithmatex">\(\theta\)</span> before" by "how well does <span class="arithmatex">\(\theta\)</span> explain the data" and you get "how plausible is <span class="arithmatex">\(\theta\)</span> now": the <strong><abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr></strong>. The <strong><abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr></strong> estimate is the <span class="arithmatex">\(\theta\)</span> where the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> peaks. Mechanically: multiply <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> and likelihood, drop constants, then run the MLE six steps on the product.</p>
+<div class="admonition idea">
+<p class="admonition-title">The thing that confused me</p>
+<p>The <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> formula has a denominator <span class="arithmatex">\(p(x)\)</span> that looks scary. It is a <strong>number</strong> (it does not contain <span class="arithmatex">\(\theta\)</span>), so for the <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> you can ignore it completely: <span class="arithmatex">\(\arg\max_\theta\)</span> of <span class="arithmatex">\(\frac{\text{stuff}(\theta)}{\text{number}}\)</span> is the <span class="arithmatex">\(\arg\max\)</span> of stuff<span class="arithmatex">\((\theta)\)</span>. You only compute it if the exam asks for the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> <em>as a proper pdf</em> or for the MMSE (<a href="u07-mmse.html">U7</a>).</p>
+</div>
+<h2 id="a-tiny-example-with-numbers">A tiny example with numbers<a class="headerlink" href="#a-tiny-example-with-numbers" title="Permanent link">#</a></h2>
+<p>Coin with unknown <span class="arithmatex">\(P(\text{heads}) = \theta\)</span>. Data: 3 heads, 1 tail. Prior: <span class="arithmatex">\(p(\theta)\propto\theta(1-\theta)\)</span> (you think fair-ish).</p>
+<ol>
+<li>Likelihood: <span class="arithmatex">\(\theta^3(1-\theta)^1\)</span>. Prior: <span class="arithmatex">\(\theta^1(1-\theta)^1\)</span>.</li>
+<li>Posterior <span class="arithmatex">\(\propto \theta^{3+1}(1-\theta)^{1+1} = \theta^4(1-\theta)^2\)</span>.</li>
+<li><span class="arithmatex">\(\ln\)</span>: <span class="arithmatex">\(4\ln\theta + 2\ln(1-\theta)\)</span>. Derivative: <span class="arithmatex">\(\frac4\theta - \frac{2}{1-\theta} = 0 \Rightarrow 4(1-\theta) = 2\theta \Rightarrow 4 = 6\theta \Rightarrow \hat\theta_{MAP} = \frac23 = 0.667\)</span>.</li>
+</ol>
+<p>The MLE would be <span class="arithmatex">\(3/4 = 0.75\)</span> (same steps without the <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr>). The <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr>, peaked at <span class="arithmatex">\(0.5\)</span>, pulled the estimate from <span class="arithmatex">\(0.75\)</span> toward <span class="arithmatex">\(0.5\)</span>.</p>
+<div class="admonition question">
+<p class="admonition-title">Your turn</p>
+<p>Same <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr>, but now 30 heads and 10 tails. Posterior exponents? <span class="arithmatex">\(\hat\theta_{MAP}\)</span>? Compare with the MLE <span class="arithmatex">\(30/40 = 0.75\)</span>.</p>
+<details class="solution" open="open">
+<summary>Answer</summary>
+<p>Posterior <span class="arithmatex">\(\propto\theta^{31}(1-\theta)^{11}\)</span>; <span class="arithmatex">\(\frac{31}{\theta} = \frac{11}{1-\theta} \Rightarrow 31 - 31\theta = 11\theta \Rightarrow \hat\theta = 31/42 = 0.738\)</span>. Much closer to <span class="arithmatex">\(0.75\)</span>: with more data the <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> matters less. That is the sentence Jun 2026 2d asks you to write.</p>
+</details>
+</div>
+<h2 id="the-formulas-every-symbol-named">The formulas, every symbol named<a class="headerlink" href="#the-formulas-every-symbol-named" title="Permanent link">#</a></h2>
+<div class="key">
+<div class="arithmatex">\[p(\theta\mid\mathbf x) = \frac{p(\mathbf x\mid\theta)\,p(\theta)}{p(\mathbf x)} \;\propto\; p(\mathbf x\mid\theta)\,p(\theta), \qquad \hat\theta_{MAP} = \arg\max_\theta\,p(\theta\mid\mathbf x) = \arg\max_\theta\left[\ln p(\mathbf x\mid\theta) + \ln p(\theta)\right]\]</div>
+</div>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(p(\theta)\)</span></td>
+<td><abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr>: pdf of <span class="arithmatex">\(\theta\)</span> before seeing data (Beta, Gamma, exponential, uniform… given in the question)</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(p(\mathbf x\mid\theta)\)</span></td>
+<td>likelihood, the product over the samples as in <a href="u05-mle.html">U5</a></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(p(\theta\mid\mathbf x)\)</span></td>
+<td><abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr>: pdf of <span class="arithmatex">\(\theta\)</span> after the data</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(p(\mathbf x)\)</span></td>
+<td>evidence <span class="arithmatex">\(= \int p(\mathbf x\mid\theta)p(\theta)\,d\theta\)</span>: a number that makes the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> integrate to 1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\propto\)</span></td>
+<td>"proportional to": equal up to a factor that does not contain <span class="arithmatex">\(\theta\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\hat\theta_{MAP}\)</span></td>
+<td>maximum a posteriori: the <abbr title="the location of the peak of a pdf.">mode</abbr> (peak) of the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Two shapes to recognise</strong> (they save all the calculus):</p>
+<table>
+<thead>
+<tr>
+<th>If the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> looks like</th>
+<th>it is</th>
+<th>and its peak (<abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr>) is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\theta^{a-1}(1-\theta)^{b-1}\)</span> on <span class="arithmatex">\(0&lt;\theta&lt;1\)</span></td>
+<td>Beta<span class="arithmatex">\((a,b)\)</span></td>
+<td><span class="arithmatex">\(\dfrac{a-1}{a+b-2}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\lambda^{a-1}e^{-b\lambda}\)</span> on <span class="arithmatex">\(\lambda&gt;0\)</span></td>
+<td>Gamma<span class="arithmatex">\((a, \text{rate } b)\)</span></td>
+<td><span class="arithmatex">\(\dfrac{a-1}{b}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Both come from "derivative of the <span class="arithmatex">\(\ln\)</span> = 0": for Beta, <span class="arithmatex">\(\frac{a-1}{\theta} - \frac{b-1}{1-\theta} = 0\)</span>; for Gamma, <span class="arithmatex">\(\frac{a-1}{\lambda} - b = 0\)</span>. Always show that line in the exam, then quote the result.</p>
+<h2 id="what-the-exam-asks-in-its-own-words">What the exam asks, in its own words<a class="headerlink" href="#what-the-exam-asks-in-its-own-words" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>IF YOU SEE</th>
+<th>It means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"assume a Beta / Gamma / exponential <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> on <span class="arithmatex">\(\theta\)</span>"</td>
+<td>that is <span class="arithmatex">\(p(\theta)\)</span>; write it down with the given numbers</td>
+</tr>
+<tr>
+<td>"write the likelihood function for <span class="arithmatex">\(\theta\)</span>"</td>
+<td><a href="u05-mle.html">U5</a> step 1: product over the data, numbers plugged in</td>
+</tr>
+<tr>
+<td>"derive the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> distribution for <span class="arithmatex">\(\theta\)</span>"</td>
+<td>multiply likelihood by <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr>, keep the <span class="arithmatex">\(\theta\)</span> factors, name the family and its new parameters</td>
+</tr>
+<tr>
+<td>"compute the <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> estimate"</td>
+<td>peak of the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr>: <span class="arithmatex">\(\ln\)</span>, differentiate, zero, solve (or the shape shortcut)</td>
+</tr>
+<tr>
+<td>"compare the <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> with the MLE and explain the effect of the <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr>"</td>
+<td>compute both numbers; the <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> pulls the <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> toward the <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr>'s own peak; more data → <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> → MLE</td>
+</tr>
+<tr>
+<td>"the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> takes the form <span class="arithmatex">\(\ldots\)</span>"</td>
+<td>the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> is handed to you: skip straight to the maximisation</td>
+</tr>
+<tr>
+<td>"find a threshold <span class="arithmatex">\(y_{th}\)</span> such that the decision on <span class="arithmatex">\(X\)</span> depends on whether it is exceeded" (discrete <span class="arithmatex">\(X\)</span>)</td>
+<td>compare the two <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> probabilities; their ratio <span class="arithmatex">\(\gtrless1\)</span> reduces to <span class="arithmatex">\(y\gtrless y_{th}\)</span></td>
+</tr>
+<tr>
+<td>"evaluate the a posteriori probabilities <span class="arithmatex">\(P[X = 1\mid Y]\)</span>"</td>
+<td>Bayes with a sum (not an integral) in the denominator: <span class="arithmatex">\(P[Y\mid X=1]P[X=1]/\sum_x P[Y\mid x]P[x]\)</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="recipe">Recipe<a class="headerlink" href="#recipe" title="Permanent link">#</a></h2>
+<div class="admonition recipe key">
+<p class="admonition-title">U6 · Posterior, then <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr></p>
+<ol>
+<li><strong>Likelihood</strong> <span class="arithmatex">\(p(\mathbf x\mid\theta)\)</span> as a product; plug in the data numbers if given (<span class="arithmatex">\(\sum x_i\)</span>, <span class="arithmatex">\(n\)</span>).</li>
+<li><strong>Prior</strong> <span class="arithmatex">\(p(\theta)\)</span> copied from the question, constants dropped.</li>
+<li><strong>Multiply.</strong> Collect powers of <span class="arithmatex">\(\theta\)</span> and exponentials: <span class="arithmatex">\(\theta^{p}\cdot\theta^{q} = \theta^{p+q}\)</span>, <span class="arithmatex">\(e^{-a\theta}e^{-b\theta} = e^{-(a+b)\theta}\)</span>. The result is "<abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> <span class="arithmatex">\(\propto\)</span> …".</li>
+<li><strong>Name it</strong> if it matches Beta or Gamma (table above). If the exam wants the proper pdf, divide by <span class="arithmatex">\(\int(\ldots)d\theta\)</span> (<a href="maths.html#m9-integrals-the-exam-hands-out-and-evaluating-at-0-and-infty">M9</a>).</li>
+<li><strong><abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr>:</strong> take <span class="arithmatex">\(\ln\)</span>, differentiate in <span class="arithmatex">\(\theta\)</span>, set to zero, solve (U5 steps 2 to 5). For nested functions (sigmoid) use the chain rule and the hint.</li>
+<li><strong>Compare</strong> with the MLE if asked: MLE = same steps without the <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr>. Write one sentence on the direction of the pull.</li>
+</ol>
+</div>
+<h2 id="worked-exam-question-one-step-at-a-time">Worked exam question, one step at a time<a class="headerlink" href="#worked-exam-question-one-step-at-a-time" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">June 2026 resit · 2c · 1 p</p>
+<p>A genomics researcher screens patients sequentially to recruit eligible participants for a trial. Each patient is independently eligible with unknown probability <span class="arithmatex">\(\theta \in (0, 1)\)</span>. The researcher records the number of patients screened <span class="arithmatex">\(X_i\)</span> until exactly <span class="arithmatex">\(k = 2\)</span> eligible participants are found. This is modelled as <span class="arithmatex">\(X_i \sim \text{NegBin}(k, \theta)\)</span>, <span class="arithmatex">\(k = 2\)</span> (known), with PMF</p>
+<div class="arithmatex">\[P(X = x \mid \theta) = \binom{x-1}{k-1} \theta^k (1-\theta)^{x-k}, \quad x = k, k+1, k+2, \dots\]</div>
+<p>The observed screening counts over five recruitment rounds are <span class="arithmatex">\(x = \{3, 5, 4, 6, 4\}\)</span>. Assume a Beta <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> on <span class="arithmatex">\(\theta\)</span>: <span class="arithmatex">\(\theta \sim \text{Beta}(\alpha = 2, \beta = 3)\)</span>.</p>
+<ul>
+<li>Write the likelihood function for <span class="arithmatex">\(\theta\)</span>.</li>
+<li>Derive the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> distribution for <span class="arithmatex">\(\theta\)</span>.</li>
+<li>Compute the <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> estimate for <span class="arithmatex">\(\theta\)</span>.</li>
+</ul>
+<p>Hint: <span class="arithmatex">\(X \sim \text{Beta}(\alpha, \beta)\)</span> has pdf <span class="arithmatex">\(p(x \mid \alpha, \beta) = \frac{1}{B(\alpha, \beta)} x^{\alpha-1} (1-x)^{\beta-1}\)</span>, <span class="arithmatex">\(0 &lt; x &lt; 1\)</span>, where <span class="arithmatex">\(B(\alpha, \beta) = \Gamma(\alpha)\Gamma(\beta)/\Gamma(\alpha + \beta)\)</span>.</p>
+</div>
+<div class="stepper">
+<p><strong>Step 1 · Likelihood.</strong> With <span class="arithmatex">\(k = 2\)</span>: <span class="arithmatex">\(P(x_i\mid\theta) = \binom{x_i-1}{1}\theta^2(1-\theta)^{x_i-2} = (x_i - 1)\,\theta^2(1-\theta)^{x_i-2}\)</span>. Product over the five rounds:</p>
+<div class="arithmatex">\[L(\theta) = \prod_{i=1}^{5}(x_i-1)\;\theta^{2\cdot5}\;(1-\theta)^{\sum_i(x_i-2)}.\]</div>
+<p>Numbers: <span class="arithmatex">\(\prod(x_i - 1) = 2\cdot4\cdot3\cdot5\cdot3 = 360\)</span>. <span class="arithmatex">\(\sum x_i = 3+5+4+6+4 = 22\)</span>, so <span class="arithmatex">\(\sum(x_i-2) = 22 - 10 = 12\)</span>. Hence <span class="arithmatex">\(L(\theta) = 360\,\theta^{10}(1-\theta)^{12}\)</span>.</p>
+<p><strong>Now do step 2 yourself:</strong> write the <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> with <span class="arithmatex">\(\alpha = 2\)</span>, <span class="arithmatex">\(\beta = 3\)</span>, dropping the constant <span class="arithmatex">\(1/B(\alpha,\beta)\)</span>.</p>
+<hr />
+<p><strong>Step 2 · Prior.</strong> <span class="arithmatex">\(p(\theta) \propto \theta^{2-1}(1-\theta)^{3-1} = \theta^{1}(1-\theta)^{2}\)</span>.</p>
+<p><strong>Now do step 3 yourself:</strong> multiply likelihood and <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr>; add the exponents.</p>
+<hr />
+<p><strong>Step 3 · Multiply.</strong> <span class="arithmatex">\(p(\theta\mid\mathbf x) \propto \theta^{10}(1-\theta)^{12}\cdot\theta^{1}(1-\theta)^{2} = \theta^{11}(1-\theta)^{14}\)</span>.</p>
+<p><strong>Now do step 4 yourself:</strong> which Beta is that? (<span class="arithmatex">\(\theta^{a-1}(1-\theta)^{b-1}\)</span>.)</p>
+<hr />
+<p><strong>Step 4 · Name it.</strong> <span class="arithmatex">\(a - 1 = 11 \Rightarrow a = 12\)</span>; <span class="arithmatex">\(b - 1 = 14 \Rightarrow b = 15\)</span>. Posterior <span class="arithmatex">\(= \text{Beta}(12, 15)\)</span>: <span class="arithmatex">\(p(\theta\mid\mathbf x) = \frac{1}{B(12,15)}\theta^{11}(1-\theta)^{14}\)</span>. (General rule you can quote: Beta<span class="arithmatex">\((\alpha + nk,\ \beta + \sum x_i - nk)\)</span>.)</p>
+<p><strong>Now do step 5 yourself:</strong> take <span class="arithmatex">\(\ln\)</span> of <span class="arithmatex">\(\theta^{11}(1-\theta)^{14}\)</span>, differentiate, set to zero, solve.</p>
+<hr />
+<p><strong>Step 5 · <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr>.</strong> <span class="arithmatex">\(\ln = 11\ln\theta + 14\ln(1-\theta)\)</span>. Derivative: <span class="arithmatex">\(\frac{11}{\theta} - \frac{14}{1-\theta}\)</span> (the second term is negative because <span class="arithmatex">\(\frac{d}{d\theta}\ln(1-\theta) = \frac{-1}{1-\theta}\)</span>). Zero: <span class="arithmatex">\(\frac{11}{\theta} = \frac{14}{1-\theta} \Rightarrow 11(1-\theta) = 14\theta \Rightarrow 11 = 25\theta \Rightarrow \hat\theta_{MAP} = \frac{11}{25} = 0.44\)</span>. Shortcut check: <span class="arithmatex">\(\frac{a-1}{a+b-2} = \frac{11}{25}\)</span>. Same.</p>
+<p><strong>Step 6 · Compare (not asked, but one line costs nothing).</strong> MLE from <span class="arithmatex">\(\theta^{10}(1-\theta)^{12}\)</span>: <span class="arithmatex">\(\frac{10}{22} = 0.4545\)</span>. Prior peak: <span class="arithmatex">\(\frac{2-1}{2+3-2} = \frac13 = 0.333\)</span>. <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> <span class="arithmatex">\(= 0.44\)</span> sits between them, pulled toward the <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(L(\theta) = 360\,\theta^{10}(1-\theta)^{12}\)</span>; <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> <span class="arithmatex">\(\theta\mid\mathbf x\sim\text{Beta}(12,15)\)</span>, i.e. <span class="arithmatex">\(\propto\theta^{11}(1-\theta)^{14}\)</span>; <span class="arithmatex">\(\hat\theta_{MAP} = 11/25 = 0.44\)</span>.</p>
+</div>
+</div>
+<h2 id="do-it-cold-1">Do it cold · 1<a class="headerlink" href="#do-it-cold-1" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">June 2026 resit · 2d · 1 p</p>
+<p>An environmental scientist monitors the number of pollution spikes recorded per day at an air quality monitoring station on the outskirts of a city. The daily spike count is modelled as <span class="arithmatex">\(X_i \sim \text{Poisson}(\lambda)\)</span>, where <span class="arithmatex">\(\lambda &gt; 0\)</span> is the unknown average number of pollution spikes per day. The observed counts over six days are <span class="arithmatex">\(x = \{2, 4, 3, 5, 2, 4\}\)</span>. Assume a Gamma <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> on <span class="arithmatex">\(\lambda\)</span> with pdf <span class="arithmatex">\(p(\lambda) \propto \lambda^{\alpha-1}e^{-\beta\lambda}\)</span>, <span class="arithmatex">\(\lambda &gt; 0\)</span>, <span class="arithmatex">\(\alpha = 3\)</span>, <span class="arithmatex">\(\beta = 2\)</span>.</p>
+<ul>
+<li>Write the likelihood function for <span class="arithmatex">\(\lambda\)</span>.</li>
+<li>Derive the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> distribution for <span class="arithmatex">\(\lambda\)</span>.</li>
+<li>Find the <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> estimate for <span class="arithmatex">\(\lambda\)</span>.</li>
+<li>Compare the <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> estimate with the MLE and explain the effect of the <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr>.</li>
+</ul>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><strong>Step 1.</strong> Poisson PMF: <span class="arithmatex">\(P(x\mid\lambda) = \frac{\lambda^{x}e^{-\lambda}}{x!}\)</span>. Product over <span class="arithmatex">\(n = 6\)</span> days: <span class="arithmatex">\(L(\lambda) = \frac{\lambda^{\sum x_i}e^{-6\lambda}}{\prod x_i!}\)</span>. <span class="arithmatex">\(\sum x_i = 2+4+3+5+2+4 = 20\)</span>. <span class="arithmatex">\(\prod x_i! = 2\cdot24\cdot6\cdot120\cdot2\cdot24 = 1\,658\,880\)</span>. So <span class="arithmatex">\(L(\lambda) = \dfrac{\lambda^{20}e^{-6\lambda}}{1\,658\,880} \propto \lambda^{20}e^{-6\lambda}\)</span>.</p>
+<p><strong>Step 2.</strong> Prior <span class="arithmatex">\(\propto\lambda^{3-1}e^{-2\lambda} = \lambda^{2}e^{-2\lambda}\)</span>.</p>
+<p><strong>Step 3.</strong> Posterior <span class="arithmatex">\(\propto\lambda^{20}e^{-6\lambda}\lambda^{2}e^{-2\lambda} = \lambda^{22}e^{-8\lambda}\)</span>.</p>
+<p><strong>Step 4.</strong> Gamma with <span class="arithmatex">\(a - 1 = 22 \Rightarrow a = 23\)</span> and rate <span class="arithmatex">\(b = 8\)</span>: <span class="arithmatex">\(\lambda\mid\mathbf x\sim\text{Gamma}(23, 8)\)</span>. (Rule: Gamma<span class="arithmatex">\((\alpha + \sum x_i,\ \beta + n)\)</span>.)</p>
+<p><strong>Step 5.</strong> <span class="arithmatex">\(\ln = 22\ln\lambda - 8\lambda\)</span>; derivative <span class="arithmatex">\(\frac{22}{\lambda} - 8 = 0 \Rightarrow \hat\lambda_{MAP} = \frac{22}{8} = 2.75\)</span>.</p>
+<p><strong>Step 6.</strong> MLE: <span class="arithmatex">\(\ln L = 20\ln\lambda - 6\lambda\)</span>, derivative <span class="arithmatex">\(\frac{20}{\lambda} - 6 = 0 \Rightarrow \hat\lambda_{ML} = \frac{20}{6} = 3.333\)</span> (the sample mean). The <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> peaks at <span class="arithmatex">\(\frac{\alpha-1}{\beta} = 1\)</span> (it "expects" about one spike a day), so it pulls the estimate down from <span class="arithmatex">\(3.33\)</span> to <span class="arithmatex">\(2.75\)</span>. In the formula <span class="arithmatex">\(\frac{\alpha - 1 + \sum x_i}{\beta + n}\)</span> the data terms <span class="arithmatex">\(\sum x_i\)</span> and <span class="arithmatex">\(n\)</span> grow with more days while <span class="arithmatex">\(\alpha-1 = 2\)</span> and <span class="arithmatex">\(\beta = 2\)</span> stay fixed, so the <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> converges to the MLE.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(L(\lambda)\propto\lambda^{20}e^{-6\lambda}\)</span>; <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> Gamma<span class="arithmatex">\((23, 8)\)</span>; <span class="arithmatex">\(\hat\lambda_{MAP} = 22/8 = 2.75\)</span>; <span class="arithmatex">\(\hat\lambda_{ML} = 20/6 = 3.33\)</span>; the <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> (<abbr title="the location of the peak of a pdf.">mode</abbr> 1) pulls the estimate down, and the pull fades as <span class="arithmatex">\(n\)</span> grows.</p>
+</div>
+</details>
+<h2 id="do-it-cold-2-the-15-point-sigmoid-one">Do it cold · 2 (the 1.5-point sigmoid one)<a class="headerlink" href="#do-it-cold-2-the-15-point-sigmoid-one" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">April 2024 · 2d · 1.5 p</p>
+<p>Consider the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> distribution <span class="arithmatex">\(p(\theta | x) = \frac{\lambda(\theta)}{2} e^{-\frac{\lambda(\theta)}{2}x}\)</span>, <span class="arithmatex">\(x &gt; 1\)</span>, where <span class="arithmatex">\(\lambda(\cdot)\)</span> is defined as the logistic sigmoid function <span class="arithmatex">\(\lambda(\theta) = \frac{1}{1+e^{-\theta}}\)</span>. Derive the <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> for the parameter <span class="arithmatex">\(\theta\)</span>. Hint: <span class="arithmatex">\(\frac{\partial \lambda(\theta)}{\partial \theta} = \lambda(\theta)(1 - \lambda(\theta))\)</span>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p>The <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> is given, so start at step 5. Write <span class="arithmatex">\(\lambda\)</span> for <span class="arithmatex">\(\lambda(\theta)\)</span>.</p>
+<p><strong>ln.</strong> <span class="arithmatex">\(\ln p = \ln\lambda - \ln 2 - \frac{\lambda x}{2}\)</span>.</p>
+<p><strong>Differentiate</strong> (chain rule with the hint): <span class="arithmatex">\(\frac{d}{d\theta}\ln\lambda = \frac{\lambda'}{\lambda} = \frac{\lambda(1-\lambda)}{\lambda} = 1 - \lambda\)</span>. <span class="arithmatex">\(\frac{d}{d\theta}\left(-\frac{x}{2}\lambda\right) = -\frac x2\lambda(1-\lambda)\)</span>. Sum: <span class="arithmatex">\((1-\lambda) - \frac x2\lambda(1-\lambda) = (1-\lambda)\left(1 - \frac{x\lambda}{2}\right)\)</span>.</p>
+<p><strong>Zero.</strong> <span class="arithmatex">\(\lambda = 1\)</span> would need <span class="arithmatex">\(\theta = \infty\)</span> (discard). So <span class="arithmatex">\(1 - \frac{x\lambda}{2} = 0 \Rightarrow \lambda = \frac2x\)</span>.</p>
+<p><strong>Undo the sigmoid.</strong> <span class="arithmatex">\(\frac{1}{1+e^{-\theta}} = \frac2x \Rightarrow 1 + e^{-\theta} = \frac x2 \Rightarrow e^{-\theta} = \frac x2 - 1 \Rightarrow \theta = -\ln\!\left(\frac x2 - 1\right)\)</span>.</p>
+<p><strong>Domain.</strong> Needs <span class="arithmatex">\(\frac x2 - 1 &gt; 0\)</span>, i.e. <span class="arithmatex">\(x &gt; 2\)</span>. For <span class="arithmatex">\(1 &lt; x \le 2\)</span> the derivative is positive for every <span class="arithmatex">\(\theta\)</span> (since <span class="arithmatex">\(\lambda &lt; 1 \le 2/x\)</span>), the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> keeps rising and there is no finite <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(\hat\theta_{MAP} = -\ln\!\left(\dfrac{x}{2} - 1\right)\)</span> for <span class="arithmatex">\(x &gt; 2\)</span>.</p>
+</div>
+</details>
+<h2 id="do-it-cold-3">Do it cold · 3<a class="headerlink" href="#do-it-cold-3" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">April 2025 · 2d · 1 p</p>
+<p>An experiment with binary outcomes Y/N has been independently repeated <span class="arithmatex">\(N\)</span> times and resulted in a dataset <span class="arithmatex">\(\mathcal{D} = \{x_1, \dots, x_N\}\)</span> in which <span class="arithmatex">\(x_n \in \{Y, N\}\)</span>. Let <span class="arithmatex">\(N_0\)</span> and <span class="arithmatex">\(N_1\)</span> denote the number of obtained Ns and Ys, respectively. Furthermore, let <span class="arithmatex">\(\theta\)</span> denote the probability of obtaining a Y whereby the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> distribution takes the form <span class="arithmatex">\(p(\theta | \mathcal{D}) = \theta^{\beta_1 - 1 + k_1 N_1} (1 - \theta)^{\beta_0 - 1 + k_0 N_0}\)</span>. Derive the <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> estimate of <span class="arithmatex">\(\theta\)</span>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p>Call the two exponents <span class="arithmatex">\(A = \beta_1 - 1 + k_1N_1\)</span> and <span class="arithmatex">\(B = \beta_0 - 1 + k_0N_0\)</span> (known numbers). <span class="arithmatex">\(\ln p = A\ln\theta + B\ln(1-\theta)\)</span>. Derivative: <span class="arithmatex">\(\frac A\theta - \frac{B}{1-\theta} = 0 \Rightarrow A(1-\theta) = B\theta \Rightarrow A = (A+B)\theta\)</span>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(\hat\theta_{MAP} = \dfrac{\beta_1 - 1 + k_1N_1}{\beta_1 - 1 + k_1N_1 + \beta_0 - 1 + k_0N_0}\)</span>. (It is the Beta shortcut with <span class="arithmatex">\(a - 1 = A\)</span>, <span class="arithmatex">\(b - 1 = B\)</span>.)</p>
+</div>
+</details>
+<h2 id="do-it-cold-4">Do it cold · 4<a class="headerlink" href="#do-it-cold-4" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">November 2022 · 2g · 0.5 p</p>
+<p>Posterior <span class="arithmatex">\(p(\theta|x) = (x+a)^2 \theta e^{-(x+a)\theta}\)</span> for <span class="arithmatex">\(\theta \geq 0\)</span>. Find the maximum a posteriori estimator.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><span class="arithmatex">\(\ln p = 2\ln(x+a) + \ln\theta - (x+a)\theta\)</span>. Derivative in <span class="arithmatex">\(\theta\)</span> (the first term is constant): <span class="arithmatex">\(\frac1\theta - (x+a) = 0\)</span>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(\hat\theta_{MAP} = \dfrac{1}{x+a}\)</span>. (Gamma shortcut: <span class="arithmatex">\(a_{\text{shape}} = 2\)</span>, rate <span class="arithmatex">\(x+a\)</span>, <abbr title="the location of the peak of a pdf.">mode</abbr> <span class="arithmatex">\(\frac{2-1}{x+a}\)</span>.) Compare <a href="u07-mmse.html">U7</a>: the MMSE of the same <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> is <span class="arithmatex">\(\frac{2}{x+a}\)</span>, twice as large, because the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> is skewed to the right.</p>
+</div>
+</details>
+<h2 id="do-it-cold-5-no-closed-form">Do it cold · 5 (no closed form)<a class="headerlink" href="#do-it-cold-5-no-closed-form" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">November 2019 · 3c · 1 p</p>
+<p><span class="arithmatex">\(p(x;\theta) = \frac{x}{\theta^2}\exp[-\frac{x^2}{2\theta^2}]\)</span>, <span class="arithmatex">\(x\ge0\)</span>, <span class="arithmatex">\(N\)</span> i.i.d. samples. Now consider the case where <span class="arithmatex">\(\theta\)</span> is also a random variable with PDF <span class="arithmatex">\(p(\theta) = \lambda\exp[-\lambda\theta]\)</span>. Find the <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> estimator for <span class="arithmatex">\(\theta\)</span>. The answer does <strong>not</strong> have to be in the form <span class="arithmatex">\(\hat\theta = f(x,\lambda)\)</span>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><span class="arithmatex">\(\ln[p(\mathbf x;\theta)p(\theta)] = \sum\ln x_n - 2N\ln\theta - \frac{\sum x_n^2}{2\theta^2} + \ln\lambda - \lambda\theta\)</span>. Derivative: <span class="arithmatex">\(-\frac{2N}{\theta} + \frac{\sum x_n^2}{\theta^3} - \lambda = 0\)</span>. Multiply by <span class="arithmatex">\(\theta^3\)</span>: <span class="arithmatex">\(\lambda\theta^3 + 2N\theta^2 - \sum x_n^2 = 0\)</span>, a cubic with no nice root.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(\hat\theta_{MAP}\)</span> solves <span class="arithmatex">\(-\frac{2N}{\theta} + \frac{1}{\theta^3}\sum_n x_n^2 - \lambda = 0\)</span>; it depends on <span class="arithmatex">\(\lambda\)</span> (for <span class="arithmatex">\(\lambda\to0\)</span> it becomes the MLE <span class="arithmatex">\(\sqrt{\sum x^2/(2N)}\)</span>).</p>
+</div>
+</details>
+<h2 id="do-it-cold-6-discrete-x-posterior-probabilities-and-a-threshold">Do it cold · 6 (discrete <span class="arithmatex">\(X\)</span>: <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> probabilities and a threshold)<a class="headerlink" href="#do-it-cold-6-discrete-x-posterior-probabilities-and-a-threshold" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">January 2022 resit · 2f + 2h · 0.6 + 0.6 p</p>
+<p>Let <span class="arithmatex">\(Y = X + N\)</span> where <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(N\)</span> are independent. <span class="arithmatex">\(X\)</span> takes the values <span class="arithmatex">\(+1\)</span> and <span class="arithmatex">\(-1\)</span> with equal probability, and <span class="arithmatex">\(N\)</span> is a zero-mean Gaussian random variable with variance <span class="arithmatex">\(\sigma^2\)</span>.</p>
+<p><strong>2f</strong> Evaluate the a posteriori probabilities <span class="arithmatex">\(P[X = 1|Y]\)</span> and <span class="arithmatex">\(P[X = -1|Y]\)</span>.</p>
+<p><strong>2h</strong> Find the maximum a <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> estimator <span class="arithmatex">\(\hat{X}_{\text{MAP}}\)</span> of <span class="arithmatex">\(X\)</span> given the observation <span class="arithmatex">\(Y\)</span>. More specifically, find a threshold value <span class="arithmatex">\(y_{\text{th}}\)</span> such that a decision on <span class="arithmatex">\(X\)</span> depends on whether or not this threshold value is exceeded. <em>Hint:</em> <span class="arithmatex">\(\hat{X}_{\text{MAP}} = \arg\max_{X \in \{1, -1\}} P[X|Y]\)</span>; you can check the ratio of the a <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> probabilities.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><strong>2f, likelihoods.</strong> If <span class="arithmatex">\(X = 1\)</span> then <span class="arithmatex">\(Y = 1 + N\sim\mathcal N(1,\sigma^2)\)</span>: <span class="arithmatex">\(p(y\mid X=1) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-(y-1)^2/(2\sigma^2)}\)</span>. If <span class="arithmatex">\(X = -1\)</span>: <span class="arithmatex">\(p(y\mid X=-1) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-(y+1)^2/(2\sigma^2)}\)</span>. Priors: <span class="arithmatex">\(\frac12\)</span> each.</p>
+<p><strong>Evidence (a sum, because <span class="arithmatex">\(X\)</span> is discrete).</strong> <span class="arithmatex">\(p(y) = \frac12 p(y\mid1) + \frac12 p(y\mid-1) = \frac{1}{2\sqrt{2\pi\sigma^2}}\left(e^{-(y-1)^2/(2\sigma^2)} + e^{-(y+1)^2/(2\sigma^2)}\right)\)</span>.</p>
+<p><strong>Posteriors.</strong> <span class="arithmatex">\(P[X=1\mid Y] = \frac{\frac12 p(y\mid 1)}{p(y)}\)</span>; the <span class="arithmatex">\(\frac12\)</span> and the <span class="arithmatex">\(\frac{1}{\sqrt{2\pi\sigma^2}}\)</span> cancel top and bottom:</p>
+<div class="arithmatex">\[P[X=1\mid Y] = \frac{e^{-(y-1)^2/(2\sigma^2)}}{e^{-(y-1)^2/(2\sigma^2)} + e^{-(y+1)^2/(2\sigma^2)}},\qquad P[X=-1\mid Y] = \frac{e^{-(y+1)^2/(2\sigma^2)}}{e^{-(y-1)^2/(2\sigma^2)} + e^{-(y+1)^2/(2\sigma^2)}}.\]</div>
+<p><strong>2h, ratio.</strong> <span class="arithmatex">\(\frac{P[X=1\mid Y]}{P[X=-1\mid Y]} = \frac{e^{-(y-1)^2/(2\sigma^2)}}{e^{-(y+1)^2/(2\sigma^2)}} = \exp\!\left(\frac{-(y-1)^2 + (y+1)^2}{2\sigma^2}\right)\)</span>. Expand: <span class="arithmatex">\((y+1)^2 - (y-1)^2 = (y^2+2y+1) - (y^2-2y+1) = 4y\)</span>. Ratio <span class="arithmatex">\(= e^{4y/(2\sigma^2)} = e^{2y/\sigma^2}\)</span>. Decide <span class="arithmatex">\(X = 1\)</span> when the ratio <span class="arithmatex">\(\ge 1\)</span>: <span class="arithmatex">\(e^{2y/\sigma^2}\ge1 \Leftrightarrow \frac{2y}{\sigma^2}\ge0 \Leftrightarrow y\ge0\)</span>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p>Posteriors as above. <span class="arithmatex">\(\hat X_{MAP} = +1\)</span> if <span class="arithmatex">\(y &gt; 0\)</span>, <span class="arithmatex">\(-1\)</span> if <span class="arithmatex">\(y &lt; 0\)</span>: <span class="arithmatex">\(y_{th} = 0\)</span>.</p>
+</div>
+</details>
+<h2 id="do-it-cold-7-uniform-prior">Do it cold · 7 (uniform <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr>)<a class="headerlink" href="#do-it-cold-7-uniform-prior" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">January 2019 · 2c · 1 p</p>
+<p><span class="arithmatex">\(p(x\mid\lambda) = \lambda e^{-\lambda x}\)</span>, <span class="arithmatex">\(N\)</span> i.i.d. samples, <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> <span class="arithmatex">\(p(\lambda) = \frac12\)</span> for <span class="arithmatex">\(0\le\lambda\le2\)</span>, <span class="arithmatex">\(0\)</span> otherwise. Find the <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> estimator for <span class="arithmatex">\(\lambda\)</span>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p>Posterior <span class="arithmatex">\(\propto\lambda^N e^{-\lambda\sum x_i}\cdot\frac12\)</span> on <span class="arithmatex">\([0,2]\)</span>, zero outside. A flat <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> changes nothing inside <span class="arithmatex">\([0,2]\)</span>, so the peak is the MLE <span class="arithmatex">\(N/\sum x_i\)</span> (<a href="u05-mle.html">U5</a>, do it cold 5), provided it lies in <span class="arithmatex">\([0,2]\)</span>; if <span class="arithmatex">\(N/\sum x_i &gt; 2\)</span> the peak is at the edge, <span class="arithmatex">\(\hat\lambda = 2\)</span>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(\hat\lambda_{MAP} = N/\sum_i x_i\)</span> (capped at 2).</p>
+</div>
+</details>
+<h2 id="where-points-get-lost">Where points get lost<a class="headerlink" href="#where-points-get-lost" title="Permanent link">#</a></h2>
+<div class="admonition trap key">
+<p class="admonition-title">Where points get lost</p>
+<table>
+<thead>
+<tr>
+<th>Wrong line</th>
+<th>Right line</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Posterior $= $ likelihood <span class="arithmatex">\(\times\)</span> <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr>, "and the <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> is Beta(2,3) so I multiply by <span class="arithmatex">\(B(2,3)\)</span>"</td>
+<td>Drop every constant: <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> <span class="arithmatex">\(\propto\theta^{10}(1-\theta)^{12}\cdot\theta^{1}(1-\theta)^{2}\)</span>. Constants never move the peak.</td>
+</tr>
+<tr>
+<td>Prior Beta<span class="arithmatex">\((\alpha,\beta)\)</span> written as <span class="arithmatex">\(\theta^{\alpha}(1-\theta)^{\beta}\)</span></td>
+<td>It is <span class="arithmatex">\(\theta^{\alpha-1}(1-\theta)^{\beta-1}\)</span>. The "<span class="arithmatex">\(-1\)</span>" is where most lost points live.</td>
+</tr>
+<tr>
+<td>Posterior Beta<span class="arithmatex">\((11, 14)\)</span></td>
+<td>Exponents <span class="arithmatex">\(11\)</span> and <span class="arithmatex">\(14\)</span> mean <span class="arithmatex">\(a - 1 = 11\)</span>: Beta<span class="arithmatex">\((12, 15)\)</span>.</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sum(x_i - k)\)</span> computed as <span class="arithmatex">\(\sum x_i - k\)</span></td>
+<td>It is <span class="arithmatex">\(\sum x_i - nk\)</span>: subtract <span class="arithmatex">\(k\)</span> once per sample.</td>
+</tr>
+<tr>
+<td><abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> <span class="arithmatex">\(= \frac{a}{a+b}\)</span> (the mean)</td>
+<td>The <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> is the <abbr title="the location of the peak of a pdf.">mode</abbr> <span class="arithmatex">\(\frac{a-1}{a+b-2}\)</span>; <span class="arithmatex">\(\frac{a}{a+b}\)</span> is the MMSE (<a href="u07-mmse.html">U7</a>).</td>
+</tr>
+<tr>
+<td>Keeping <span class="arithmatex">\(\lambda(\theta) = 1\)</span> as a <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr></td>
+<td><span class="arithmatex">\(\lambda=1\)</span> means <span class="arithmatex">\(\theta=\infty\)</span>; say "boundary, discarded".</td>
+</tr>
+<tr>
+<td>Stopping at "<span class="arithmatex">\(\lambda = 2/x\)</span>"</td>
+<td>The parameter is <span class="arithmatex">\(\theta\)</span>; invert the sigmoid and state the domain <span class="arithmatex">\(x &gt; 2\)</span>.</td>
+</tr>
+<tr>
+<td>For discrete <span class="arithmatex">\(X\)</span>, writing <span class="arithmatex">\(p(y) = \int\ldots\)</span></td>
+<td>With two values of <span class="arithmatex">\(X\)</span> the evidence is a <strong>sum</strong> of two terms.</td>
+</tr>
+<tr>
+<td>"The <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> always makes the estimate smaller"</td>
+<td>It pulls toward the <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr>'s own peak, which can be above or below the MLE. Say which, with numbers.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="true-or-false-from-real-mc-options">True or false (from real MC options)<a class="headerlink" href="#true-or-false-from-real-mc-options" title="Permanent link">#</a></h2>
+<div class="tf">
+<table>
+<thead>
+<tr>
+<th>statement</th>
+<th>T or F</th>
+<th>why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> estimate depends on both the likelihood and the <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr>, and therefore cannot be computed without specifying a <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> distribution.</td>
+<td>True</td>
+<td>Jun 2026 2a (c), the correct option.</td>
+</tr>
+<tr>
+<td>The <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> estimate always equals the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> mean.</td>
+<td>False</td>
+<td>Jun 2026 2a (a): only for symmetric posteriors (e.g. Gaussian). Nov 2022 2g vs 2f: <span class="arithmatex">\(\frac{1}{x+a}\)</span> vs <span class="arithmatex">\(\frac{2}{x+a}\)</span>.</td>
+</tr>
+<tr>
+<td>As the number of observations increases, the <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> estimate converges to the MLE regardless of the choice of <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr>.</td>
+<td>False</td>
+<td>Jun 2026 2a (b): the word <em>regardless</em> is the lie; a <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> that is zero on part of the range (like the uniform on <span class="arithmatex">\([0,2]\)</span>) can block convergence. For smooth priors it does converge.</td>
+</tr>
+<tr>
+<td>Unlike classical estimators, Bayesian estimators do not incorporate <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> knowledge about the unknown parameter.</td>
+<td>False</td>
+<td>Nov 2022 2c (a): it is the other way round.</td>
+</tr>
+<tr>
+<td>The Bayesian estimate is the estimate that minimises the Bayes risk <span class="arithmatex">\(\iint C(e)p(\theta\mid\mathbf x)d\theta\,p(\mathbf x)d\mathbf x\)</span>.</td>
+<td>True</td>
+<td>Nov 2022 2c (b). Quadratic cost gives the MMSE, hit-or-miss cost gives the <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr>.</td>
+</tr>
+<tr>
+<td>Minimising the Bayes risk for the uniform (hit-or-miss) error cost results in the minimum mean square error estimator.</td>
+<td>False</td>
+<td>Nov 2022 2c (c): uniform cost gives the <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr>; the <em>quadratic</em> cost gives the MMSE.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>You can leave this page when you can:</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> multiply a likelihood by a Beta or Gamma <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> and read off the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> family and parameters.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> compute a <abbr title="maximum a posteriori: the parameter value where the posterior is highest.">MAP</abbr> by the <span class="arithmatex">\(\ln\)</span>-derivative-zero route and check it with the <abbr title="the location of the peak of a pdf.">mode</abbr> shortcut.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> handle a sigmoid inside the <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> with the chain rule and invert it at the end.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> write <abbr title="the pdf of the parameter after seeing the data: likelihood × prior, normalised.">posterior</abbr> probabilities for a discrete unknown (sum in the denominator) and turn their ratio into a threshold.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> explain in one sentence what the <abbr title="the pdf you assign to the parameter before seeing data.">prior</abbr> does to the estimate and why it fades with more data.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="u05-mle.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: U5 · Maximum likelihood">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                U5 · Maximum likelihood
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="u07-mmse.html" class="md-footer__link md-footer__link--next" aria-label="Next: U7 · MMSE">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                U7 · MMSE
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.top", "navigation.footer", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "toc.follow", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js?v=1794380413"></script>
+      
+        <script src="javascripts/katex.js?v=1794380413"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="javascripts/quiz.js?v=1794380413"></script>
+      
+        <script src="javascripts/ask.js?v=1794380413"></script>
+      
+        <script src="javascripts/video.js?v=1794380413"></script>
+      
+        <script src="javascripts/layout.js?v=1794380413"></script>
+      
+        <script src="javascripts/keypoints.js?v=1794380413"></script>
+      
+        <script src="javascripts/progress.js?v=1794380413"></script>
+      
+        <script src="javascripts/widgets.js?v=1794380413"></script>
+      
+        <script src="javascripts/navsections.js?v=1794380413"></script>
+      
+    
+  </body>
+</html>

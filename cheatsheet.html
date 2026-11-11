@@ -1,0 +1,2143 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Active study guide and cheat sheet for 5CTA0 Statistical Signal Processing (TU/e), built from every past exam.">
+      
+      
+      
+        <link rel="canonical" href="https://dkealvaro.github.io/5cta0-study-guide/cheatsheet.html">
+      
+      
+        <link rel="prev" href="maths.html">
+      
+      
+        <link rel="next" href="battle.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Cheat sheet (2 A4 sides) - 5CTA0 · pass the exam</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css?v=1794380413">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css?v=1794380413">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+4:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Serif 4";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.11/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap">
+    
+      <link rel="stylesheet" href="stylesheets/extra.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/ask.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/layout.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/keypoints.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/widgets.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/cheat-print.css?v=1794380413">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#5cta0-cheat-sheet-one-a4-front-and-back-boxes-numbered-as-the-guide-u1-to-u19-print-at-100-cheatsheetpdf" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="5CTA0 · pass the exam" class="md-header__button md-logo" aria-label="5CTA0 · pass the exam" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            5CTA0 · pass the exam
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cheat sheet (2 A4 sides)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DKeAlvaro/5cta0-study-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DKeAlvaro/5cta0-study-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="5CTA0 · pass the exam" class="md-nav__button md-logo" aria-label="5CTA0 · pass the exam" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    5CTA0 · pass the exam
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DKeAlvaro/5cta0-study-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DKeAlvaro/5cta0-study-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inventory.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Every exam question + ranking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="maths.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M · Maths the course assumes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat sheet (2 A4 sides)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="cheatsheet.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat sheet (2 A4 sides)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-probability-and-random-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PART 1 · Probability and random signals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PART 1 · Probability and random signals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#u1-total-probability-and-bayes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U1 · Total probability and Bayes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u2-joint-pdf-constant-marginal-conditional-independence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U2 · Joint pdf: constant, marginal, conditional, independence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u3-random-variables-and-processes-mc-facts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U3 · Random variables and processes (MC facts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u4-spectral-factorisation-psd-lz-sigma_i2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U4 · Spectral factorisation (PSD → \(L(z)\), \(\sigma_i^2\))
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PART 2 · Estimation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PART 2 · Estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#u5-maximum-likelihood-mle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U5 · Maximum likelihood (MLE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u6-posterior-and-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U6 · Posterior and MAP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u7-mmse-posterior-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U7 · MMSE = posterior mean
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u8-fisher-information-and-crlb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U8 · Fisher information and CRLB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u9-least-squares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U9 · Least squares
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u10-estimation-mc-the-swap-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U10 · Estimation MC: the swap test
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-spectral-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PART 3 · Spectral estimation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PART 3 · Spectral estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#u11-correlogram-from-lags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U11 · Correlogram from lags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u12-ar-model-by-yulewalker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U12 · AR model by Yule–Walker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u13-ma-model-from-lags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U13 · MA model from lags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u14-difference-equation-model-name-psd-autocorrelation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U14 · Difference equation → model name, PSD, autocorrelation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u15-spectral-estimation-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U15 · Spectral estimation theory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PART 4 · Detection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PART 4 · Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#u16-likelihood-ratio-test-threshold-on-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U16 · Likelihood ratio test → threshold on \(x\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u17-p_fa-p_d-p_m-shade-and-compute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U17 · \(P_{FA}\), \(P_D\), \(P_M\): shade and compute
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u18-bayesian-detector-priors-and-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U18 · Bayesian detector: priors and costs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u19-detection-mc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U19 · Detection MC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculations-the-algebra-under-every-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calculations · the algebra under every answer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="battle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battle table (every question with the sheet)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 · Probability and random signals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 · Probability and random signals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u01-bayes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U1 · Total probability and Bayes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u02-joint.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U2 · Joint pdf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u03-process-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U3 · Random variables and processes (MC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u04-factorisation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U4 · Spectral factorisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 · Estimation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 · Estimation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u05-mle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U5 · Maximum likelihood
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u06-map.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U6 · Posterior and MAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u07-mmse.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U7 · MMSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u08-crlb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U8 · Fisher information and CRLB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u09-ls.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U9 · Least squares
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u10-estimation-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U10 · Estimation theory MC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 · Spectral estimation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 · Spectral estimation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u11-correlogram.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U11 · Correlogram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u12-ar.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U12 · AR model (Yule–Walker)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u13-ma.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U13 · MA model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u14-model-autocorr.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U14 · From a difference equation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u15-spectral-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U15 · Spectral estimation theory (MC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4 · Detection
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 4 · Detection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u16-lrt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U16 · Likelihood ratio test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u17-pfa-pd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U17 · P_FA, P_D, P_M
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u18-bayes-detector.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U18 · Bayesian detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u19-detection-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U19 · Detection theory MC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-probability-and-random-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PART 1 · Probability and random signals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PART 1 · Probability and random signals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#u1-total-probability-and-bayes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U1 · Total probability and Bayes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u2-joint-pdf-constant-marginal-conditional-independence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U2 · Joint pdf: constant, marginal, conditional, independence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u3-random-variables-and-processes-mc-facts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U3 · Random variables and processes (MC facts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u4-spectral-factorisation-psd-lz-sigma_i2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U4 · Spectral factorisation (PSD → \(L(z)\), \(\sigma_i^2\))
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PART 2 · Estimation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PART 2 · Estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#u5-maximum-likelihood-mle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U5 · Maximum likelihood (MLE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u6-posterior-and-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U6 · Posterior and MAP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u7-mmse-posterior-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U7 · MMSE = posterior mean
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u8-fisher-information-and-crlb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U8 · Fisher information and CRLB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u9-least-squares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U9 · Least squares
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u10-estimation-mc-the-swap-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U10 · Estimation MC: the swap test
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-spectral-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PART 3 · Spectral estimation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PART 3 · Spectral estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#u11-correlogram-from-lags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U11 · Correlogram from lags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u12-ar-model-by-yulewalker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U12 · AR model by Yule–Walker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u13-ma-model-from-lags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U13 · MA model from lags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u14-difference-equation-model-name-psd-autocorrelation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U14 · Difference equation → model name, PSD, autocorrelation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u15-spectral-estimation-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U15 · Spectral estimation theory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PART 4 · Detection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PART 4 · Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#u16-likelihood-ratio-test-threshold-on-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U16 · Likelihood ratio test → threshold on \(x\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u17-p_fa-p_d-p_m-shade-and-compute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U17 · \(P_{FA}\), \(P_D\), \(P_M\): shade and compute
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u18-bayesian-detector-priors-and-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U18 · Bayesian detector: priors and costs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u19-detection-mc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U19 · Detection MC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculations-the-algebra-under-every-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calculations · the algebra under every answer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+  
+  
+
+
+<div class="cheat">
+<h1 id="5cta0-cheat-sheet-one-a4-front-and-back-boxes-numbered-as-the-guide-u1-to-u19-print-at-100-cheatsheetpdf">5CTA0 cheat sheet · one A4, front and back · boxes numbered as the guide (U1 to U19) · print at 100 % (<code>cheatsheet.pdf</code>)<a class="headerlink" href="#5cta0-cheat-sheet-one-a4-front-and-back-boxes-numbered-as-the-guide-u1-to-u19-print-at-100-cheatsheetpdf" title="Permanent link">#</a></h1>
+<div class="cheat-cols">
+<div>
+<h2 id="part-1-probability-and-random-signals">PART 1 · Probability and random signals<a class="headerlink" href="#part-1-probability-and-random-signals" title="Permanent link">#</a></h2>
+<h3 id="u1-total-probability-and-bayes">U1 · Total probability and Bayes<a class="headerlink" href="#u1-total-probability-and-bayes" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "machine <span class="arithmatex">\(M_i\)</span> produces 40 % … defective 2 % for <span class="arithmatex">\(M_1\)</span> … probability that a chip is defective / given that it is defective, which machine": sources with shares and rates.</p>
+<ol>
+<li>Shares <span class="arithmatex">\(P(A_i)\)</span>: percentages, or counts divided by the total (18 of 55 patients → <span class="arithmatex">\(18/55\)</span>). They add to 1.</li>
+<li>Rate of the asked event in each source <span class="arithmatex">\(P(B\mid A_i)\)</span>. If the text gives the opposite event (85 % pass, you want "not pass"), use <span class="arithmatex">\(1 - 0.85\)</span>.</li>
+<li>Forward ("probability that an item is <span class="arithmatex">\(B\)</span>"): <span class="arithmatex">\(P(B) = \sum_i P(B\mid A_i)P(A_i)\)</span>; write each product, then add.</li>
+<li>Backward ("given that it is <span class="arithmatex">\(B\)</span>, probability it came from <span class="arithmatex">\(A_k\)</span>"): <span class="arithmatex">\(P(A_k\mid B) = \dfrac{P(B\mid A_k)P(A_k)}{P(B)}\)</span>: that source's product over the sum. All backward answers add to 1.</li>
+</ol>
+<p><em>Jun26 1b: <span class="arithmatex">\(0.4(0.02)+0.35(0.04)+0.25(0.05) = 0.0345\)</span>; <span class="arithmatex">\(P(M_2\mid D) = 0.014/0.0345 = 0.41\)</span>. Apr24 1b (TB, "99 % accurate" = 0.99 both ways): <span class="arithmatex">\(0.000495/0.01049 = 0.047\)</span>. Lifetime <span class="arithmatex">\(\Pr[T\ge t] = e^{-t/5}\)</span>, "breaks in year 3 given alive at 2": <span class="arithmatex">\((e^{-2/5}-e^{-3/5})/e^{-2/5} = 1 - e^{-1/5} = 0.18\)</span>.</em>
+Independent events: <span class="arithmatex">\(P(A\cap B) = P(A)P(B)\)</span>, i.e. <span class="arithmatex">\(P(A\mid B) = P(A)\)</span>. Not "<span class="arithmatex">\(P(A\cap B) = 0\)</span>" (disjoint) and not "<span class="arithmatex">\(P(A\cup B) = P(A)+P(B)\)</span>".</p>
+<h3 id="u2-joint-pdf-constant-marginal-conditional-independence">U2 · Joint pdf: constant, marginal, conditional, independence<a class="headerlink" href="#u2-joint-pdf-constant-marginal-conditional-independence" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "joint PDF <span class="arithmatex">\(p_{X,Y}(x,y) = \ldots\)</span> for <span class="arithmatex">\(0\le x\le1\)</span>, <span class="arithmatex">\(0\le y\le1\)</span> (square) or <span class="arithmatex">\(x+y&lt;1\)</span> / <span class="arithmatex">\(0\le y\le x\le1\)</span> (triangle)": limits are the whole job.</p>
+<ol>
+<li>Draw the region. Square: both limits are numbers. Triangle: choose the order, freeze the outer letter, inner limits depend on it (<span class="arithmatex">\(x\)</span> from <span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(1-y\)</span>), outer limits are numbers (<span class="arithmatex">\(y\)</span> from <span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(1\)</span>).</li>
+<li>Constant <span class="arithmatex">\(c\)</span>: double integral <span class="arithmatex">\(= 1\)</span>. Inner antiderivative, evaluate at both limits, then outer. <em>Apr25 1c: <span class="arithmatex">\(\int_0^1\!\int_0^{1-y}(cx+1)\,dx\,dy = \frac c6 + \frac12 = 1 \Rightarrow c = 3\)</span>.</em></li>
+<li>Marginal <span class="arithmatex">\(p_X(x) = \int p_{X,Y}\,dy\)</span> with the <span class="arithmatex">\(y\)</span> limits for that fixed <span class="arithmatex">\(x\)</span>; always write the domain ("for <span class="arithmatex">\(0\le x\le1\)</span>"). <em>Jun26 1c: <span class="arithmatex">\(\int_0^1 6x^2y\,dy = 3x^2\)</span>. Apr24 1c: <span class="arithmatex">\(p_Y(y) = \int_y^1 2\,dx = 2(1-y)\)</span>.</em></li>
+<li>Conditional <span class="arithmatex">\(p_{X\mid Y}(x\mid y) = p_{X,Y}/p_Y(y)\)</span>, domain = the <span class="arithmatex">\(x\)</span> range for that <span class="arithmatex">\(y\)</span>. <em>Apr24 1c: <span class="arithmatex">\(2/(2(1-y)) = 1/(1-y)\)</span> for <span class="arithmatex">\(y\le x\le1\)</span>.</em></li>
+<li>Independent only if the region is a rectangle AND the formula factors (<span class="arithmatex">\(6x^2y = 3x^2\cdot2y\)</span>: yes; anything on a triangle: no).</li>
+<li>Discrete table: marginal of <span class="arithmatex">\(X\)</span> = add across the row (<span class="arithmatex">\(\frac16+\frac14+\frac18 = \frac{13}{24}\)</span>).</li>
+</ol>
+<h3 id="u3-random-variables-and-processes-mc-facts">U3 · Random variables and processes (MC facts)<a class="headerlink" href="#u3-random-variables-and-processes-mc-facts" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "WSS", "ergodic", "expected value", "discrete or continuous", "realisation", "legitimate autocorrelation":</p>
+<ul>
+<li>Expected value = average of the outcomes weighted by the pmf/pdf = mean over infinitely many observations. Not the most probable, not the largest.</li>
+<li>Discrete = countable values (counts, phone numbers, pixel 0–255). Continuous = any value in a range (time, weight).</li>
+<li>A picture is a realisation of a random process; one pixel is a random variable. The ensemble is all realisations.</li>
+<li>WSS: mean constant in time AND autocorrelation depends only on the lag <span class="arithmatex">\(t-s\)</span> (constant pdf = strict-sense; flat PSD = white noise; time averages = ergodicity).</li>
+<li>Ergodic in the mean: the time average of ONE realisation equals the ensemble mean. i.i.d. dice rolls: ergodic in mean and variance. A random amplitude drawn once per realisation (<span class="arithmatex">\(A\cos t\)</span>, uniform on <span class="arithmatex">\([-A,A]\)</span>): not ergodic in variance; <span class="arithmatex">\(A\cos t\)</span> is not even WSS (mean <span class="arithmatex">\(\cos t\)</span> moves); uniform on <span class="arithmatex">\([-A,A]\)</span> has mean 0 and is ergodic in the mean.</li>
+<li>Recipe (Apr24 1d): (1) <span class="arithmatex">\(E[X(t)]\)</span> over the random ingredient: constant? (2) <span class="arithmatex">\(E[X(t)X(s)]\)</span> with <span class="arithmatex">\(\cos\alpha\cos\beta = \frac12[\cos(\alpha+\beta)+\cos(\alpha-\beta)]\)</span> (terms with <span class="arithmatex">\(2U\)</span> average to 0): function of <span class="arithmatex">\(t-s\)</span> only? (3) time average of one realisation equals (1)? <span class="arithmatex">\(\cos(t+U)\)</span>: <span class="arithmatex">\(0\)</span>, <span class="arithmatex">\(\frac12\cos(t-s)\)</span>, <span class="arithmatex">\(0\)</span> → WSS and ergodic.</li>
+<li>Legitimate autocorrelation: <span class="arithmatex">\(r[-l] = r[l]\)</span> and <span class="arithmatex">\(|r[l]|\le r[0]\)</span>..</li>
+<li>Covariance: direction by its sign, scale-dependent, unbounded ("all of the above"); correlation coefficient = cov/(<span class="arithmatex">\(\sigma_X\sigma_Y\)</span>) in <span class="arithmatex">\([-1,1]\)</span>. Binomial "exactly <span class="arithmatex">\(k\)</span> of <span class="arithmatex">\(n\)</span>": <span class="arithmatex">\(\binom nk p^k(1-p)^{n-k}\)</span>; <span class="arithmatex">\(\binom86 0.8^6 0.2^2 = 0.2936\)</span>.</li>
+</ul>
+<h3 id="u4-spectral-factorisation-psd-lz-sigma_i2">U4 · Spectral factorisation (PSD → <span class="arithmatex">\(L(z)\)</span>, <span class="arithmatex">\(\sigma_i^2\)</span>)<a class="headerlink" href="#u4-spectral-factorisation-psd-lz-sigma_i2" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "find the spectral factorization / the innovation filter <span class="arithmatex">\(L(z)\)</span> and the variance of the input noise" with <span class="arithmatex">\(P(e^{j\theta}) = \dfrac{\text{number}}{\alpha \pm \beta\cos\theta}\)</span>:</p>
+<ol>
+<li><span class="arithmatex">\(\cos\theta = \frac{z+z^{-1}}{2}\)</span>, so <span class="arithmatex">\(\alpha + \beta\cos\theta = \alpha + \frac\beta2 z + \frac\beta2 z^{-1}\)</span>.</li>
+<li>Match to <span class="arithmatex">\(C(1\pm az^{-1})(1\pm az) = C(1+a^2) \pm Ca(z+z^{-1})\)</span> (sign <span class="arithmatex">\(+\)</span> if <span class="arithmatex">\(\beta&gt;0\)</span>, <span class="arithmatex">\(-\)</span> if <span class="arithmatex">\(\beta&lt;0\)</span>): <span class="arithmatex">\(Ca = |\beta|/2\)</span> and <span class="arithmatex">\(C(1+a^2) = \alpha\)</span>.</li>
+<li>Divide: <span class="arithmatex">\(|\beta|a^2 - 2\alpha a + |\beta| = 0\)</span>; <span class="arithmatex">\(a = \dfrac{2\alpha\pm\sqrt{4\alpha^2-4\beta^2}}{2|\beta|}\)</span>. Keep the root with <span class="arithmatex">\(|a|&lt;1\)</span> (minimum phase; the other is <span class="arithmatex">\(1/a\)</span>). <span class="arithmatex">\(C = |\beta|/(2a)\)</span>.</li>
+<li><span class="arithmatex">\(\sigma_i^2 = C_{\text{numerator}}/C_{\text{denominator}}\)</span>; <span class="arithmatex">\(L(z)\)</span> = the <span class="arithmatex">\(z^{-1}\)</span> halves only: <span class="arithmatex">\(\dfrac{1\pm bz^{-1}}{1\pm az^{-1}}\)</span>.</li>
+<li>Check by expanding <span class="arithmatex">\(\sigma_i^2|L(e^{j\theta})|^2 = \sigma_i^2\frac{1+b^2\pm2b\cos\theta}{1+a^2\pm2a\cos\theta}\)</span> back.</li>
+</ol>
+<p><em>Apr25 1e: <span class="arithmatex">\(1/(61+60\cos\theta)\)</span>: <span class="arithmatex">\(Ca = 30\)</span>, <span class="arithmatex">\(C(1+a^2) = 61\)</span>, <span class="arithmatex">\(30a^2-61a+30 = 0\)</span>, <span class="arithmatex">\(a = 5/6\)</span> (not 1.2), <span class="arithmatex">\(C = 36\)</span>: <span class="arithmatex">\(\sigma_i^2 = 1/36\)</span>, <span class="arithmatex">\(L = 1/(1+\frac56z^{-1})\)</span>.</em>
+<em>Apr24 1e: <span class="arithmatex">\(7/(25-24\cos\theta)\)</span>: <span class="arithmatex">\(12a^2-25a+12=0\)</span>, <span class="arithmatex">\(a = 3/4\)</span>, <span class="arithmatex">\(C = 16\)</span>: <span class="arithmatex">\(\sigma_i^2 = 7/16\)</span>, <span class="arithmatex">\(L = 1/(1-\frac34z^{-1})\)</span>. Nov22 1d: <span class="arithmatex">\(1/(\frac53-\cos\theta)\)</span>: <span class="arithmatex">\(a = \frac13\)</span>, <span class="arithmatex">\(C = \frac32\)</span>: <span class="arithmatex">\(\sigma_i^2 = \frac23\)</span>, <span class="arithmatex">\(L = 1/(1-\frac13z^{-1})\)</span>.</em>
+MC: the innovation filter is minimum phase (poles and zeros inside the unit circle), causal, stable; <span class="arithmatex">\(L(z^{-1})\)</span> (zeros outside) is the wrong mirror; the constant in front of the factorised PSD is <span class="arithmatex">\(\sigma_i^2\)</span> (Jan22 1d: 2, option c).</p>
+<h2 id="part-2-estimation">PART 2 · Estimation<a class="headerlink" href="#part-2-estimation" title="Permanent link">#</a></h2>
+<h3 id="u5-maximum-likelihood-mle">U5 · Maximum likelihood (MLE)<a class="headerlink" href="#u5-maximum-likelihood-mle" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "write the likelihood and log-likelihood … derive the MLE for <span class="arithmatex">\(\theta\)</span>", "find an estimator for the parameter" with a pdf <span class="arithmatex">\(p(x;\theta)\)</span> and <span class="arithmatex">\(N\)</span> i.i.d. samples:</p>
+<ol>
+<li>Likelihood = product of the pdf over the samples: constants become <span class="arithmatex">\(c^N\)</span>, exponentials merge: <span class="arithmatex">\(\exp(\sum\cdot)\)</span>, <span class="arithmatex">\(\theta^k\)</span> in a denominator becomes <span class="arithmatex">\(\theta^{Nk}\)</span>.</li>
+<li><span class="arithmatex">\(\ln\)</span> of the product = sum of <span class="arithmatex">\(\ln\)</span>s: <span class="arithmatex">\(\ln(ab) = \ln a + \ln b\)</span>, <span class="arithmatex">\(\ln a^n = n\ln a\)</span>, <span class="arithmatex">\(\ln e^u = u\)</span>, denominator terms get a minus.</li>
+<li>Drop every term without <span class="arithmatex">\(\theta\)</span>.</li>
+<li>Differentiate in <span class="arithmatex">\(\theta\)</span>: <span class="arithmatex">\(\frac{d}{d\theta}c\ln\theta = c/\theta\)</span>; <span class="arithmatex">\(\frac{d}{d\theta}(c/\theta) = -c/\theta^2\)</span>; <span class="arithmatex">\(\frac{d}{d\theta}(c/\theta^2) = -2c/\theta^3\)</span>; <span class="arithmatex">\(\frac{d}{d\theta}c\theta = c\)</span>; nested <span class="arithmatex">\(\lambda(\theta)\)</span>: <span class="arithmatex">\(\frac{d}{d\theta}\ln\lambda = \lambda'/\lambda\)</span> (sigmoid: <span class="arithmatex">\(\lambda' = \lambda(1-\lambda)\)</span> so <span class="arithmatex">\(\lambda'/\lambda = 1-\lambda\)</span>).</li>
+<li>Set to zero, multiply by the denominators, solve for <span class="arithmatex">\(\theta\)</span>. Discard solutions at the boundary (<span class="arithmatex">\(\lambda = 1\)</span> means <span class="arithmatex">\(\theta = \infty\)</span>). If the question's parameter is inside a sigmoid, invert at the end: <span class="arithmatex">\(\frac{1}{1+e^{-\theta}} = v \Rightarrow \theta = -\ln(\frac1v - 1)\)</span>.</li>
+<li>One sentence of meaning ("the sample mean divided by <span class="arithmatex">\(k\)</span>").</li>
+</ol>
+<p><em>Gamma, known <span class="arithmatex">\(k\)</span> (Jun26 2b): <span class="arithmatex">\(\ln L = (k-1)\sum\ln x_i - \frac{\sum x_i}{\theta} - nk\ln\theta - n\ln\Gamma(k)\)</span>; <span class="arithmatex">\(\frac{S}{\theta^2} - \frac{nk}{\theta} = 0 \Rightarrow \hat\theta = \frac{\sum x_i}{nk} = \bar x/k\)</span>.</em>
+<em><span class="arithmatex">\(\frac{x}{2\theta}e^{-x^2/(2\theta)}\)</span> (Apr24 2c): <span class="arithmatex">\(\hat\theta = \frac{1}{2N}\sum x_n^2\)</span>. Rayleigh <span class="arithmatex">\(\frac{x}{\theta^2}e^{-x^2/(2\theta^2)}\)</span> (Nov19 3a): <span class="arithmatex">\(\hat\theta = \sqrt{\frac{1}{2N}\sum x^2}\)</span>. <span class="arithmatex">\(\lambda e^{-\lambda x}\)</span>: <span class="arithmatex">\(\hat\lambda = N/\sum x_i\)</span>. Sigmoid (Apr25 2c) <span class="arithmatex">\(3\lambda e^{-4\lambda x/7}\)</span>: <span class="arithmatex">\((1-\lambda)(1-\frac47\lambda x) = 0 \Rightarrow \lambda = \frac{7}{4x} \Rightarrow \hat\theta = -\ln(\frac{4x}{7}-1)\)</span>. Angle (Nov22 2d): <span class="arithmatex">\(\hat\theta = \tan^{-1}(x_2/x_1)\)</span>, quadrant of <span class="arithmatex">\((x_1,x_2)\)</span>.</em></p>
+<h3 id="u6-posterior-and-map">U6 · Posterior and MAP<a class="headerlink" href="#u6-posterior-and-map" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "assume a Beta/Gamma/exponential prior … write the likelihood, derive the posterior, compute the MAP, compare with the MLE":</p>
+<ol>
+<li>Likelihood with the data numbers in (<span class="arithmatex">\(\sum x_i\)</span>, <span class="arithmatex">\(n\)</span>). Prior with constants dropped: Beta<span class="arithmatex">\((\alpha,\beta)\propto\theta^{\alpha-1}(1-\theta)^{\beta-1}\)</span>; Gamma<span class="arithmatex">\((\alpha,\beta)\propto\lambda^{\alpha-1}e^{-\beta\lambda}\)</span>.</li>
+<li>Posterior <span class="arithmatex">\(\propto\)</span> likelihood × prior: add exponents of <span class="arithmatex">\(\theta\)</span> and of <span class="arithmatex">\(e\)</span>. Name it: <span class="arithmatex">\(\theta^{a-1}(1-\theta)^{b-1}\)</span> is Beta<span class="arithmatex">\((a,b)\)</span>; <span class="arithmatex">\(\lambda^{a-1}e^{-b\lambda}\)</span> is Gamma<span class="arithmatex">\((a,b)\)</span>. The denominator <span class="arithmatex">\(p(x)\)</span> is a number: ignore it for the MAP.</li>
+<li>MAP = peak: <span class="arithmatex">\(\ln\)</span>, differentiate, zero, solve. Beta: <span class="arithmatex">\(\frac{a-1}{\theta} = \frac{b-1}{1-\theta} \Rightarrow \hat\theta = \frac{a-1}{a+b-2}\)</span>. Gamma: <span class="arithmatex">\(\frac{a-1}{\lambda} = b \Rightarrow \hat\lambda = \frac{a-1}{b}\)</span>.</li>
+<li>MLE = same without the prior. The prior pulls the MAP toward its own peak; the pull fades as <span class="arithmatex">\(n\)</span> grows (data terms grow, prior terms do not).</li>
+</ol>
+<p><em>NegBin <span class="arithmatex">\(k=2\)</span>, Beta(2,3), <span class="arithmatex">\(x = \{3,5,4,6,4\}\)</span> (Jun26 2c): <span class="arithmatex">\(L = \prod(x_i-1)\,\theta^{10}(1-\theta)^{12}\)</span> (<span class="arithmatex">\(\sum x_i = 22\)</span>, <span class="arithmatex">\(\sum(x_i-2) = 12\)</span>); posterior <span class="arithmatex">\(\theta^{11}(1-\theta)^{14}\)</span> = Beta(12,15); MAP <span class="arithmatex">\(= 11/25 = 0.44\)</span> (MLE <span class="arithmatex">\(10/22\)</span>, prior peak <span class="arithmatex">\(1/3\)</span>).</em>
+<em>Poisson, Gamma(3,2), <span class="arithmatex">\(x = \{2,4,3,5,2,4\}\)</span> (Jun26 2d): <span class="arithmatex">\(L\propto\lambda^{20}e^{-6\lambda}\)</span>; posterior <span class="arithmatex">\(\lambda^{22}e^{-8\lambda}\)</span> = Gamma(23,8); MAP <span class="arithmatex">\(22/8 = 2.75\)</span>; MLE <span class="arithmatex">\(20/6 = 3.33\)</span>; the prior (mode 1) pulls down.</em>
+<em>Posterior given (Apr25 2d) <span class="arithmatex">\(\theta^{A}(1-\theta)^{B}\)</span>: MAP <span class="arithmatex">\(= A/(A+B)\)</span> with <span class="arithmatex">\(A = \beta_1-1+k_1N_1\)</span>, <span class="arithmatex">\(B = \beta_0-1+k_0N_0\)</span>. Nov22 2g <span class="arithmatex">\((x+a)^2\theta e^{-(x+a)\theta}\)</span>: <span class="arithmatex">\(\frac1\theta - (x+a) = 0 \Rightarrow \frac{1}{x+a}\)</span>.</em>
+<em>Sigmoid posterior (Apr24 2d) <span class="arithmatex">\(\frac\lambda2 e^{-\lambda x/2}\)</span>: <span class="arithmatex">\((1-\lambda)(1-\frac{x\lambda}{2}) = 0 \Rightarrow \lambda = \frac2x \Rightarrow \hat\theta = -\ln(\frac x2-1)\)</span>, <span class="arithmatex">\(x&gt;2\)</span>. No closed form (Nov19 3c): stop at the equation "derivative <span class="arithmatex">\(= 0\)</span>".</em>
+<em>Discrete <span class="arithmatex">\(X\in\{\pm1\}\)</span>, <span class="arithmatex">\(Y = X+N\)</span> (Jan22 2f, 2h): <span class="arithmatex">\(P[X=1\mid Y] = \frac{e^{-(y-1)^2/2\sigma^2}}{e^{-(y-1)^2/2\sigma^2}+e^{-(y+1)^2/2\sigma^2}}\)</span> (a sum in the denominator); ratio <span class="arithmatex">\(e^{2y/\sigma^2}\gtrless1 \Rightarrow y_{th} = 0\)</span>.</em></p>
+<h3 id="u7-mmse-posterior-mean">U7 · MMSE = posterior mean<a class="headerlink" href="#u7-mmse-posterior-mean" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "find the minimum mean square error estimator" (posterior given or derived in the previous part):</p>
+<ol>
+<li><span class="arithmatex">\(\hat\theta_{MMSE} = E[\theta\mid x] = \int\theta\,p(\theta\mid x)\,d\theta\)</span> over the posterior's range; the posterior must integrate to 1 (divide likelihood × prior by <span class="arithmatex">\(\int\)</span> likelihood × prior if needed). Discrete: <span class="arithmatex">\(\sum_x x\,P[X=x\mid Y]\)</span>.</li>
+<li>Substitute to match the handed-out integral (<span class="arithmatex">\(y = (x+a)\theta\)</span>: <span class="arithmatex">\(\theta = y/(x+a)\)</span>, <span class="arithmatex">\(d\theta = dy/(x+a)\)</span>), evaluate antiderivative at <span class="arithmatex">\(\infty\)</span> (0) and at 0, subtract.</li>
+</ol>
+<p><em>Nov22 2f: <span class="arithmatex">\((x+a)^2\int_0^\infty\theta^2e^{-(x+a)\theta}d\theta = \frac{1}{x+a}\int_0^\infty y^2e^{-y}dy = \frac{2}{x+a}\)</span> (MAP was <span class="arithmatex">\(\frac1{x+a}\)</span>: skewed posterior). Jan22 2g: <span class="arithmatex">\((+1)P[1\mid Y] - P[-1\mid Y] = \tanh(y/\sigma^2)\)</span>. Mixture <span class="arithmatex">\(c\,\mathcal N(x,1) + (1-c)\mathcal N(-x,1)\)</span>: <span class="arithmatex">\(x(2c-1)\)</span>.</em>
+Means: Beta<span class="arithmatex">\((a,b)\)</span>: <span class="arithmatex">\(\frac{a}{a+b}\)</span>; Gamma<span class="arithmatex">\((a,b)\)</span>: <span class="arithmatex">\(\frac ab\)</span>; exponential rate <span class="arithmatex">\(r\)</span>: <span class="arithmatex">\(\frac1r\)</span>. MAP = MMSE only for symmetric posteriors (Gaussian); "always different" is false.</p>
+<h3 id="u8-fisher-information-and-crlb">U8 · Fisher information and CRLB<a class="headerlink" href="#u8-fisher-information-and-crlb" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "derive the Fisher information", "find the Cramér–Rao lower bound", "check whether the CRLB can be derived":</p>
+<ol>
+<li>If the pdf's range depends on <span class="arithmatex">\(\theta\)</span> (<span class="arithmatex">\(0\le x\le\theta\)</span>): regularity condition violated, no CRLB. Stop (Jan22 2e).</li>
+<li><span class="arithmatex">\(\ln p\)</span> of the full data (<span class="arithmatex">\(\theta\)</span> terms only). 2. Differentiate twice. 3. Expectation: replace <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(x^2\)</span> by <span class="arithmatex">\(E[x]\)</span>, <span class="arithmatex">\(E[x^2]\)</span> (given in a hint, or integrate). 4. <span class="arithmatex">\(\mathcal I(\theta) = -E[\partial^2\ln p/\partial\theta^2]\)</span>; <span class="arithmatex">\(N\)</span> samples: <span class="arithmatex">\(\mathcal I = N\,i(\theta)\)</span>; CRLB <span class="arithmatex">\(= 1/\mathcal I\)</span>.</li>
+</ol>
+<p><em>Nov22 2e: <span class="arithmatex">\(\ln p \ni \frac{A}{\sigma^2}(x_1\cos\theta + x_2\sin\theta)\)</span>; second derivative <span class="arithmatex">\(\frac{A}{\sigma^2}(-x_1\cos\theta - x_2\sin\theta)\)</span>; <span class="arithmatex">\(E[x_1] = A\cos\theta\)</span>, <span class="arithmatex">\(E[x_2] = A\sin\theta\)</span> → <span class="arithmatex">\(\mathcal I = A^2/\sigma^2\)</span>.</em>
+<em>Rayleigh (Nov19 3b): <span class="arithmatex">\(\ln p = \ln x - 2\ln\theta - \frac{x^2}{2\theta^2}\)</span>; second derivative <span class="arithmatex">\(\frac2{\theta^2} - \frac{3x^2}{\theta^4}\)</span>; <span class="arithmatex">\(E[x^2] = 2\theta^2\)</span> → <span class="arithmatex">\(i = 4/\theta^2\)</span>, CRLB <span class="arithmatex">\(= \theta^2/(4N)\)</span>.</em>
+MC: <span class="arithmatex">\(\operatorname{Var}\ge1/\mathcal I\)</span> (not <span class="arithmatex">\(\ge\mathcal I\)</span>); <span class="arithmatex">\(\mathcal I\ge0\)</span> (never "strictly negative"); <span class="arithmatex">\(\mathcal I_N = N i\)</span> so the bound falls as <span class="arithmatex">\(1/N\)</span>; efficient = unbiased AND variance equal to the bound; MLE is asymptotically unbiased/efficient/Gaussian, not "always" at the bound; invariance <span class="arithmatex">\(\hat\theta = \psi^{-1}(\hat\alpha)\)</span> holds for ML and LS, not MMSE.</p>
+<h3 id="u9-least-squares">U9 · Least squares<a class="headerlink" href="#u9-least-squares" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "find the linear function having least squares error for the data <span class="arithmatex">\(\{(x_i,y_i)\}\)</span>":</p>
+<p><span class="arithmatex">\(J(a,b) = \sum(y_i - ax_i - b)^2\)</span>; <span class="arithmatex">\(\partial J/\partial a = -2\sum x_i(y_i - ax_i - b) = 0\)</span>, <span class="arithmatex">\(\partial J/\partial b = -2\sum(y_i - ax_i - b) = 0\)</span>; solve the <span class="arithmatex">\(2\times2\)</span> system by substitution, fractions kept. Closed form: <span class="arithmatex">\(a = \frac{n\sum xy - \sum x\sum y}{n\sum x^2 - (\sum x)^2}\)</span>, <span class="arithmatex">\(b = \frac{\sum y - a\sum x}{n}\)</span>. <em>Apr25 2b, <span class="arithmatex">\((0,3),(2,4),(3,3)\)</span>: <span class="arithmatex">\(26a+10b = 34\)</span>, <span class="arithmatex">\(10a+6b = 20\)</span> → <span class="arithmatex">\(a = \frac1{14}\)</span>, <span class="arithmatex">\(b = \frac{45}{14}\)</span>.</em>
+"Which estimator, no noise pdf given": least squares (needs no statistics). Linear in the unknown (<span class="arithmatex">\(\phi\)</span> known in <span class="arithmatex">\(Ae^{\phi n}\)</span>): closed form <span class="arithmatex">\(\hat A = \sum x[n]e^{\phi n}/\sum e^{2\phi n}\)</span>. Non-linear: write the cost, iterate (Gauss–Newton or Newton–Raphson) or transform (<span class="arithmatex">\(x = \ln\theta + w \Rightarrow \hat\theta = e^{\bar x}\)</span>). The error vector, not the solution, is orthogonal to the columns of <span class="arithmatex">\(\mathbf H\)</span>.</p>
+<h3 id="u10-estimation-mc-the-swap-test">U10 · Estimation MC: the swap test<a class="headerlink" href="#u10-estimation-mc-the-swap-test" title="Permanent link">#</a></h3>
+<p>A false option is a true sentence with one word swapped: <em>always · regardless · only · strictly · <span class="arithmatex">\(x\leftrightarrow\theta\)</span> · mean <span class="arithmatex">\(\leftrightarrow\)</span> maximum · <span class="arithmatex">\(\mathcal I\leftrightarrow1/\mathcal I\)</span> · negative</em>. True: MLE = <span class="arithmatex">\(\arg\max_\theta p(x\mid\theta)\)</span> (<span class="arithmatex">\(\arg\min\sum(\cdot)^2\)</span> is LS, <span class="arithmatex">\(\arg\max p(\theta\mid x)\)</span> is MAP); MMSE = posterior mean; MAP = posterior maximum, needs a prior; Bayes risk <span class="arithmatex">\(\iint C(e)p(\theta\mid x)d\theta\,p(x)dx\)</span> is minimised: quadratic cost → MMSE, hit-or-miss → MAP; Bayesian estimators DO use prior knowledge.</p>
+</div>
+<div>
+<h2 id="part-3-spectral-estimation">PART 3 · Spectral estimation<a class="headerlink" href="#part-3-spectral-estimation" title="Permanent link">#</a></h2>
+<h3 id="u11-correlogram-from-lags">U11 · Correlogram from lags<a class="headerlink" href="#u11-correlogram-from-lags" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "calculate the correlogram / the PSD in a non-parametric fashion … as a function of cosines" with <span class="arithmatex">\(r[0], r[\pm1], r[\pm2]\)</span> and "assume <span class="arithmatex">\(r[k] = 0\)</span> beyond":</p>
+<p><span class="arithmatex">\(\hat P_{corr}(e^{j\theta}) = r[0] + 2r[1]\cos\theta + 2r[2]\cos2\theta + \cdots\)</span> (every lag except 0 is doubled; comes from <span class="arithmatex">\(r[k]e^{-jk\theta} + r[-k]e^{jk\theta} = 2r[k]\cos k\theta\)</span>). Values: at <span class="arithmatex">\(\theta = 0\)</span> all cosines are 1; at <span class="arithmatex">\(\pi\)</span> they alternate <span class="arithmatex">\(-1, +1, -1\)</span>; at <span class="arithmatex">\(\pi/2\)</span>: <span class="arithmatex">\(0, -1, 0, +1\)</span>. It may go negative (a flaw of truncation); a parametric PSD never does.
+<em>Jun26 3c (<span class="arithmatex">\(3,2,1\)</span>): <span class="arithmatex">\(3+4\cos\theta+2\cos2\theta\)</span> (9 at 0, 1 at <span class="arithmatex">\(\pi\)</span>). Apr25 3d (<span class="arithmatex">\(2,-\frac14,-\frac3{16}\)</span>): <span class="arithmatex">\(2 - \frac12\cos\theta - \frac38\cos2\theta\)</span> (1.125 at 0, 2.125 at <span class="arithmatex">\(\pi\)</span>). Apr24 3d: <span class="arithmatex">\(\frac{25}{16} - \frac32\cos\theta + \cos2\theta - \cos3\theta\)</span> (0.06 at 0, 5.06 at <span class="arithmatex">\(\pi\)</span>). Jan22 3c: <span class="arithmatex">\(\frac{13}8 - \frac{15}8\cos\theta + \frac12\cos2\theta\)</span>.</em></p>
+<h3 id="u12-ar-model-by-yulewalker">U12 · AR model by Yule–Walker<a class="headerlink" href="#u12-ar-model-by-yulewalker" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "model as an AR(<span class="arithmatex">\(p\)</span>) process, find the parameters / state the Yule–Walker equations in matrix form / variance of the driving noise / PSD as a function of <span class="arithmatex">\(\cos\theta\)</span>":</p>
+<p>Model (course signs): <span class="arithmatex">\(x[n] = i[n] - a_1x[n-1] - a_2x[n-2]\)</span>, <span class="arithmatex">\(H(z) = 1/(1 + a_1z^{-1} + a_2z^{-2})\)</span>.</p>
+<ol>
+<li>Yule–Walker, one line per lag <span class="arithmatex">\(m = 1..p\)</span>: <span class="arithmatex">\(r[m] + a_1r[m-1] + a_2r[m-2] = 0\)</span> (use <span class="arithmatex">\(r[-1] = r[1]\)</span>). Matrix: <span class="arithmatex">\(\begin{bmatrix}r_0&amp;r_1\\r_1&amp;r_0\end{bmatrix}\begin{bmatrix}a_1\\a_2\end{bmatrix} = -\begin{bmatrix}r_1\\r_2\end{bmatrix}\)</span> (or augmented <span class="arithmatex">\(\begin{bmatrix}r_0&amp;r_1&amp;r_2\\r_1&amp;r_0&amp;r_1\\r_2&amp;r_1&amp;r_0\end{bmatrix}\begin{bmatrix}1\\a_1\\a_2\end{bmatrix} = \begin{bmatrix}\sigma_i^2\\0\\0\end{bmatrix}\)</span>). AR(1): <span class="arithmatex">\(a_1 = -r[1]/r[0]\)</span>.</li>
+<li><span class="arithmatex">\(\sigma_i^2 = r[0] + a_1r[1] + a_2r[2]\)</span> (must be between 0 and <span class="arithmatex">\(r[0]\)</span>).</li>
+<li><span class="arithmatex">\(P_{AR} = \dfrac{\sigma_i^2}{|1 + a_1e^{-j\theta} + a_2e^{-j2\theta}|^2}\)</span>; AR(1) denominator <span class="arithmatex">\(1 + a_1^2 + 2a_1\cos\theta\)</span>; AR(2) denominator <span class="arithmatex">\((1+a_1^2+a_2^2) + 2(a_1 + a_1a_2)\cos\theta + 2a_2\cos2\theta\)</span>. Clear fractions by multiplying top and bottom.</li>
+</ol>
+<p><em>Jun26 3d (<span class="arithmatex">\(3,2,1\)</span>): <span class="arithmatex">\(3a_1+2a_2 = -2\)</span>, <span class="arithmatex">\(2a_1+3a_2 = -1\)</span> → <span class="arithmatex">\(a_1 = -0.8\)</span>, <span class="arithmatex">\(a_2 = 0.2\)</span>, <span class="arithmatex">\(\sigma_i^2 = 3-1.6+0.2 = 1.6\)</span>, <span class="arithmatex">\(P = 1.6/(1.68 - 1.92\cos\theta + 0.4\cos2\theta)\)</span> (10 at 0, 0.4 at <span class="arithmatex">\(\pi\)</span>).</em>
+<em>Apr25 3e (<span class="arithmatex">\(2,-\frac14\)</span>): <span class="arithmatex">\(a_1 = \frac18\)</span>, <span class="arithmatex">\(\sigma_i^2 = 2-\frac1{32} = \frac{63}{32}\)</span>, <span class="arithmatex">\(P = \frac{63/32}{65/64+\frac14\cos\theta} = \frac{126}{65+16\cos\theta}\)</span>. Nov22 3f (<span class="arithmatex">\(1,-\frac18\)</span>): <span class="arithmatex">\(a_1 = \frac18\)</span>, <span class="arithmatex">\(\sigma_i^2 = \frac{63}{64}\)</span>, <span class="arithmatex">\(P = \frac{63}{65+16\cos\theta}\)</span>. Jan22 3d (<span class="arithmatex">\(\frac{13}8,-\frac{15}{16}\)</span>): <span class="arithmatex">\(a_1 = \frac{15}{26}\)</span>, <span class="arithmatex">\(\sigma_i^2 = \frac{451}{416}\)</span>. Apr24 3e (<span class="arithmatex">\(\frac{25}{16},-\frac34,\frac12\)</span>): <span class="arithmatex">\(a_1 = \frac{204}{481}\)</span>, <span class="arithmatex">\(a_2 = -\frac{56}{481}\)</span>, <span class="arithmatex">\(\sigma_i^2 = 1.19\)</span>.</em></p>
+<h3 id="u13-ma-model-from-lags">U13 · MA model from lags<a class="headerlink" href="#u13-ma-model-from-lags" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "model as an MA(1) process, find the parameters … PSD as a function of cosines", "MA(2) … calculate <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span>":</p>
+<p>MA(1) <span class="arithmatex">\(x = i + b_1i[n-1]\)</span>: <span class="arithmatex">\(r[0] = \sigma_i^2(1+b_1^2)\)</span>, <span class="arithmatex">\(r[1] = \sigma_i^2b_1\)</span>, <span class="arithmatex">\(r[k\ge2] = 0\)</span>.</p>
+<ol>
+<li><span class="arithmatex">\(\rho = r[1]/r[0] = \dfrac{b_1}{1+b_1^2}\)</span> → <span class="arithmatex">\(\rho b_1^2 - b_1 + \rho = 0\)</span> → <span class="arithmatex">\(b_1 = \dfrac{1\pm\sqrt{1-4\rho^2}}{2\rho}\)</span>; the roots multiply to 1; keep <span class="arithmatex">\(|b_1|&lt;1\)</span> (minimum phase).</li>
+<li><span class="arithmatex">\(\sigma_i^2 = r[1]/b_1\)</span> (check <span class="arithmatex">\(\sigma_i^2(1+b_1^2) = r[0]\)</span>).</li>
+<li><span class="arithmatex">\(P_{MA} = \sigma_i^2(1 + b_1^2 + 2b_1\cos\theta) = r[0] + 2r[1]\cos\theta\)</span> (ignores <span class="arithmatex">\(r[2]\)</span> and beyond). If the process is truly MA(1) (only lags <span class="arithmatex">\(0,\pm1\)</span> given), this equals the correlogram exactly (Jan20 3b).</li>
+</ol>
+<p>MA(2) with unit-variance input, <span class="arithmatex">\(x = i + ai_1 + bi_2\)</span>: <span class="arithmatex">\(r[2] = b\)</span>, <span class="arithmatex">\(r[1] = a(1+b)\)</span>, <span class="arithmatex">\(r[0] = 1+a^2+b^2\)</span>. <em>Jan22 3b: <span class="arithmatex">\(b = \frac14\)</span>, <span class="arithmatex">\(a = -\frac{15}{16}/\frac54 = -\frac34\)</span>, <span class="arithmatex">\(r[0] = \frac{13}8\)</span>.</em>
+<em>Apr25 3f and Nov22 3g: <span class="arithmatex">\(\rho = -\frac18\)</span> → <span class="arithmatex">\(b_1^2 + 8b_1 + 1 = 0\)</span> → <span class="arithmatex">\(b_1 = -4+\sqrt{15} = -0.127\)</span>; <span class="arithmatex">\(\sigma_i^2 = -0.25/-0.127 = 1.97\)</span> (Apr25) or <span class="arithmatex">\(0.984\)</span> (Nov22); <span class="arithmatex">\(P = 2 - 0.5\cos\theta\)</span> / <span class="arithmatex">\(1 - 0.25\cos\theta\)</span>.</em>
+MC: MA fit needs non-linear equations (Jan19 1d C true); MA(<span class="arithmatex">\(q\)</span>) autocorrelation is zero beyond lag <span class="arithmatex">\(q\)</span>; linear prediction (Wiener) gives AR, not MA, coefficients.</p>
+<h3 id="u14-difference-equation-model-name-psd-autocorrelation">U14 · Difference equation → model name, PSD, autocorrelation<a class="headerlink" href="#u14-difference-equation-model-name-psd-autocorrelation" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "<span class="arithmatex">\(x[k] = i[k] - i[k-1] + \frac34x[k-1]\)</span> … which kind of process / PSD / autocorrelation" or "filtered with <span class="arithmatex">\(H(z) = \ldots\)</span>":</p>
+<ul>
+<li>Name: only <span class="arithmatex">\(i\)</span> terms → MA(<span class="arithmatex">\(q\)</span>), <span class="arithmatex">\(q\)</span> = oldest kick; <span class="arithmatex">\(i[n]\)</span> + past <span class="arithmatex">\(x\)</span> → AR(<span class="arithmatex">\(p\)</span>); both → ARMA(<span class="arithmatex">\(p,q\)</span>). <span class="arithmatex">\(H(z)\)</span>: numerator = <span class="arithmatex">\(i\)</span> coefficients, denominator = $1 - $(coefficients of past <span class="arithmatex">\(x\)</span> on the right side).</li>
+<li>PSD <span class="arithmatex">\(= \sigma_i^2|H(e^{j\theta})|^2\)</span>; <span class="arithmatex">\(|1 + ce^{-j\theta}|^2 = 1 + c^2 + 2c\cos\theta\)</span> top and bottom. <em>Nov22 3d: <span class="arithmatex">\(\frac78\cdot\frac{2-2\cos\theta}{\frac{25}{16}-\frac32\cos\theta} = 28\frac{1-\cos\theta}{25-24\cos\theta}\)</span> (0 at <span class="arithmatex">\(\theta=0\)</span>).</em></li>
+<li>MA lags: slide the coefficient list <span class="arithmatex">\([1,b_1,b_2,\ldots]\)</span> over itself by <span class="arithmatex">\(k\)</span>, add the products, times <span class="arithmatex">\(\sigma_i^2\)</span>. <em>Apr24 3c, <span class="arithmatex">\([1,-\frac12,\frac14,-\frac12]\)</span>: <span class="arithmatex">\(r_0 = \frac{25}{16}\)</span>, <span class="arithmatex">\(r_1 = -\frac12-\frac18-\frac18 = -\frac34\)</span>, <span class="arithmatex">\(r_2 = \frac14+\frac14 = \frac12\)</span>, <span class="arithmatex">\(r_3 = -\frac12\)</span>.</em></li>
+<li>ARMA(1,1) <span class="arithmatex">\(x = i + b_1i_1 - a_1x_1\)</span> (here <span class="arithmatex">\(b_1 = -1\)</span>, <span class="arithmatex">\(-a_1 = \frac34\)</span>): multiply by <span class="arithmatex">\(x\)</span> and by <span class="arithmatex">\(x_1\)</span>, take <span class="arithmatex">\(E\)</span>. Rules: <span class="arithmatex">\(E[i^2] = \sigma_i^2\)</span>; <span class="arithmatex">\(E[i\,x_1] = 0\)</span> (future kick); <span class="arithmatex">\(E[i_1x_1] = \sigma_i^2\)</span> (the past signal contains the past kick with coefficient 1); <span class="arithmatex">\(E[x_1^2] = r_0\)</span>. <em>Nov22 3e: <span class="arithmatex">\(r_0 = \frac78+\frac78+\frac9{16}r_0 - \frac32\cdot\frac78 \Rightarrow r_0 = 1\)</span>; <span class="arithmatex">\(r_1 = -\frac78 + \frac34r_0 = -\frac18\)</span>; <span class="arithmatex">\(r[\tau] = \frac34r[\tau-1]\)</span> for <span class="arithmatex">\(\tau\ge2\)</span>, so <span class="arithmatex">\(r[\tau] = -\frac18(\frac34)^{|\tau|-1}\)</span>.</em></li>
+</ul>
+<h3 id="u15-spectral-estimation-theory">U15 · Spectral estimation theory<a class="headerlink" href="#u15-spectral-estimation-theory" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "which statement is TRUE/FALSE about the periodogram / windows / zero padding", "fill the table of PSD estimators", "energy or power signal", "Welch: how many segments", "AR model order":</p>
+<ul>
+<li><strong>Periodogram</strong> <span class="arithmatex">\(= \frac1N\lvert\sum x[n]e^{-jn\theta}\rvert^2\)</span> (<span class="arithmatex">\(\lvert\)</span>DFT<span class="arithmatex">\(\rvert^2/N\)</span>) = correlogram with the biased <span class="arithmatex">\(\hat r\)</span>. Bias: asymptotically unbiased (smeared by a triangular window for finite <span class="arithmatex">\(N\)</span>). Variance: <span class="arithmatex">\(\propto P^2\)</span>, does NOT fall with <span class="arithmatex">\(N\)</span>: not consistent.</li>
+<li><strong>Bartlett</strong>: <span class="arithmatex">\(K\)</span> non-overlapping segments, average their periodograms. Bias increases (shorter segments). Variance <span class="arithmatex">\(/K\)</span>.</li>
+<li><strong>Welch (WOSA)</strong>: overlapping (50 %) windowed segments, averaged. Bias like Bartlett. Variance roughly <span class="arithmatex">\(/K\)</span> but not exactly (correlated segments); lower than Bartlett for the same <span class="arithmatex">\(N\)</span>.</li>
+<li>
+<p><strong>Blackman–Tukey</strong>: window the estimated autocorrelation (lag window <span class="arithmatex">\(M&lt;N\)</span>), then FT. Shorter <span class="arithmatex">\(M\)</span>: more bias, less variance. Consistent.</p>
+</li>
+<li>
+<p>Consistent: Bartlett, Welch, Blackman–Tukey, parametric. FT of autocorrelation: correlogram, Blackman–Tukey. Averages periodograms: Bartlett, Welch. Overlap: Welch. "Variance ∝ square of the true spectrum": periodogram (if the table says "bias", the intended answer is still periodogram).</p>
+</li>
+<li>Welch segments: <span class="arithmatex">\(K = \frac{N-L}{L(1-\text{overlap})} + 1\)</span>; variance ratio <span class="arithmatex">\(1/K\)</span> if independent. <em>Jun26 3b: <span class="arithmatex">\(N = 1000\)</span>, <span class="arithmatex">\(L = 200\)</span>, 50 %: <span class="arithmatex">\(K = 800/100+1 = 9\)</span>, ratio <span class="arithmatex">\(1/9\)</span>.</em> Bartlett: <span class="arithmatex">\(K = N/L\)</span>.</li>
+<li>Windows: main-lobe width → resolution (wider = worse); side-lobe height → leakage (higher = more). Same length: rectangular = narrowest main lobe (best resolution), highest side lobes (most leakage); triangular/Hanning/Hamming widen the lobe, lower the side lobes. Longer window → better resolution, leakage (relative side-lobe level) unchanged. Zero padding to <span class="arithmatex">\(L\)</span> points = sampling the same FTD at <span class="arithmatex">\(\theta = 2\pi k/L\)</span>: interpolation, NO resolution gain, no variance change.</li>
+<li>Jan22 3a: infinite cosine → two lines (B); windowed → sinc with side lobes (D); zero-padded DFT → circles sampling D (C); 24-point DFT at <span class="arithmatex">\(f_s/2\)</span> → only the peaks (A): 1B 2D 3C 4A.</li>
+<li>Energy <span class="arithmatex">\(E = \int|x|^2dt\)</span> or <span class="arithmatex">\(\sum|x[n]|^2\)</span>; power <span class="arithmatex">\(P = \lim\frac1T\int_{-T/2}^{T/2}|x|^2dt\)</span>. Finite <span class="arithmatex">\(E\)</span> → energy signal, <span class="arithmatex">\(P = 0\)</span>. Periodic → power signal, <span class="arithmatex">\(E = \infty\)</span>. <em><span class="arithmatex">\(A\sin\omega t\)</span>: <span class="arithmatex">\(P = A^2/2\)</span> (via <span class="arithmatex">\(\sin^2 = \frac{1-\cos2\omega t}2\)</span>). <span class="arithmatex">\(e^{-n}u[n]\)</span>: <span class="arithmatex">\(E = \sum(e^{-2})^n = \frac1{1-e^{-2}} = 1.157\)</span>. <span class="arithmatex">\(e^{-t}u(t)\)</span>: <span class="arithmatex">\(E = \frac12\)</span>; <span class="arithmatex">\(\cos t\,u(t)\)</span>: <span class="arithmatex">\(P = \frac14\)</span>.</em></li>
+<li>AR order (Jun26 3e): residual variance always decreases with <span class="arithmatex">\(p\)</span> → cannot choose <span class="arithmatex">\(p\)</span>; risk = overfitting (spurious peaks, parameter variance). Criteria add a penalty growing with <span class="arithmatex">\(p\)</span>: AIC <span class="arithmatex">\(= N\ln\hat\sigma_p^2 + 2p\)</span>, MDL <span class="arithmatex">\(= N\ln\hat\sigma_p^2 + p\ln N\)</span>, FPE <span class="arithmatex">\(= \hat\sigma_p^2\frac{N+p+1}{N-p-1}\)</span>; pick the minimum. Any spectrum (even MA nulls) is approximated by AR with a sufficiently high order <span class="arithmatex">\(p\)</span>.</li>
+<li>Which plot: evaluate each PSD at <span class="arithmatex">\(\theta = 0\)</span> (cosines <span class="arithmatex">\(= 1\)</span>) and <span class="arithmatex">\(\pi\)</span> (alternate signs); AR and MA fitted to the same two lags nearly overlap; a parametric PSD is never negative. <em>Apr25 3g: corr 1.125 / 2.125, AR 1.56 / 2.57, MA 1.5 / 2.5 → plot D (option a). Apr24 3f: corr 0.06 / 5.06, AR 0.69 / 5.6 → plot B (option c).</em></li>
+</ul>
+<h2 id="part-4-detection">PART 4 · Detection<a class="headerlink" href="#part-4-detection" title="Permanent link">#</a></h2>
+<h3 id="u16-likelihood-ratio-test-threshold-on-x">U16 · Likelihood ratio test → threshold on <span class="arithmatex">\(x\)</span><a class="headerlink" href="#u16-likelihood-ratio-test-threshold-on-x" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "construct the likelihood-ratio test for a threshold <span class="arithmatex">\(\eta\)</span>", "show that the LRT takes the form <span class="arithmatex">\(\sum|x_n|\gtrless\gamma'\)</span>", "for which <span class="arithmatex">\(x\)</span> should <span class="arithmatex">\(H_1\)</span> be accepted", "derive the log-likelihood ratio test":</p>
+<ol>
+<li><span class="arithmatex">\(L(x) = \dfrac{p(x;H_1)}{p(x;H_0)}\)</span>, <span class="arithmatex">\(H_1\)</span> on top. <span class="arithmatex">\(N\)</span> samples: products → <span class="arithmatex">\(c^N\)</span> and <span class="arithmatex">\(\exp(\sum)\)</span>.</li>
+<li>Cancel common factors (<span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(k_1\)</span>); <span class="arithmatex">\(e^a/e^b = e^{a-b}\)</span>; <span class="arithmatex">\(x^a/x^b = x^{a-b}\)</span>.</li>
+<li><span class="arithmatex">\(L\gtrless\gamma\)</span>, take <span class="arithmatex">\(\ln\)</span> (direction kept). 4. Isolate the data term; dividing by a negative flips the inequality AND swaps the <span class="arithmatex">\(H_0/H_1\)</span> labels. 5. <span class="arithmatex">\(x^2&gt;c\)</span> with <span class="arithmatex">\(x&gt;0\)</span> → <span class="arithmatex">\(x&gt;\sqrt c\)</span>; <span class="arithmatex">\(e^x&gt;c\)</span> → <span class="arithmatex">\(x&gt;\ln c\)</span>. 6. Say "decide <span class="arithmatex">\(H_1\)</span> when …"; the answer is a range. 7. Test a far point.</li>
+</ol>
+<p><em>Rayleigh<span class="arithmatex">\((\sigma_0)\)</span> vs Rayleigh<span class="arithmatex">\((\sigma_1)\)</span> (Jun26 4b): <span class="arithmatex">\(L = \frac{\sigma_0^2}{\sigma_1^2}\exp[\frac{x^2}{2}(\frac1{\sigma_0^2}-\frac1{\sigma_1^2})]\)</span> (bracket <span class="arithmatex">\(&gt;0\)</span>); decide <span class="arithmatex">\(H_1\)</span> when <span class="arithmatex">\(x &gt; \sqrt{\frac{2\sigma_0^2\sigma_1^2}{\sigma_1^2-\sigma_0^2}\ln(\eta\sigma_1^2/\sigma_0^2)}\)</span>. Closer <span class="arithmatex">\(\sigma\)</span>'s → curves overlap → <span class="arithmatex">\(P_D\to P_{FA}\)</span>, ROC → diagonal.</em>
+<em>Apr25 4a, <span class="arithmatex">\(p = k_1\theta x^{k_2\theta-1}\)</span>, <span class="arithmatex">\(\theta = 3\)</span> vs <span class="arithmatex">\(6\)</span>, <span class="arithmatex">\(\lambda = 0.2\)</span>: <span class="arithmatex">\(L = \frac{6x^{11}}{3x^5} = 2x^6\ge0.2 \Rightarrow x\ge0.1^{1/6} = 0.68\)</span>.</em>
+<em>Laplacian (Nov22 4c) <span class="arithmatex">\(\frac12e^{-|x|}\)</span> vs <span class="arithmatex">\(e^{-2|x|}\)</span>: <span class="arithmatex">\(L = 2^Ne^{-\sum|x_n|}\)</span>; <span class="arithmatex">\(\sum|x_n|\underset{H_1}{\overset{H_0}{\gtrless}}N\ln2 - \ln\gamma\)</span> (small sum → <span class="arithmatex">\(H_1\)</span>). Gaussian variances (Nov19 4c, Oct21 4b): <span class="arithmatex">\(\ln L = N\ln\frac{\sigma_0}{\sigma_1} - \frac{\sum x^2}{2\sigma_1^2} + \frac{\sum x^2}{2\sigma_0^2} &gt; \ln\gamma\)</span>. Rayleigh 1 vs <span class="arithmatex">\(\frac14\)</span> (deck): <span class="arithmatex">\(L = \frac14e^{3x^2/8}\)</span>, <span class="arithmatex">\(x&gt;\sqrt{\frac83\ln4\lambda} = 1.92\)</span>.</em>
+Definitions (Jan19 3a): <span class="arithmatex">\(P_{fa} = \int_{\{L&gt;\gamma\}}p(x;H_0)dx\)</span>, <span class="arithmatex">\(P_d = \int_{\{L&gt;\gamma\}}p(x;H_1)dx\)</span>.</p>
+<h3 id="u17-p_fa-p_d-p_m-shade-and-compute">U17 · <span class="arithmatex">\(P_{FA}\)</span>, <span class="arithmatex">\(P_D\)</span>, <span class="arithmatex">\(P_M\)</span>: shade and compute<a class="headerlink" href="#u17-p_fa-p_d-p_m-shade-and-compute" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "sketch the likelihoods … indicate <span class="arithmatex">\(P_{FA}\)</span> and <span class="arithmatex">\(P_M\)</span> … calculate <span class="arithmatex">\(P_D\)</span> and <span class="arithmatex">\(P_{FA}\)</span> for <span class="arithmatex">\(\gamma = 1\)</span>", "for <span class="arithmatex">\(P_{FA} = 0.1\)</span> calculate the threshold", "plot the ROC":</p>
+<p>Curve = the truth, side = what you said. <span class="arithmatex">\(P_{FA}\)</span> = <span class="arithmatex">\(H_0\)</span> curve on the <span class="arithmatex">\(H_1\)</span> side. <span class="arithmatex">\(P_D\)</span> = <span class="arithmatex">\(H_1\)</span> curve on the <span class="arithmatex">\(H_1\)</span> side. <span class="arithmatex">\(P_M = 1 - P_D\)</span> = <span class="arithmatex">\(H_1\)</span> curve on the <span class="arithmatex">\(H_0\)</span> side.</p>
+<ol>
+<li><span class="arithmatex">\(\gamma = 1\)</span>: threshold on the axis = where the curves cross: set <span class="arithmatex">\(p_1 = p_0\)</span>, divide, take <span class="arithmatex">\(\ln\)</span>, solve (quadratic if Gaussian vs exponential).</li>
+<li>Which side is <span class="arithmatex">\(H_1\)</span>: test <span class="arithmatex">\(y = 0\)</span> (or a large <span class="arithmatex">\(y\)</span>); the side where <span class="arithmatex">\(p_1 &gt; \gamma p_0\)</span>. It can be the LEFT (Nov22, Jan20). "Pay attention to the inequality" = this.</li>
+<li>Integrals with explicit limits; two-sided region <span class="arithmatex">\(|y|&gt;y_{th}\)</span>: double one tail.</li>
+<li>Evaluate: <span class="arithmatex">\(\int_0^\gamma\lambda e^{-\lambda y}dy = 1 - e^{-\lambda\gamma}\)</span>; <span class="arithmatex">\(\int_\gamma^\infty\lambda e^{-\lambda y}dy = e^{-\lambda\gamma}\)</span>; Gaussian: standardise, <span class="arithmatex">\(P(X&gt;a) = Q(\frac{a-\mu}{\sigma})\)</span>, area to the left <span class="arithmatex">\(= 1-Q\)</span>; erf table: left area <span class="arithmatex">\(= \frac12(1+\text{erf})\)</span>, right <span class="arithmatex">\(= \frac12(1-\text{erf})\)</span>; band values: tail beyond <span class="arithmatex">\(3\sigma = 0.5-0.341-0.136-0.021 = 0.002\)</span>, beyond <span class="arithmatex">\(1\sigma = 0.159\)</span>.</li>
+<li>Threshold from a target: write $P_{FA}(\gamma') = $ target, solve with <span class="arithmatex">\(\ln\)</span>. Then <span class="arithmatex">\(P_D\)</span> at that <span class="arithmatex">\(\gamma'\)</span>; reuse <span class="arithmatex">\(e^{-\gamma'}\)</span>: <span class="arithmatex">\(e^{-2\gamma'} = (e^{-\gamma'})^2\)</span>.</li>
+<li>Check <span class="arithmatex">\(P_D &gt; P_{FA}\)</span>. ROC: <span class="arithmatex">\(P_D\)</span> vertical, <span class="arithmatex">\(P_{FA}\)</span> horizontal, through <span class="arithmatex">\((0,0)\)</span> and <span class="arithmatex">\((1,1)\)</span>, above the diagonal; more separation → closer to the top-left.</li>
+</ol>
+<p><em>Apr24 4b / Jan22 4b-c: <span class="arithmatex">\(\frac14e^{-y/2} = \frac{1}{\sqrt{2\pi}}e^{-y^2/2}\)</span> → <span class="arithmatex">\(e^{y^2/2-y/2} = \frac4{\sqrt{2\pi}} = 1.596\)</span> → <span class="arithmatex">\(y^2 - y - 0.935 = 0\)</span> → <span class="arithmatex">\(y_{th} = 1.588\)</span>; <span class="arithmatex">\(H_1\)</span> outside (<span class="arithmatex">\(|y|&gt;1.588\)</span>). <span class="arithmatex">\(P_{FA} = 2Q(1.59) = 0.112\)</span>; <span class="arithmatex">\(P_D = 2\cdot\frac14\int_{1.588}^\infty e^{-y/2}dy = e^{-0.794} = 0.452\)</span> (one-sided, as printed in Apr24: <span class="arithmatex">\(0.056\)</span> and <span class="arithmatex">\(0.226\)</span>).</em>
+<em>Nov22 4d-e, <span class="arithmatex">\(e^{-y}\)</span> vs <span class="arithmatex">\(2e^{-2y}\)</span>, <span class="arithmatex">\(H_1\)</span> when <span class="arithmatex">\(y&lt;\gamma'\)</span>: <span class="arithmatex">\(P_{FA} = 1 - e^{-\gamma'} = 0.1 \Rightarrow \gamma' = -\ln0.9 = 0.105\)</span>; <span class="arithmatex">\(P_D = 1 - e^{-2\gamma'} = 1 - 0.81 = 0.19\)</span>.</em>
+<em>Nov19 4b, <span class="arithmatex">\(\sigma_1 = 3\sigma_0\)</span>, <span class="arithmatex">\(x_{th} = \sigma_1\)</span>: <span class="arithmatex">\(P_{fa} = 2(0.002) = 0.004\)</span>, <span class="arithmatex">\(P_d = 2(0.159) = 0.318\)</span>. Gaussian means (Oct21 4a): <span class="arithmatex">\(H_1\)</span> when <span class="arithmatex">\(y&gt;y_{th}\)</span>, <span class="arithmatex">\(P_{fa} = \frac12(1-\text{erf}(\frac{y_{th}}{\sqrt2}))\)</span>, <span class="arithmatex">\(P_d = \frac12(1-\text{erf}(\frac{y_{th}-\mu}{\sqrt2}))\)</span>. Exponentials (Jan20 5): <span class="arithmatex">\(H_1\)</span> on the left, <span class="arithmatex">\(P_d = 1-e^{-\lambda_1x_{th}}\)</span>, <span class="arithmatex">\(P_{fa} = 1-e^{-\lambda_0x_{th}}\)</span>.</em></p>
+<h3 id="u18-bayesian-detector-priors-and-costs">U18 · Bayesian detector: priors and costs<a class="headerlink" href="#u18-bayesian-detector-priors-and-costs" title="Permanent link">#</a></h3>
+<p class="see">IF YOU SEE "prior probabilities <span class="arithmatex">\(P(H_0) = 0.9\)</span>, <span class="arithmatex">\(P(H_1) = 0.1\)</span> … equal costs … when should <span class="arithmatex">\(H_1\)</span> be accepted", "<span class="arithmatex">\(C_{0,1} = 100C_{1,0}\)</span> … the posterior of <span class="arithmatex">\(H_0\)</span> is 5 times smaller", "find <span class="arithmatex">\(\gamma''\)</span> where <span class="arithmatex">\(p(y|H_1)P_1 = p(y|H_0)P_0\)</span>":</p>
+<p><span class="arithmatex">\(C_{ij}\)</span> = cost of deciding <span class="arithmatex">\(H_i\)</span> when <span class="arithmatex">\(H_j\)</span> is true: <span class="arithmatex">\(C_{10}\)</span> false alarm, <span class="arithmatex">\(C_{01}\)</span> miss.
+<span class="arithmatex">\(L(x)\gtrless\eta = \dfrac{P_0(C_{10}-C_{00})}{P_1(C_{01}-C_{11})}\)</span>; equivalently <span class="arithmatex">\(\dfrac{p(H_1\mid x)}{p(H_0\mid x)}\gtrless\dfrac{C_{10}-C_{00}}{C_{01}-C_{11}}\)</span> (posteriors already contain the priors). Equal costs: <span class="arithmatex">\(\eta = P_0/P_1\)</span> (minimises <span class="arithmatex">\(P_e = P_0P_{FA} + P_1P_M\)</span>). Equal costs and priors: <span class="arithmatex">\(\eta = 1\)</span> (ML). Scaling all costs changes nothing. Larger <span class="arithmatex">\(P_0\)</span> or <span class="arithmatex">\(C_{10}\)</span> → larger <span class="arithmatex">\(\eta\)</span>; larger <span class="arithmatex">\(P_1\)</span> or <span class="arithmatex">\(C_{01}\)</span> → smaller <span class="arithmatex">\(\eta\)</span>.
+<em>Jun26 4c: <span class="arithmatex">\(\eta = 0.9/0.1 = 9\)</span> → plug into the Rayleigh LRT: <span class="arithmatex">\(x\ge\sqrt{\frac{2\sigma_0^2\sigma_1^2}{\sigma_1^2-\sigma_0^2}\ln\frac{9\sigma_1^2}{\sigma_0^2}}\)</span>. Apr25 4c: threshold <span class="arithmatex">\(C_{10}/(100C_{10}) = 0.01\)</span>; posterior ratio <span class="arithmatex">\(5\ge0.01\)</span> → <span class="arithmatex">\(H_1\)</span>: the student fails. Nov22 4f-g: <span class="arithmatex">\(1.2e^{-2y} = 0.4e^{-y} \Rightarrow e^y = 3\)</span>, <span class="arithmatex">\(\gamma'' = \ln3\)</span>, <span class="arithmatex">\(H_1\)</span> when <span class="arithmatex">\(y&lt;\ln3\)</span>; <span class="arithmatex">\(P_{FA} = 1-e^{-\ln3} = \frac23\)</span>, <span class="arithmatex">\(P_M = e^{-2\ln3} = \frac19\)</span>, <span class="arithmatex">\(P_e = 0.4\cdot\frac23 + 0.6\cdot\frac19 = \frac13\)</span>.</em></p>
+<h3 id="u19-detection-mc">U19 · Detection MC<a class="headerlink" href="#u19-detection-mc" title="Permanent link">#</a></h3>
+<p>Decide <span class="arithmatex">\(H_1\)</span>, truth <span class="arithmatex">\(H_0\)</span>: false alarm = false positive = type I (<span class="arithmatex">\(P_{FA}\)</span>). Decide <span class="arithmatex">\(H_0\)</span>, truth <span class="arithmatex">\(H_1\)</span>: miss = false negative = type II (<span class="arithmatex">\(P_M\)</span>). Neyman–Pearson: for a FIXED <span class="arithmatex">\(P_{FA}\)</span>, <span class="arithmatex">\(P_D\)</span> is MAXIMISED (lies: "minimised", "fixed <span class="arithmatex">\(P_D\)</span>", "<span class="arithmatex">\(P_{FA} = P_D\)</span>"); always a threshold on the likelihood ratio. Bayesian: Bayes risk MINIMISED; <span class="arithmatex">\(C_{01} = C_{10}\)</span> (1 or 10), <span class="arithmatex">\(C_{00} = C_{11} = 0\)</span> minimises <span class="arithmatex">\(P_e\)</span>. Matched filter: maximises output SNR; <span class="arithmatex">\(h[n] = s[N-1-n]\)</span> (time-reversed, not <span class="arithmatex">\(s[n]\)</span>); correlated noise → prewhiten, so "only uncorrelated noise" is false. ROC below the diagonal = swapped hypotheses or axes, or CDF used for <span class="arithmatex">\(P_d\)</span>; a large <span class="arithmatex">\(H_0\)</span> variance cannot cause it (Oct21 1e).</p>
+<h2 id="calculations-the-algebra-under-every-answer">Calculations · the algebra under every answer<a class="headerlink" href="#calculations-the-algebra-under-every-answer" title="Permanent link">#</a></h2>
+<ul>
+<li><span class="arithmatex">\(\ln\)</span>: <span class="arithmatex">\(\ln(ab) = \ln a+\ln b\)</span>; <span class="arithmatex">\(\ln a^n = n\ln a\)</span>; <span class="arithmatex">\(\ln e^u = u\)</span>; <span class="arithmatex">\(\ln\prod = \sum\ln\)</span>; <span class="arithmatex">\(e^ae^b = e^{a+b}\)</span>; <span class="arithmatex">\(e^a/e^b = e^{a-b}\)</span>; <span class="arithmatex">\((e^a)^n = e^{an}\)</span>; <span class="arithmatex">\(e^{-2\ln3} = 3^{-2} = \frac19\)</span>; <span class="arithmatex">\(e^{-\ln3} = \frac13\)</span>; solve <span class="arithmatex">\(e^{ku} = c\)</span>: <span class="arithmatex">\(u = \ln c/k\)</span>.</li>
+<li>Derivatives: <span class="arithmatex">\((\ln\theta)' = 1/\theta\)</span>; <span class="arithmatex">\((\ln(1-\theta))' = -1/(1-\theta)\)</span>; <span class="arithmatex">\((c/\theta)' = -c/\theta^2\)</span>; <span class="arithmatex">\((c/\theta^2)' = -2c/\theta^3\)</span>; <span class="arithmatex">\((e^{a\theta})' = ae^{a\theta}\)</span>; <span class="arithmatex">\((\ln f)' = f'/f\)</span>.</li>
+<li>Integrals: <span class="arithmatex">\(\int e^{ax} = \frac1ae^{ax}\)</span>; <span class="arithmatex">\(\int xe^{ax} = (\frac xa - \frac1{a^2})e^{ax}\)</span>; <span class="arithmatex">\(\int x^2e^{ax} = (\frac{x^2}a - \frac{2x}{a^2} + \frac2{a^3})e^{ax}\)</span>; <span class="arithmatex">\(\int_0^\infty x^ne^{-x}dx = n!\)</span> (<span class="arithmatex">\(\int_0^\infty x^2e^{-x} = 2\)</span>, <span class="arithmatex">\(\int_0^\infty xe^{-x} = 1\)</span>); <span class="arithmatex">\(\int_0^\infty\theta e^{-c\theta}d\theta = 1/c^2\)</span>; <span class="arithmatex">\(\int_0^\infty\theta^2e^{-c\theta}d\theta = 2/c^3\)</span>; <span class="arithmatex">\([F]_a^b = F(b) - F(a)\)</span>; at <span class="arithmatex">\(\infty\)</span>, polynomial <span class="arithmatex">\(\times e^{-cx}\to0\)</span>; <span class="arithmatex">\(\int_0^1 y\,dy = \frac12\)</span>, <span class="arithmatex">\(\int_0^1y^2dy = \frac13\)</span>. Substitution <span class="arithmatex">\(y = c\theta\)</span>: <span class="arithmatex">\(d\theta = dy/c\)</span>.</li>
+<li>Rayleigh moment: <span class="arithmatex">\(E[x^2] = \int_0^\infty x^2\frac{x}{\theta^2}e^{-x^2/2\theta^2}dx = 2\theta^2\)</span> (put <span class="arithmatex">\(u = x^2/2\theta^2\)</span>). <span class="arithmatex">\(E[X^2] = \operatorname{Var} + \mu^2\)</span>.</li>
+<li>Cosines: <span class="arithmatex">\(e^{jk\theta}+e^{-jk\theta} = 2\cos k\theta\)</span>; <span class="arithmatex">\(|1+ae^{-j\theta}|^2 = 1+a^2+2a\cos\theta\)</span>; <span class="arithmatex">\(|1+a_1e^{-j\theta}+a_2e^{-j2\theta}|^2 = (1+a_1^2+a_2^2) + 2(a_1+a_1a_2)\cos\theta + 2a_2\cos2\theta\)</span>; <span class="arithmatex">\(\cos\theta = \frac{z+z^{-1}}2\)</span>; <span class="arithmatex">\(\cos\alpha\cos\beta = \frac12[\cos(\alpha+\beta)+\cos(\alpha-\beta)]\)</span>; <span class="arithmatex">\(\sin^2 = \frac{1-\cos2\alpha}2\)</span>; <span class="arithmatex">\(\cos^2 = \frac{1+\cos2\alpha}2\)</span>; at <span class="arithmatex">\(\theta=\pi\)</span>: <span class="arithmatex">\(\cos k\pi = (-1)^k\)</span>; at <span class="arithmatex">\(\pi/2\)</span>: <span class="arithmatex">\(0,-1,0,1\)</span>.</li>
+<li>Quadratic <span class="arithmatex">\(Ax^2+Bx+C = 0\)</span>: <span class="arithmatex">\(x = \frac{-B\pm\sqrt{B^2-4AC}}{2A}\)</span>; <span class="arithmatex">\(b^2+8b+1 = 0\)</span>: <span class="arithmatex">\(-4\pm\sqrt{15}\)</span>; <span class="arithmatex">\(y^2-y-0.935 = 0\)</span>: <span class="arithmatex">\(\frac{1\pm2.177}2\)</span>.</li>
+<li>Geometric: <span class="arithmatex">\(\sum_{n\ge0}q^n = \frac1{1-q}\)</span> (<span class="arithmatex">\(|q|&lt;1\)</span>).</li>
+<li>Inequalities: <span class="arithmatex">\(\ln\)</span> keeps the direction; multiplying by a negative flips it (and swaps <span class="arithmatex">\(H_0/H_1\)</span>); <span class="arithmatex">\(\sqrt{\cdot}\)</span> keeps it for positives.</li>
+</ul>
+<h2 id="numbers">Numbers<a class="headerlink" href="#numbers" title="Permanent link">#</a></h2>
+<p><span class="arithmatex">\(e^{-1} = 0.3679\)</span>, <span class="arithmatex">\(e^{-2} = 0.1353\)</span>, <span class="arithmatex">\(e^{-0.5} = 0.6065\)</span>, <span class="arithmatex">\(e^{-0.794} = 0.452\)</span>, <span class="arithmatex">\(\ln2 = 0.693\)</span>, <span class="arithmatex">\(\ln3 = 1.099\)</span>, <span class="arithmatex">\(\ln4 = 1.386\)</span>, <span class="arithmatex">\(\ln10 = 2.303\)</span>, <span class="arithmatex">\(\ln20 = 2.996\)</span>, <span class="arithmatex">\(\ln0.9 = -0.1054\)</span>, <span class="arithmatex">\(\ln0.1 = -2.303\)</span>, <span class="arithmatex">\(\sqrt{2\pi} = 2.5066\)</span>, <span class="arithmatex">\(1/\sqrt{2\pi} = 0.3989\)</span>, <span class="arithmatex">\(4/\sqrt{2\pi} = 1.596\)</span>, <span class="arithmatex">\(\sqrt{15} = 3.873\)</span>, <span class="arithmatex">\(1/(1-e^{-2}) = 1.1565\)</span>, <span class="arithmatex">\(0.1^{1/6} = 0.681\)</span>.
+<span class="arithmatex">\(Q(x)\)</span> = area right of <span class="arithmatex">\(x\)</span> for <span class="arithmatex">\(\mathcal N(0,1)\)</span>; <span class="arithmatex">\(Q(-x) = 1-Q(x)\)</span>; <span class="arithmatex">\(Q(0) = 0.5\)</span>, <span class="arithmatex">\(Q(1) = 0.1587\)</span>, <span class="arithmatex">\(Q(1.28) = 0.100\)</span>, <span class="arithmatex">\(Q(1.5) = 0.0668\)</span>, <span class="arithmatex">\(Q(1.59) = 0.0559\)</span>, <span class="arithmatex">\(Q(1.645) = 0.050\)</span>, <span class="arithmatex">\(Q(1.96) = 0.025\)</span>, <span class="arithmatex">\(Q(2) = 0.0228\)</span>, <span class="arithmatex">\(Q(3) = 0.00135\)</span>. erf<span class="arithmatex">\((x/\sqrt2)\)</span>, <span class="arithmatex">\(x = 1,2,3\)</span>: <span class="arithmatex">\(0.683, 0.954, 0.997\)</span> (<span class="arithmatex">\(\frac12(1-0.683) = 0.1585 = Q(1)\)</span>).</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="maths.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: M · Maths the course assumes">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                M · Maths the course assumes
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="battle.html" class="md-footer__link md-footer__link--next" aria-label="Next: Battle table (every question with the sheet)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Battle table (every question with the sheet)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.top", "navigation.footer", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "toc.follow", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js?v=1794380413"></script>
+      
+        <script src="javascripts/katex.js?v=1794380413"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="javascripts/quiz.js?v=1794380413"></script>
+      
+        <script src="javascripts/ask.js?v=1794380413"></script>
+      
+        <script src="javascripts/video.js?v=1794380413"></script>
+      
+        <script src="javascripts/layout.js?v=1794380413"></script>
+      
+        <script src="javascripts/keypoints.js?v=1794380413"></script>
+      
+        <script src="javascripts/progress.js?v=1794380413"></script>
+      
+        <script src="javascripts/widgets.js?v=1794380413"></script>
+      
+        <script src="javascripts/navsections.js?v=1794380413"></script>
+      
+    
+  </body>
+</html>

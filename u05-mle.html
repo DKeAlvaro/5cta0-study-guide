@@ -1,0 +1,1947 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Active study guide and cheat sheet for 5CTA0 Statistical Signal Processing (TU/e), built from every past exam.">
+      
+      
+      
+        <link rel="canonical" href="https://dkealvaro.github.io/5cta0-study-guide/u05-mle.html">
+      
+      
+        <link rel="prev" href="u04-factorisation.html">
+      
+      
+        <link rel="next" href="u06-map.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>U5 · Maximum likelihood - 5CTA0 · pass the exam</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css?v=1794380413">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css?v=1794380413">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+4:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Serif 4";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.11/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap">
+    
+      <link rel="stylesheet" href="stylesheets/extra.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/ask.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/layout.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/keypoints.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/widgets.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/cheat-print.css?v=1794380413">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#u5-maximum-likelihood-likelihood-log-likelihood-derivative-solve" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="5CTA0 · pass the exam" class="md-header__button md-logo" aria-label="5CTA0 · pass the exam" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            5CTA0 · pass the exam
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              U5 · Maximum likelihood
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DKeAlvaro/5cta0-study-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DKeAlvaro/5cta0-study-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="5CTA0 · pass the exam" class="md-nav__button md-logo" aria-label="5CTA0 · pass the exam" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    5CTA0 · pass the exam
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DKeAlvaro/5cta0-study-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DKeAlvaro/5cta0-study-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inventory.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Every exam question + ranking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="maths.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M · Maths the course assumes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cheatsheet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat sheet (2 A4 sides)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="battle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battle table (every question with the sheet)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 · Probability and random signals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 · Probability and random signals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u01-bayes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U1 · Total probability and Bayes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u02-joint.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U2 · Joint pdf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u03-process-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U3 · Random variables and processes (MC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u04-factorisation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U4 · Spectral factorisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 · Estimation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 · Estimation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U5 · Maximum likelihood
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="u05-mle.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U5 · Maximum likelihood
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-idea-in-plain-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea in plain words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-tiny-example-with-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A tiny example with numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-formulas-every-symbol-named" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The formulas, every symbol named
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-exam-asks-in-its-own-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the exam asks, in its own words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-exam-question-one-step-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked exam question, one step at a time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-1-the-sigmoid-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 1 (the sigmoid one)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-3-the-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 3 (the angle)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-points-get-lost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where points get lost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#true-or-false-from-real-mc-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        True or false (from real MC options)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u06-map.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U6 · Posterior and MAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u07-mmse.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U7 · MMSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u08-crlb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U8 · Fisher information and CRLB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u09-ls.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U9 · Least squares
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u10-estimation-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U10 · Estimation theory MC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 · Spectral estimation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 · Spectral estimation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u11-correlogram.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U11 · Correlogram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u12-ar.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U12 · AR model (Yule–Walker)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u13-ma.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U13 · MA model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u14-model-autocorr.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U14 · From a difference equation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u15-spectral-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U15 · Spectral estimation theory (MC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4 · Detection
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 4 · Detection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u16-lrt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U16 · Likelihood ratio test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u17-pfa-pd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U17 · P_FA, P_D, P_M
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u18-bayes-detector.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U18 · Bayesian detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u19-detection-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U19 · Detection theory MC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-idea-in-plain-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea in plain words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-tiny-example-with-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A tiny example with numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-formulas-every-symbol-named" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The formulas, every symbol named
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-exam-asks-in-its-own-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the exam asks, in its own words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-exam-question-one-step-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked exam question, one step at a time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-1-the-sigmoid-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 1 (the sigmoid one)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-3-the-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 3 (the angle)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-points-get-lost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where points get lost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#true-or-false-from-real-mc-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        True or false (from real MC options)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="u5-maximum-likelihood-likelihood-log-likelihood-derivative-solve">U5 · Maximum <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr>: <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr>, log-<abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr>, derivative, solve<a class="headerlink" href="#u5-maximum-likelihood-likelihood-log-likelihood-derivative-solve" title="Permanent link">#</a></h1>
+<div class="meta"><span class="hot">Rank 4 · 6.5 points over 7 sittings</span><span>1 p in each of the last three exams</span><span>75 min</span></div>
+
+<div class="admonition need">
+<p class="admonition-title">Before this page</p>
+<p><a href="maths.html#m1-exponents-and-logarithms">M1 exponents, ln and their derivatives</a>, <a href="maths.html#m8-argmax-set-the-derivative-to-zero-quadratics">M8 argmax</a>. Nothing else.</p>
+</div>
+<h2 id="the-idea-in-plain-words">The idea in plain words<a class="headerlink" href="#the-idea-in-plain-words" title="Permanent link">#</a></h2>
+<p>You measured some numbers. The pdf that produced them has an unknown knob <span class="arithmatex">\(\theta\)</span>. Turn the knob until the numbers you actually got become as probable as possible. The knob position that does that is the <strong>maximum <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> estimate</strong>. Mechanically it is: multiply the pdf over all data, take <span class="arithmatex">\(\ln\)</span>, differentiate, set to zero, solve.</p>
+<div class="admonition idea">
+<p class="admonition-title">The thing that confused me</p>
+<p>The pdf <span class="arithmatex">\(p(x;\theta)\)</span> is a function of <strong>two</strong> things. As a pdf we vary <span class="arithmatex">\(x\)</span> with <span class="arithmatex">\(\theta\)</span> fixed. As a <strong><abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr></strong> we plug in the data for <span class="arithmatex">\(x\)</span> and vary <span class="arithmatex">\(\theta\)</span>. Same formula, different variable. When you differentiate, differentiate with respect to <span class="arithmatex">\(\theta\)</span>, and treat every <span class="arithmatex">\(x_n\)</span> as a known number.</p>
+</div>
+<h2 id="a-tiny-example-with-numbers">A tiny example with numbers<a class="headerlink" href="#a-tiny-example-with-numbers" title="Permanent link">#</a></h2>
+<p>Exponential pdf <span class="arithmatex">\(p(x;\lambda) = \lambda e^{-\lambda x}\)</span>. Data: <span class="arithmatex">\(x_1 = 2\)</span>, <span class="arithmatex">\(x_2 = 4\)</span> (<span class="arithmatex">\(N=2\)</span>).</p>
+<ol>
+<li>Likelihood: <span class="arithmatex">\(p(\mathbf x;\lambda) = \lambda e^{-2\lambda}\cdot\lambda e^{-4\lambda} = \lambda^{2}e^{-6\lambda}\)</span> (rule <span class="arithmatex">\(e^ae^b = e^{a+b}\)</span>).</li>
+<li>Log: <span class="arithmatex">\(\ln(\lambda^2 e^{-6\lambda}) = 2\ln\lambda - 6\lambda\)</span>.</li>
+<li>Derivative: <span class="arithmatex">\(\frac{2}{\lambda} - 6\)</span>.</li>
+<li>Zero: <span class="arithmatex">\(\frac2\lambda = 6 \Rightarrow \hat\lambda = \frac26 = \frac13\)</span>.</li>
+</ol>
+<p>That is <span class="arithmatex">\(N/\sum x_n = 2/6\)</span>: the MLE of the exponential rate is one over the sample mean.</p>
+<div class="admonition question">
+<p class="admonition-title">Your turn</p>
+<p>Same pdf, data <span class="arithmatex">\(x = \{1, 2, 3, 6\}\)</span>. Write the <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> as <span class="arithmatex">\(\lambda^{a}e^{-b\lambda}\)</span> (give <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span>), then <span class="arithmatex">\(\hat\lambda\)</span>.</p>
+<details class="solution" open="open">
+<summary>Answer</summary>
+<p><span class="arithmatex">\(a = N = 4\)</span>, <span class="arithmatex">\(b = \sum x = 12\)</span>: <span class="arithmatex">\(\lambda^4 e^{-12\lambda}\)</span>. <span class="arithmatex">\(\ln = 4\ln\lambda - 12\lambda\)</span>; derivative <span class="arithmatex">\(4/\lambda - 12 = 0 \Rightarrow \hat\lambda = 4/12 = 1/3\)</span>.</p>
+</details>
+</div>
+<h2 id="the-formulas-every-symbol-named">The formulas, every symbol named<a class="headerlink" href="#the-formulas-every-symbol-named" title="Permanent link">#</a></h2>
+<div class="key">
+<div class="arithmatex">\[\hat\theta_{ML} = \arg\max_\theta\, p(\mathbf x;\theta), \qquad p(\mathbf x;\theta) = \prod_{n=1}^{N}p(x_n;\theta), \qquad \frac{\partial}{\partial\theta}\ln p(\mathbf x;\theta)\Big|_{\hat\theta} = 0\]</div>
+</div>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\theta\)</span></td>
+<td>the unknown parameter (could be called <span class="arithmatex">\(\lambda\)</span>, <span class="arithmatex">\(\sigma^2\)</span>, <span class="arithmatex">\(A\)</span>, an angle…)</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(x_n\)</span></td>
+<td>the <span class="arithmatex">\(n\)</span>-th observation, a known number</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(N\)</span></td>
+<td>number of observations; if the question has one <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(N = 1\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(p(\mathbf x;\theta)\)</span> (or <span class="arithmatex">\(p(\mathbf x\mid\theta)\)</span>)</td>
+<td><abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr>: product of the single-sample pdfs because the samples are independent</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\ln p(\mathbf x;\theta)\)</span></td>
+<td>log-<abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr>; same maximiser, far easier to differentiate</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\arg\max\)</span></td>
+<td>"the <span class="arithmatex">\(\theta\)</span> at which the maximum happens"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why ln.</strong> <span class="arithmatex">\(\ln\)</span> is increasing, so the <span class="arithmatex">\(\theta\)</span> that maximises <span class="arithmatex">\(p\)</span> also maximises <span class="arithmatex">\(\ln p\)</span> (<a href="maths.html#m8-argmax-set-the-derivative-to-zero-quadratics">M8</a>). And <span class="arithmatex">\(\ln\)</span> of a product of exponentials is a sum of simple terms (<a href="maths.html#m1-exponents-and-logarithms">M1</a>).</p>
+<h2 id="what-the-exam-asks-in-its-own-words">What the exam asks, in its own words<a class="headerlink" href="#what-the-exam-asks-in-its-own-words" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>IF YOU SEE</th>
+<th>It means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"write the <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> and log-<abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> functions for <span class="arithmatex">\(\theta\)</span> given <span class="arithmatex">\(x_1,\ldots,x_n\)</span>"</td>
+<td>step 1 and step 2 of the recipe, written out explicitly; the product with <span class="arithmatex">\(\prod\)</span>, then the sum with <span class="arithmatex">\(\sum\)</span></td>
+</tr>
+<tr>
+<td>"derive the maximum <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> <abbr title="a formula that turns data into a guess of the parameter; the estimate is the number you get for specific data.">estimator</abbr> for <span class="arithmatex">\(\theta\)</span>"</td>
+<td>all six steps, ending with $\hat\theta = $ formula in the <span class="arithmatex">\(x_n\)</span></td>
+</tr>
+<tr>
+<td>"find an <abbr title="a formula that turns data into a guess of the parameter; the estimate is the number you get for specific data.">estimator</abbr> for the parameter <span class="arithmatex">\(\theta\)</span>" (no method named, a pdf given)</td>
+<td>MLE is the intended method</td>
+</tr>
+<tr>
+<td>"known shape parameter <span class="arithmatex">\(k\)</span>" / "<span class="arithmatex">\(k_1, k_2\)</span> known constants"</td>
+<td>they are numbers, not variables; they survive in the answer</td>
+</tr>
+<tr>
+<td>"explain what the MLE tells us"</td>
+<td>one sentence: it is the value of <span class="arithmatex">\(\theta\)</span> that makes the observed data most probable; here it equals (sample mean)/<span class="arithmatex">\(k\)</span>, etc.</td>
+</tr>
+<tr>
+<td>"the derivative of the <abbr title="λ(θ) = 1/(1+e^(−θ)), a smooth S-curve from 0 to 1.">logistic sigmoid</abbr> is <span class="arithmatex">\(\lambda(1-\lambda)\)</span>"</td>
+<td>you will need the chain rule: <span class="arithmatex">\(\frac{d}{d\theta}\ln\lambda(\theta) = \lambda'/\lambda = 1-\lambda\)</span></td>
+</tr>
+<tr>
+<td>"the answer does not have to be in the form <span class="arithmatex">\(\hat\theta = f(x)\)</span>"</td>
+<td>you may stop at the equation "derivative <span class="arithmatex">\(= 0\)</span>" if it cannot be solved in closed form</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recipe">Recipe<a class="headerlink" href="#recipe" title="Permanent link">#</a></h2>
+<div class="admonition recipe key">
+<p class="admonition-title">U5 · MLE in six steps</p>
+<ol>
+<li><strong>Likelihood.</strong> Write the pdf once with <span class="arithmatex">\(x_n\)</span>, then the product over <span class="arithmatex">\(n = 1..N\)</span>. Collect: constants multiply to <span class="arithmatex">\(c^N\)</span>, powers of <span class="arithmatex">\(x_n\)</span> stay as <span class="arithmatex">\(\prod x_n^{\,a}\)</span>, exponentials merge into <span class="arithmatex">\(\exp(\sum\cdot)\)</span>.</li>
+<li><strong>Log-<abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr>.</strong> <span class="arithmatex">\(\ln\)</span> of the product = sum of <span class="arithmatex">\(\ln\)</span>s. Expand each with <span class="arithmatex">\(\ln(ab) = \ln a + \ln b\)</span>, <span class="arithmatex">\(\ln a^n = n\ln a\)</span>, <span class="arithmatex">\(\ln e^{u} = u\)</span>.</li>
+<li><strong>Drop</strong> every term that does not contain <span class="arithmatex">\(\theta\)</span> (its derivative is zero anyway). Say so.</li>
+<li><strong>Differentiate</strong> with respect to <span class="arithmatex">\(\theta\)</span>. Table in <a href="maths.html#m1-exponents-and-logarithms">M1</a>: <span class="arithmatex">\(\frac{d}{d\theta}\ln\theta = 1/\theta\)</span>, <span class="arithmatex">\(\frac{d}{d\theta}(c/\theta) = -c/\theta^2\)</span>, <span class="arithmatex">\(\frac{d}{d\theta}(c\theta) = c\)</span>, chain rule for anything nested.</li>
+<li><strong>Set to zero and solve</strong> for <span class="arithmatex">\(\theta\)</span>. Multiply through by the denominators first.</li>
+<li><strong>Write the <abbr title="a formula that turns data into a guess of the parameter; the estimate is the number you get for specific data.">estimator</abbr></strong> with a hat and, if asked, one sentence of meaning. Optionally check the second derivative is negative (a maximum, not a minimum).</li>
+</ol>
+</div>
+<h2 id="worked-exam-question-one-step-at-a-time">Worked exam question, one step at a time<a class="headerlink" href="#worked-exam-question-one-step-at-a-time" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">June 2026 resit · 2b · 1 p</p>
+<p>A hospital administrator records the recovery time <span class="arithmatex">\(X\)</span> (in days) for patients following a routine surgical procedure. Recovery times are modelled as <span class="arithmatex">\(X \sim \text{Gamma}(k, \theta)\)</span>, where <span class="arithmatex">\(k &gt; 0\)</span> is a <em>known</em> shape parameter and <span class="arithmatex">\(\theta &gt; 0\)</span> is the unknown scale parameter (average recovery contribution per stage). The Gamma pdf is</p>
+<div class="arithmatex">\[p(x \mid \theta) = x^{k-1} e^{-x/\theta} / (\theta^k \Gamma(k)), \quad x &gt; 0.\]</div>
+<ul>
+<li>Write the <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> and log-<abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> functions for <span class="arithmatex">\(\theta\)</span> given observations <span class="arithmatex">\(x_1, \dots, x_n\)</span>.</li>
+<li>Derive the maximum <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> <abbr title="a formula that turns data into a guess of the parameter; the estimate is the number you get for specific data.">estimator</abbr> (MLE) for <span class="arithmatex">\(\theta\)</span>.</li>
+<li>Explain what the MLE tells us about patient recovery at the hospital.</li>
+</ul>
+</div>
+<div class="stepper">
+<p><strong>Step 1 · Likelihood.</strong> For one observation: <span class="arithmatex">\(p(x_i\mid\theta) = \dfrac{x_i^{k-1}e^{-x_i/\theta}}{\theta^k\Gamma(k)}\)</span>. Product over <span class="arithmatex">\(i = 1..n\)</span>:</p>
+<div class="arithmatex">\[L(\theta) = \prod_{i=1}^{n}\frac{x_i^{k-1}e^{-x_i/\theta}}{\theta^k\Gamma(k)} = \frac{\left(\prod_i x_i\right)^{k-1}\exp\!\left(-\frac1\theta\sum_i x_i\right)}{\theta^{nk}\,\Gamma(k)^n}.\]</div>
+<p>(Constants: <span class="arithmatex">\(\theta^k\)</span> appears <span class="arithmatex">\(n\)</span> times → <span class="arithmatex">\(\theta^{nk}\)</span>; <span class="arithmatex">\(\Gamma(k)\)</span> appears <span class="arithmatex">\(n\)</span> times → <span class="arithmatex">\(\Gamma(k)^n\)</span>; exponentials add their exponents.)</p>
+<p><strong>Now do step 2 yourself:</strong> take <span class="arithmatex">\(\ln\)</span> and expand into four terms.</p>
+<hr />
+<p><strong>Step 2 · Log-<abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr>.</strong> <span class="arithmatex">\(\ln L = (k-1)\sum_i\ln x_i - \frac{1}{\theta}\sum_i x_i - nk\ln\theta - n\ln\Gamma(k)\)</span>.</p>
+<p>Where each term comes from: <span class="arithmatex">\(\ln(\prod x_i)^{k-1} = (k-1)\sum\ln x_i\)</span>; <span class="arithmatex">\(\ln\exp(u) = u\)</span>; <span class="arithmatex">\(\ln\theta^{nk} = nk\ln\theta\)</span> with a minus because it is in the denominator; same for <span class="arithmatex">\(\Gamma(k)^n\)</span>.</p>
+<p><strong>Now do step 3 yourself:</strong> which terms contain <span class="arithmatex">\(\theta\)</span>?</p>
+<hr />
+<p><strong>Step 3 · Drop.</strong> Only <span class="arithmatex">\(-\frac1\theta\sum x_i\)</span> and <span class="arithmatex">\(-nk\ln\theta\)</span> contain <span class="arithmatex">\(\theta\)</span>. Keep <span class="arithmatex">\(\ell(\theta) = -\frac{S}{\theta} - nk\ln\theta\)</span> with <span class="arithmatex">\(S = \sum_i x_i\)</span>.</p>
+<p><strong>Now do step 4 yourself:</strong> differentiate <span class="arithmatex">\(\ell\)</span> with respect to <span class="arithmatex">\(\theta\)</span>.</p>
+<hr />
+<p><strong>Step 4 · Differentiate.</strong> <span class="arithmatex">\(\frac{d}{d\theta}\left(-\frac S\theta\right) = -S\cdot\left(-\frac{1}{\theta^2}\right) = \frac{S}{\theta^2}\)</span>. <span class="arithmatex">\(\frac{d}{d\theta}(-nk\ln\theta) = -\frac{nk}{\theta}\)</span>. So <span class="arithmatex">\(\ell'(\theta) = \dfrac{S}{\theta^2} - \dfrac{nk}{\theta}\)</span>.</p>
+<p><strong>Now do step 5 yourself:</strong> set to zero, multiply by <span class="arithmatex">\(\theta^2\)</span>, solve.</p>
+<hr />
+<p><strong>Step 5 · Solve.</strong> <span class="arithmatex">\(\frac{S}{\theta^2} = \frac{nk}{\theta}\)</span>. Multiply both sides by <span class="arithmatex">\(\theta^2\)</span>: <span class="arithmatex">\(S = nk\theta\)</span>. So <span class="arithmatex">\(\hat\theta = \dfrac{S}{nk} = \dfrac{1}{k}\cdot\dfrac{1}{n}\sum_i x_i = \dfrac{\bar x}{k}\)</span>.</p>
+<p><strong>Step 6 · Meaning.</strong> The MLE is the sample mean of the recovery times divided by the known shape <span class="arithmatex">\(k\)</span>. Since a Gamma<span class="arithmatex">\((k,\theta)\)</span> variable has mean <span class="arithmatex">\(k\theta\)</span>, this says: choose <span class="arithmatex">\(\theta\)</span> so that the model's mean recovery time equals the hospital's observed average recovery time. (Second derivative at <span class="arithmatex">\(\hat\theta\)</span>: <span class="arithmatex">\(-2S/\theta^3 + nk/\theta^2 = -nk/\hat\theta^2 &lt; 0\)</span>: a maximum.)</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(L(\theta) = \dfrac{(\prod x_i)^{k-1}e^{-\sum x_i/\theta}}{\theta^{nk}\Gamma(k)^n}\)</span>; <span class="arithmatex">\(\ln L = (k-1)\sum\ln x_i - \frac{\sum x_i}{\theta} - nk\ln\theta - n\ln\Gamma(k)\)</span>; <span class="arithmatex">\(\hat\theta_{ML} = \dfrac{\sum_i x_i}{nk} = \bar x/k\)</span>.</p>
+</div>
+</div>
+<h2 id="do-it-cold-1-the-sigmoid-one">Do it cold · 1 (the sigmoid one)<a class="headerlink" href="#do-it-cold-1-the-sigmoid-one" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">April 2025 · 2c · 1 p</p>
+<p>Consider the <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> <span class="arithmatex">\(p(x|\theta) = 3\lambda(\theta)e^{-4\frac{\lambda(\theta)x}{7}}\)</span>, <span class="arithmatex">\(x &gt; 1\)</span>, where <span class="arithmatex">\(\lambda(\cdot)\)</span> is defined as the <abbr title="λ(θ) = 1/(1+e^(−θ)), a smooth S-curve from 0 to 1.">logistic sigmoid</abbr> function <span class="arithmatex">\(\lambda(\theta) = \frac{1}{1+e^{-\theta}}\)</span>. Derive the MLE for the parameter <span class="arithmatex">\(\theta\)</span>. Hint: The derivative of the <abbr title="λ(θ) = 1/(1+e^(−θ)), a smooth S-curve from 0 to 1.">logistic sigmoid</abbr> is <span class="arithmatex">\(\frac{\partial \lambda(\theta)}{\partial \theta} = \lambda(\theta)(1 - \lambda(\theta))\)</span>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><strong>Step 1.</strong> One observation, so the <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> is the pdf itself: <span class="arithmatex">\(3\lambda e^{-4\lambda x/7}\)</span> (write <span class="arithmatex">\(\lambda\)</span> for <span class="arithmatex">\(\lambda(\theta)\)</span>).</p>
+<p><strong>Step 2.</strong> <span class="arithmatex">\(\ln p = \ln 3 + \ln\lambda - \frac{4}{7}\lambda x\)</span>.</p>
+<p><strong>Step 3.</strong> Drop <span class="arithmatex">\(\ln 3\)</span>.</p>
+<p><strong>Step 4.</strong> Chain rule, with <span class="arithmatex">\(\lambda' = \lambda(1-\lambda)\)</span>: <span class="arithmatex">\(\frac{d}{d\theta}\ln\lambda = \frac{\lambda'}{\lambda} = 1-\lambda\)</span>; <span class="arithmatex">\(\frac{d}{d\theta}\left(-\frac47\lambda x\right) = -\frac47 x\lambda' = -\frac47 x\lambda(1-\lambda)\)</span>. Sum: <span class="arithmatex">\((1-\lambda) - \frac47x\lambda(1-\lambda) = (1-\lambda)\left(1 - \frac47\lambda x\right)\)</span>. (Expanded, as the official key writes it: <span class="arithmatex">\(1 - \lambda - \frac47\lambda x + \frac47\lambda^2 x\)</span>.)</p>
+<p><strong>Step 5.</strong> Zero when <span class="arithmatex">\(\lambda = 1\)</span> or <span class="arithmatex">\(1 - \frac47\lambda x = 0\)</span>. <span class="arithmatex">\(\lambda = 1\)</span> means <span class="arithmatex">\(e^{-\theta} = 0\)</span>, i.e. <span class="arithmatex">\(\theta\to\infty\)</span>: not a finite solution, discard. So <span class="arithmatex">\(\lambda = \frac{7}{4x}\)</span>. Undo the sigmoid: <span class="arithmatex">\(\frac{1}{1+e^{-\theta}} = \frac{7}{4x} \Rightarrow 1 + e^{-\theta} = \frac{4x}{7} \Rightarrow e^{-\theta} = \frac{4x}{7} - 1 \Rightarrow -\theta = \ln\!\left(\frac{4x}{7}-1\right)\)</span>.</p>
+<p><strong>Step 6.</strong> <span class="arithmatex">\(\hat\theta = -\ln\!\left(\frac{4x}{7}-1\right)\)</span>, which needs <span class="arithmatex">\(\frac{4x}{7} - 1 &gt; 0\)</span>, i.e. <span class="arithmatex">\(x &gt; 7/4\)</span> (the official clarification says exactly this).</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(\hat\theta_{ML} = -\ln\!\left(\frac{4}{7}x - 1\right)\)</span>, valid for <span class="arithmatex">\(x &gt; 7/4\)</span>.</p>
+</div>
+</details>
+<h2 id="do-it-cold-2">Do it cold · 2<a class="headerlink" href="#do-it-cold-2" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">April 2024 · 2c · 1 p</p>
+<p>For the data vector <span class="arithmatex">\(\mathbf{x} = \{x_1, \dots, x_N\}\)</span> consisting of independent samples with probability density function <span class="arithmatex">\(p(x_n | \theta) = \frac{x_n}{2\theta} e^{-\frac{x_n^2}{2\theta}}\)</span>, derive the MLE for the parameter <span class="arithmatex">\(\theta\)</span>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><strong>Step 1.</strong> <span class="arithmatex">\(L = \prod_n\frac{x_n}{2\theta}e^{-x_n^2/(2\theta)} = \dfrac{\prod x_n}{(2\theta)^N}\exp\!\left(-\frac{\sum x_n^2}{2\theta}\right)\)</span>.</p>
+<p><strong>Step 2.</strong> <span class="arithmatex">\(\ln L = \sum\ln x_n - N\ln(2\theta) - \frac{\sum x_n^2}{2\theta}\)</span>. Note <span class="arithmatex">\(\ln(2\theta) = \ln2 + \ln\theta\)</span>.</p>
+<p><strong>Step 3.</strong> Keep <span class="arithmatex">\(-N\ln\theta - \frac{T}{2\theta}\)</span> with <span class="arithmatex">\(T = \sum x_n^2\)</span>.</p>
+<p><strong>Step 4.</strong> <span class="arithmatex">\(-\frac N\theta + \frac{T}{2\theta^2}\)</span> (derivative of <span class="arithmatex">\(-\frac{T}{2}\theta^{-1}\)</span> is <span class="arithmatex">\(+\frac T2\theta^{-2}\)</span>).</p>
+<p><strong>Step 5.</strong> <span class="arithmatex">\(\frac{T}{2\theta^2} = \frac N\theta \Rightarrow T = 2N\theta \Rightarrow \hat\theta = \frac{T}{2N}\)</span>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(\hat\theta_{ML} = \dfrac{1}{2N}\sum_{n=1}^{N}x_n^2\)</span>. (October 2021 2b has <span class="arithmatex">\(\frac{x}{\theta}\)</span> instead of <span class="arithmatex">\(\frac{x}{2\theta}\)</span> in front; the front constant does not contain <span class="arithmatex">\(\theta\)</span> in the exponent and the answer is the same.)</p>
+</div>
+</details>
+<h2 id="do-it-cold-3-the-angle">Do it cold · 3 (the angle)<a class="headerlink" href="#do-it-cold-3-the-angle" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">November 2022 · 2d · 0.5 p</p>
+<p>Consider the observation <span class="arithmatex">\(\mathbf{x} = A \begin{bmatrix} \cos(\theta) \\ \sin(\theta) \end{bmatrix} + \mathbf{w}\)</span>, where <span class="arithmatex">\(\mathbf{w}\)</span> is white Gaussian noise. The probability density function of the observation is <span class="arithmatex">\(p(\mathbf{x}; \theta) = \frac{1}{2\pi\sigma^2} \exp\left(-\frac{1}{2\sigma^2} \left((x_1 - A \cos(\theta))^2 + (x_2 - A \sin(\theta))^2\right)\right)\)</span>. Find the maximum <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> <abbr title="a formula that turns data into a guess of the parameter; the estimate is the number you get for specific data.">estimator</abbr> of the parameter <span class="arithmatex">\(\theta\)</span>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><strong>Step 2.</strong> <span class="arithmatex">\(\ln p = -\ln(2\pi\sigma^2) - \frac{1}{2\sigma^2}\left[(x_1 - A\cos\theta)^2 + (x_2 - A\sin\theta)^2\right]\)</span>.</p>
+<p><strong>Expand the squares</strong> <span class="arithmatex">\((a-b)^2 = a^2 - 2ab + b^2\)</span>: <span class="arithmatex">\(x_1^2 - 2Ax_1\cos\theta + A^2\cos^2\theta + x_2^2 - 2Ax_2\sin\theta + A^2\sin^2\theta\)</span>. Use <span class="arithmatex">\(\cos^2+\sin^2 = 1\)</span>: <span class="arithmatex">\(= x_1^2 + x_2^2 + A^2 - 2A(x_1\cos\theta + x_2\sin\theta)\)</span>.</p>
+<p><strong>Step 3.</strong> Only <span class="arithmatex">\(-2A(x_1\cos\theta + x_2\sin\theta)\)</span> depends on <span class="arithmatex">\(\theta\)</span>; with the <span class="arithmatex">\(-\frac{1}{2\sigma^2}\)</span> in front it is <span class="arithmatex">\(+\frac{A}{\sigma^2}(x_1\cos\theta + x_2\sin\theta)\)</span>.</p>
+<p><strong>Step 4.</strong> <span class="arithmatex">\(\frac{A}{\sigma^2}(-x_1\sin\theta + x_2\cos\theta)\)</span>.</p>
+<p><strong>Step 5.</strong> <span class="arithmatex">\(x_2\cos\theta = x_1\sin\theta \Rightarrow \frac{\sin\theta}{\cos\theta} = \frac{x_2}{x_1} \Rightarrow \tan\theta = \frac{x_2}{x_1}\)</span>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(\hat\theta_{ML} = \tan^{-1}(x_2/x_1)\)</span>, taken in the quadrant of the point <span class="arithmatex">\((x_1, x_2)\)</span>: the estimate is the angle of the observed vector.</p>
+</div>
+</details>
+<h2 id="do-it-cold-4">Do it cold · 4<a class="headerlink" href="#do-it-cold-4" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">November 2019 · 3a · 1 p</p>
+<p>The data <span class="arithmatex">\(x[0], \ldots, x[N-1]\)</span> are i.i.d. according to <span class="arithmatex">\(p(x; \theta) = \frac{x}{\theta^2} \exp \left[ -\frac{x^2}{2\theta^2} \right]\)</span>, <span class="arithmatex">\(x \geq 0\)</span>. Find the maximum <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> <abbr title="a formula that turns data into a guess of the parameter; the estimate is the number you get for specific data.">estimator</abbr> for <span class="arithmatex">\(\theta\)</span>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><span class="arithmatex">\(\ln L = \sum\ln x[n] - 2N\ln\theta - \frac{\sum x[n]^2}{2\theta^2}\)</span> (because <span class="arithmatex">\(\ln\theta^2 = 2\ln\theta\)</span> and there are <span class="arithmatex">\(N\)</span> of them). Derivative: <span class="arithmatex">\(-\frac{2N}{\theta} + \frac{\sum x^2}{\theta^3}\)</span> (derivative of <span class="arithmatex">\(-\frac T2\theta^{-2}\)</span> is <span class="arithmatex">\(+T\theta^{-3}\)</span>). Zero: <span class="arithmatex">\(\frac{T}{\theta^3} = \frac{2N}{\theta} \Rightarrow T = 2N\theta^2 \Rightarrow \theta^2 = \frac{T}{2N}\)</span>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(\hat\theta_{ML} = \sqrt{\dfrac{1}{2N}\sum_{n=0}^{N-1}x^2[n]}\)</span>.</p>
+</div>
+</details>
+<h2 id="do-it-cold-5">Do it cold · 5<a class="headerlink" href="#do-it-cold-5" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">January 2019 · 2a · 1 p</p>
+<p>For the random variable <span class="arithmatex">\(x\)</span> with distribution <span class="arithmatex">\(p(x; \lambda) = \lambda e^{-\lambda x}\)</span>, find the maximum <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> <abbr title="a formula that turns data into a guess of the parameter; the estimate is the number you get for specific data.">estimator</abbr> for <span class="arithmatex">\(\lambda\)</span>, given <span class="arithmatex">\(N\)</span> i.i.d. observations <span class="arithmatex">\(x_i\)</span>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><span class="arithmatex">\(L = \lambda^N e^{-\lambda\sum x_i}\)</span>; <span class="arithmatex">\(\ln L = N\ln\lambda - \lambda\sum x_i\)</span>; derivative <span class="arithmatex">\(\frac N\lambda - \sum x_i = 0\)</span>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(\hat\lambda_{ML} = \dfrac{N}{\sum_i x_i}\)</span>.</p>
+</div>
+</details>
+<h2 id="where-points-get-lost">Where points get lost<a class="headerlink" href="#where-points-get-lost" title="Permanent link">#</a></h2>
+<div class="admonition trap key">
+<p class="admonition-title">Where points get lost</p>
+<table>
+<thead>
+<tr>
+<th>Wrong line</th>
+<th>Right line</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\ln\prod_i f_i = \prod_i\ln f_i\)</span></td>
+<td><span class="arithmatex">\(\ln\)</span> of a product is the <strong>sum</strong> of the logs.</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\ln(\theta^k\Gamma(k))\)</span> in the numerator</td>
+<td>It was in the denominator: <span class="arithmatex">\(-k\ln\theta - \ln\Gamma(k)\)</span>, and <span class="arithmatex">\(n\)</span> times.</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\frac{d}{d\theta}\frac{S}{\theta} = \frac{S}{\theta^2}\)</span></td>
+<td><span class="arithmatex">\(\frac{d}{d\theta}\frac S\theta = -\frac{S}{\theta^2}\)</span> (the minus matters: with the leading minus of the term it becomes <span class="arithmatex">\(+\)</span>).</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\frac{d}{d\theta}\ln\lambda(\theta) = \frac{1}{\lambda}\)</span></td>
+<td>Chain rule: <span class="arithmatex">\(\frac{\lambda'(\theta)}{\lambda(\theta)}\)</span>; with the hint, <span class="arithmatex">\(= 1-\lambda\)</span>.</td>
+</tr>
+<tr>
+<td>Keeping <span class="arithmatex">\(\lambda = 1\)</span> as a solution</td>
+<td>It corresponds to <span class="arithmatex">\(\theta = \infty\)</span>; discard and say why.</td>
+</tr>
+<tr>
+<td>Stopping at <span class="arithmatex">\(\lambda = 7/(4x)\)</span></td>
+<td>The question asks for <span class="arithmatex">\(\theta\)</span>: undo the sigmoid.</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\tan^{-1}(x_2/x_1)\)</span> without the quadrant remark</td>
+<td>Add "in the quadrant of <span class="arithmatex">\((x_1,x_2)\)</span>"; the key explicitly mentions it.</td>
+</tr>
+<tr>
+<td>Writing $\hat\theta = $ (a number) when <span class="arithmatex">\(N\)</span> data are symbolic</td>
+<td>The <abbr title="a formula that turns data into a guess of the parameter; the estimate is the number you get for specific data.">estimator</abbr> is a formula in the <span class="arithmatex">\(x_n\)</span>; plug numbers only if the exam gives them.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="true-or-false-from-real-mc-options">True or false (from real MC options)<a class="headerlink" href="#true-or-false-from-real-mc-options" title="Permanent link">#</a></h2>
+<div class="tf">
+<table>
+<thead>
+<tr>
+<th>statement</th>
+<th>T or F</th>
+<th>why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The MLE is the argument maximising the <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr>.</td>
+<td>True</td>
+<td>Apr 2025 2a option a.</td>
+</tr>
+<tr>
+<td>The maximum <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> estimate is the value of <span class="arithmatex">\(x\)</span> that maximises the <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> function.</td>
+<td>False</td>
+<td>Jan 2022 2b (a): it is the value of <span class="arithmatex">\(\theta\)</span>, not of <span class="arithmatex">\(x\)</span>.</td>
+</tr>
+<tr>
+<td>The maximum <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> <abbr title="a formula that turns data into a guess of the parameter; the estimate is the number you get for specific data.">estimator</abbr> always achieves the Cramér–Rao lower bound.</td>
+<td>False</td>
+<td>Nov 2022 2b (a): only asymptotically (large <span class="arithmatex">\(N\)</span>), or for special models.</td>
+</tr>
+<tr>
+<td>The maximum <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> <abbr title="a formula that turns data into a guess of the parameter; the estimate is the number you get for specific data.">estimator</abbr> is asymptotically unbiased.</td>
+<td>True</td>
+<td>Nov 2022 2b (c).</td>
+</tr>
+<tr>
+<td>For a one-to-one transformation <span class="arithmatex">\(\alpha = \psi(\theta)\)</span>, <span class="arithmatex">\(\hat\theta_{ML} = \psi^{-1}(\hat\alpha_{ML})\)</span>.</td>
+<td>True</td>
+<td>Jan 2022 2b (c): the invariance property. Used in Apr 2025 2c when we undo the sigmoid.</td>
+</tr>
+<tr>
+<td>For large sample sizes the ML estimate is uniformly distributed.</td>
+<td>False</td>
+<td>Jan 2022 2b (b): it is Gaussian, <span class="arithmatex">\(\hat\theta\sim\mathcal N(\theta, \mathcal I^{-1}(\theta))\)</span>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>You can leave this page when you can:</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> write the <abbr title="the pdf of the data, read as a function of the unknown parameter with the data plugged in.">likelihood</abbr> of <span class="arithmatex">\(N\)</span> i.i.d. samples as one expression with <span class="arithmatex">\(\prod\)</span>, <span class="arithmatex">\(c^N\)</span> and <span class="arithmatex">\(\exp(\sum)\)</span>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> expand its <span class="arithmatex">\(\ln\)</span> term by term and drop the <span class="arithmatex">\(\theta\)</span>-free terms.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> differentiate <span class="arithmatex">\(c\ln\theta\)</span>, <span class="arithmatex">\(c/\theta\)</span>, <span class="arithmatex">\(c/\theta^2\)</span> and <span class="arithmatex">\(\ln\lambda(\theta)\)</span> (chain rule) without looking.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> solve "derivative <span class="arithmatex">\(= 0\)</span>" by clearing denominators.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> say in one sentence what the estimate means.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="u04-factorisation.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: U4 · Spectral factorisation">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                U4 · Spectral factorisation
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="u06-map.html" class="md-footer__link md-footer__link--next" aria-label="Next: U6 · Posterior and MAP">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                U6 · Posterior and MAP
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.top", "navigation.footer", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "toc.follow", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js?v=1794380413"></script>
+      
+        <script src="javascripts/katex.js?v=1794380413"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="javascripts/quiz.js?v=1794380413"></script>
+      
+        <script src="javascripts/ask.js?v=1794380413"></script>
+      
+        <script src="javascripts/video.js?v=1794380413"></script>
+      
+        <script src="javascripts/layout.js?v=1794380413"></script>
+      
+        <script src="javascripts/keypoints.js?v=1794380413"></script>
+      
+        <script src="javascripts/progress.js?v=1794380413"></script>
+      
+        <script src="javascripts/widgets.js?v=1794380413"></script>
+      
+        <script src="javascripts/navsections.js?v=1794380413"></script>
+      
+    
+  </body>
+</html>

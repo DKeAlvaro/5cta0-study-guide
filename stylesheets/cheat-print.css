@@ -1,0 +1,35 @@
+/* Print layout of docs/cheatsheet.md: one A4, front and back, three columns.
+   scripts/mkpdf.py rewrites --cheat-scale to make the sheet exactly two pages. */
+:root { --cheat-scale: 1.0; }
+
+/* on screen: readable, two columns on wide screens */
+.md-typeset .cheat { font-size: .78rem; line-height: 1.35; }
+.md-typeset .cheat h1 { font-size: .95rem; }
+.md-typeset .cheat h2 { font-size: .95rem; margin: 1.2em 0 .4em; }
+.md-typeset .cheat h3 { font-size: .9rem; margin: 1em 0 .3em; }
+.md-typeset .cheat p.see { font-weight: 600; }
+.md-typeset .cheat table:not([class]) { font-size: .72rem; }
+
+@media print {
+  @page { size: A4; margin: 3.5mm 3.5mm; }
+  .md-typeset .cheat .headerlink { display: none !important; }
+  /* scripts/mkpdf.py prints a standalone copy of the sheet (site/cheatsheet-print.html): only the sheet, KaTeX and this file */
+  html, body { height: auto !important; overflow: visible !important; }
+  .md-typeset .cheat { zoom: var(--cheat-scale); font-size: 7.25pt; line-height: 1.1; color: #000; }
+  .md-typeset .cheat h1 { font-size: 7pt; margin: 0 0 .15em; color: #000; }
+  .md-typeset .cheat h2 { font-size: 8.4pt; margin: .35em 0 .12em; padding: .05em .3em; background: #3b2f63; color: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .md-typeset .cheat h3 { font-size: 7.9pt; margin: .3em 0 .1em; color: #3b2f63; }
+  .md-typeset .cheat p.see { background: #fff1b8; border-left: 2px solid #e0a100; padding: .05em .3em; margin: .1em 0; font-weight: 700; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .md-typeset .cheat p, .md-typeset .cheat ul, .md-typeset .cheat ol { margin: .06em 0; }
+  .md-typeset .cheat ol, .md-typeset .cheat ul { padding-left: 1.1em; margin-left: 0; }
+  .md-typeset .cheat li { margin: 0 0 .04em; }
+  .md-typeset .cheat em { color: #333; }
+  .md-typeset .cheat .katex { font-size: .98em; }
+  .md-typeset .cheat table:not([class]) { font-size: .9em; border-collapse: collapse; }
+  .md-typeset .cheat table:not([class]) th, .md-typeset .cheat table:not([class]) td { padding: .1em .25em; border: 1px solid #bbb; }
+  .cheat-cols { column-count: 3; column-gap: 1.1em; column-rule: 1px solid #ccc; column-fill: auto; height: auto; }
+  .cheat-cols > div { break-inside: auto; }
+  .md-main, .md-main__inner, .md-content, .md-content__inner, .md-typeset .cheat { height: auto !important; min-height: 0 !important; }
+  .md-typeset .cheat h2, .md-typeset .cheat h3, .md-typeset .cheat p.see { break-after: avoid; break-inside: avoid; }
+  .md-typeset .cheat table:not([class]) { break-inside: avoid; }
+}

@@ -1,0 +1,1836 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Active study guide and cheat sheet for 5CTA0 Statistical Signal Processing (TU/e), built from every past exam.">
+      
+      
+      
+        <link rel="canonical" href="https://dkealvaro.github.io/5cta0-study-guide/u14-model-autocorr.html">
+      
+      
+        <link rel="prev" href="u13-ma.html">
+      
+      
+        <link rel="next" href="u15-spectral-mc.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>U14 · From a difference equation - 5CTA0 · pass the exam</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css?v=1794380413">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css?v=1794380413">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+4:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Serif 4";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.11/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap">
+    
+      <link rel="stylesheet" href="stylesheets/extra.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/ask.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/layout.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/keypoints.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/widgets.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/cheat-print.css?v=1794380413">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#u14-from-a-difference-equation-to-rk-and-the-psd" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="5CTA0 · pass the exam" class="md-header__button md-logo" aria-label="5CTA0 · pass the exam" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            5CTA0 · pass the exam
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              U14 · From a difference equation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DKeAlvaro/5cta0-study-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DKeAlvaro/5cta0-study-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="5CTA0 · pass the exam" class="md-nav__button md-logo" aria-label="5CTA0 · pass the exam" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    5CTA0 · pass the exam
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DKeAlvaro/5cta0-study-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DKeAlvaro/5cta0-study-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inventory.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Every exam question + ranking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="maths.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M · Maths the course assumes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cheatsheet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat sheet (2 A4 sides)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="battle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battle table (every question with the sheet)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 · Probability and random signals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 · Probability and random signals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u01-bayes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U1 · Total probability and Bayes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u02-joint.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U2 · Joint pdf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u03-process-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U3 · Random variables and processes (MC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u04-factorisation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U4 · Spectral factorisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 · Estimation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 · Estimation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u05-mle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U5 · Maximum likelihood
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u06-map.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U6 · Posterior and MAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u07-mmse.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U7 · MMSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u08-crlb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U8 · Fisher information and CRLB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u09-ls.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U9 · Least squares
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u10-estimation-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U10 · Estimation theory MC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 · Spectral estimation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 · Spectral estimation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u11-correlogram.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U11 · Correlogram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u12-ar.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U12 · AR model (Yule–Walker)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u13-ma.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U13 · MA model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U14 · From a difference equation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="u14-model-autocorr.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U14 · From a difference equation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-idea-in-plain-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea in plain words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-tiny-example-with-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A tiny example with numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-formulas-every-symbol-named" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The formulas, every symbol named
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-exam-asks-in-its-own-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the exam asks, in its own words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-exam-question-one-step-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked exam question, one step at a time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-1-ma3-the-sliding-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 1 (MA(3), the sliding products)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-2-filter-given-as-hz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 2 (filter given as \(H(z)\))
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-3-ar1-closed-form-used-by-the-wiener-aside-and-by-sanity-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 3 (AR(1) closed form, used by the Wiener aside and by sanity checks)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-points-get-lost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where points get lost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#true-or-false-from-real-mc-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        True or false (from real MC options)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u15-spectral-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U15 · Spectral estimation theory (MC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4 · Detection
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 4 · Detection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u16-lrt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U16 · Likelihood ratio test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u17-pfa-pd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U17 · P_FA, P_D, P_M
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u18-bayes-detector.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U18 · Bayesian detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u19-detection-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U19 · Detection theory MC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-idea-in-plain-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea in plain words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-tiny-example-with-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A tiny example with numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-formulas-every-symbol-named" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The formulas, every symbol named
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-exam-asks-in-its-own-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the exam asks, in its own words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-exam-question-one-step-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked exam question, one step at a time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-1-ma3-the-sliding-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 1 (MA(3), the sliding products)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-2-filter-given-as-hz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 2 (filter given as \(H(z)\))
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-3-ar1-closed-form-used-by-the-wiener-aside-and-by-sanity-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 3 (AR(1) closed form, used by the Wiener aside and by sanity checks)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-points-get-lost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where points get lost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#true-or-false-from-real-mc-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        True or false (from real MC options)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="u14-from-a-difference-equation-to-rk-and-the-psd">U14 · From a <abbr title="a rule giving x[n] from past samples and inputs.">difference equation</abbr> to r[k] and the PSD<a class="headerlink" href="#u14-from-a-difference-equation-to-rk-and-the-psd" title="Permanent link">#</a></h1>
+<div class="meta"><span class="hot">Rank 15 · 2.1 points over 4 sittings</span><span>0.6 p in Apr 2024, 1 p in Nov 2022, 0.75 p in Oct 2021</span><span>60 min</span></div>
+
+<div class="admonition need">
+<p class="admonition-title">Before this page</p>
+<p><a href="maths.html#m6-expectation-and-variance-rules">M6 white-noise expectations</a> (only equal-time kicks survive), <a href="maths.html#m7-the-z-domain-in-four-facts">M7 z-domain</a> (<abbr title="a rule giving x[n] from past samples and inputs.">difference equation</abbr> ↔ <span class="arithmatex">\(H(z)\)</span>), <a href="maths.html#m3-complex-exponentials-and-cosine-identities">M3 rule 2</a>.</p>
+</div>
+<h2 id="the-idea-in-plain-words">The idea in plain words<a class="headerlink" href="#the-idea-in-plain-words" title="Permanent link">#</a></h2>
+<p>The exam hands you the recipe that generates a signal (a <abbr title="a rule giving x[n] from past samples and inputs.">difference equation</abbr> or a filter <span class="arithmatex">\(H(z)\)</span> fed with white noise) and asks for the signal's autocorrelation and PSD. Two mechanical routes: for the <strong>PSD</strong>, take <span class="arithmatex">\(|H|^2\)</span> at <span class="arithmatex">\(z = e^{j\theta}\)</span> and multiply by the noise variance. For the <strong>autocorrelation</strong>, multiply the equation by a delayed copy of the signal and take expectations, using that white-noise kicks at different times are uncorrelated.</p>
+<div class="admonition idea">
+<p class="admonition-title">The thing that confused me</p>
+<p>In an <abbr title="autoregressive moving-average: past outputs and past inputs both enter the equation.">ARMA</abbr> equation like <span class="arithmatex">\(x[n] = i[n] - i[n-1] + \frac34x[n-1]\)</span> the past signal <span class="arithmatex">\(x[n-1]\)</span> is <strong>not</strong> independent of the past kick <span class="arithmatex">\(i[n-1]\)</span>: <span class="arithmatex">\(x[n-1]\)</span> contains <span class="arithmatex">\(i[n-1]\)</span> with coefficient 1. So <span class="arithmatex">\(E[x[n-1]\,i[n-1]] = \sigma_i^2\)</span>, not zero. What <em>is</em> zero is <span class="arithmatex">\(E[x[n-1]\,i[n]]\)</span>: the past cannot know the future kick. Write "coefficient of <span class="arithmatex">\(i[n-m]\)</span> inside <span class="arithmatex">\(x[n-m]\)</span> is <span class="arithmatex">\(b_0 = 1\)</span>" before you start.</p>
+</div>
+<h2 id="a-tiny-example-with-numbers">A tiny example with numbers<a class="headerlink" href="#a-tiny-example-with-numbers" title="Permanent link">#</a></h2>
+<p><span class="arithmatex">\(x[n] = i[n] + 2i[n-1]\)</span>, <span class="arithmatex">\(\sigma_i^2 = 1\)</span> (MA(1)).
+PSD route: <span class="arithmatex">\(H(z) = 1 + 2z^{-1}\)</span>, <span class="arithmatex">\(P = 1\cdot|1 + 2e^{-j\theta}|^2 = 1 + 4 + 4\cos\theta = 5 + 4\cos\theta\)</span>.
+Autocorrelation route: <span class="arithmatex">\(r[0] = E[(i[n]+2i[n-1])^2] = 1 + 4 = 5\)</span>; <span class="arithmatex">\(r[1] = E[(i[n]+2i[n-1])(i[n-1]+2i[n-2])] = 2\)</span>; <span class="arithmatex">\(r[2] = 0\)</span>. Correlogram: <span class="arithmatex">\(5 + 4\cos\theta\)</span>. Same answer, as it must be.</p>
+<div class="admonition question">
+<p class="admonition-title">Your turn</p>
+<p><span class="arithmatex">\(x[n] = i[n] - \frac12 i[n-1]\)</span>, <span class="arithmatex">\(\sigma_i^2 = 4\)</span>. Find <span class="arithmatex">\(r[0]\)</span>, <span class="arithmatex">\(r[1]\)</span> and the PSD by both routes.</p>
+<details class="solution" open="open">
+<summary>Answer</summary>
+<p><span class="arithmatex">\(r[0] = 4(1 + \frac14) = 5\)</span>, <span class="arithmatex">\(r[1] = 4(-\frac12) = -2\)</span>. PSD <span class="arithmatex">\(= 4|1 - \frac12e^{-j\theta}|^2 = 4(1 + \frac14 - \cos\theta) = 5 - 4\cos\theta = r[0] + 2r[1]\cos\theta\)</span>. ✓</p>
+</details>
+</div>
+<h2 id="the-formulas-every-symbol-named">The formulas, every symbol named<a class="headerlink" href="#the-formulas-every-symbol-named" title="Permanent link">#</a></h2>
+<div class="key">
+<p>Difference equation <span class="arithmatex">\(x[n] = \sum_{k=0}^{q}b_ki[n-k] - \sum_{k=1}^{p}a_kx[n-k]\)</span> <span class="arithmatex">\(\;\Leftrightarrow\;\)</span> <span class="arithmatex">\(H(z) = \dfrac{\sum_k b_kz^{-k}}{1 + \sum_k a_kz^{-k}}\)</span>, <span class="arithmatex">\(b_0 = 1\)</span></p>
+<p>PSD: <span class="arithmatex">\(P_x(e^{j\theta}) = \sigma_i^2\,|H(e^{j\theta})|^2 = \sigma_i^2\dfrac{|1 + b_1e^{-j\theta} + \ldots|^2}{|1 + a_1e^{-j\theta} + \ldots|^2}\)</span></p>
+<p>Autocorrelation: <span class="arithmatex">\(r[m] = E[x[n]\,x[n-m]]\)</span>, computed by multiplying the equation by <span class="arithmatex">\(x[n-m]\)</span> and using <span class="arithmatex">\(E[i[n]\,i[n-k]] = \sigma_i^2\delta[k]\)</span>, <span class="arithmatex">\(E[i[n]\,x[n-m]] = 0\)</span> for <span class="arithmatex">\(m\ge1\)</span>, <span class="arithmatex">\(E[i[n-m]\,x[n-m]] = \sigma_i^2\)</span></p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Name</th>
+<th>How to recognise</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>only <span class="arithmatex">\(i\)</span> terms on the right</td>
+<td>MA(<span class="arithmatex">\(q\)</span>), <span class="arithmatex">\(q\)</span> = oldest kick</td>
+<td>finite autocorrelation (lags <span class="arithmatex">\(0..q\)</span>)</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(i[n]\)</span> plus past <span class="arithmatex">\(x\)</span> terms</td>
+<td>AR(<span class="arithmatex">\(p\)</span>), <span class="arithmatex">\(p\)</span> = oldest <span class="arithmatex">\(x\)</span></td>
+<td><span class="arithmatex">\(r[m]\)</span> decays geometrically forever</td>
+</tr>
+<tr>
+<td>both past <span class="arithmatex">\(i\)</span> and past <span class="arithmatex">\(x\)</span></td>
+<td><abbr title="autoregressive moving-average: past outputs and past inputs both enter the equation.">ARMA</abbr>(<span class="arithmatex">\(p,q\)</span>)</td>
+<td>first <span class="arithmatex">\(q\)</span> lags special, then geometric decay</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why <span class="arithmatex">\(E[i[n]\,x[n-m]] = 0\)</span> for <span class="arithmatex">\(m\ge1\)</span>.</strong> <span class="arithmatex">\(x[n-m]\)</span> is built from kicks up to time <span class="arithmatex">\(n-m\)</span>; the kick <span class="arithmatex">\(i[n]\)</span> is later and independent of all of them.</p>
+<h2 id="what-the-exam-asks-in-its-own-words">What the exam asks, in its own words<a class="headerlink" href="#what-the-exam-asks-in-its-own-words" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>IF YOU SEE</th>
+<th>It means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"which kind of signal model does this signal represent?"</td>
+<td>count the oldest <span class="arithmatex">\(i\)</span> term and the oldest <span class="arithmatex">\(x\)</span> term: MA(<span class="arithmatex">\(q\)</span>), AR(<span class="arithmatex">\(p\)</span>) or <abbr title="autoregressive moving-average: past outputs and past inputs both enter the equation.">ARMA</abbr>(<span class="arithmatex">\(p,q\)</span>)</td>
+</tr>
+<tr>
+<td>"calculate the autocorrelation function of <span class="arithmatex">\(x[n]\)</span>" (MA)</td>
+<td><span class="arithmatex">\(r[k] = \sigma_i^2\sum_m b_mb_{m+k}\)</span>: slide the coefficient list over itself</td>
+</tr>
+<tr>
+<td>"calculate the autocorrelation <span class="arithmatex">\(r[\tau]\)</span>" (<abbr title="autoregressive moving-average: past outputs and past inputs both enter the equation.">ARMA</abbr>)</td>
+<td><span class="arithmatex">\(r[0]\)</span> and <span class="arithmatex">\(r[1]\)</span> by the multiply-and-expect method (two equations), then <span class="arithmatex">\(r[\tau] = -a_1r[\tau-1]\)</span> for <span class="arithmatex">\(\tau\ge2\)</span></td>
+</tr>
+<tr>
+<td>"calculate the PSD <span class="arithmatex">\(P_x(e^{j\theta})\)</span> of <span class="arithmatex">\(x[k]\)</span>"</td>
+<td><span class="arithmatex">\(\sigma_i^2\lvert H(e^{j\theta})\rvert^2\)</span>, numerator and denominator expanded with M3</td>
+</tr>
+<tr>
+<td>"generated by filtering <abbr title="the white-noise input of a linear signal model.">innovation</abbr> <span class="arithmatex">\(i[k]\)</span> with the filter <span class="arithmatex">\(H(z) = \ldots\)</span>"</td>
+<td>first convert <span class="arithmatex">\(H(z)\)</span> to the <abbr title="a rule giving x[n] from past samples and inputs.">difference equation</abbr> (M7), then as above</td>
+</tr>
+<tr>
+<td>"if you could not solve 3a, use the following autocorrelation"</td>
+<td>fallback values; use them and say so</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recipe">Recipe<a class="headerlink" href="#recipe" title="Permanent link">#</a></h2>
+<div class="admonition recipe key">
+<p class="admonition-title">U14 · Model to lags and PSD</p>
+<ol>
+<li><strong>Write the equation and name it</strong> (MA/AR/<abbr title="autoregressive moving-average: past outputs and past inputs both enter the equation.">ARMA</abbr>, orders). If given <span class="arithmatex">\(H(z)\)</span>, convert: numerator coefficients → <span class="arithmatex">\(b_k\)</span> on <span class="arithmatex">\(i[n-k]\)</span>, denominator <span class="arithmatex">\(1 + a_1z^{-1}\)</span> → <span class="arithmatex">\(-a_1x[n-1]\)</span> on the right.</li>
+<li><strong>PSD</strong>: <span class="arithmatex">\(\sigma_i^2|H(e^{j\theta})|^2\)</span>; expand <span class="arithmatex">\(|1 + ce^{-j\theta}|^2 = 1 + c^2 + 2c\cos\theta\)</span> top and bottom; simplify fractions.</li>
+<li><strong>MA lags</strong>: <span class="arithmatex">\(r[k] = \sigma_i^2\sum_m b_mb_{m+k}\)</span> for <span class="arithmatex">\(k = 0..q\)</span>, zero beyond.</li>
+<li><strong><abbr title="autoregressive moving-average: past outputs and past inputs both enter the equation.">ARMA</abbr>(1,1) lags</strong> (<span class="arithmatex">\(x[n] = i[n] + b_1i[n-1] - a_1x[n-1]\)</span>): multiply by <span class="arithmatex">\(x[n]\)</span>: <span class="arithmatex">\(r[0] = \sigma_i^2(1 + b_1^2) - a_1r[1] - a_1b_1\sigma_i^2\cdot\)</span>… do it as in the worked example below: expand <span class="arithmatex">\(E[x[n]^2]\)</span> term by term, using <span class="arithmatex">\(E[x[n-1]i[n-1]] = \sigma_i^2\)</span>. Multiply by <span class="arithmatex">\(x[n-1]\)</span>: <span class="arithmatex">\(r[1] = b_1\sigma_i^2 - a_1r[0]\)</span>. Two equations, two unknowns. Then <span class="arithmatex">\(r[\tau] = -a_1r[\tau-1]\)</span> for <span class="arithmatex">\(\tau\ge2\)</span>.</li>
+<li><strong>Check</strong>: <span class="arithmatex">\(r[0] &gt; 0\)</span>, <span class="arithmatex">\(|r[1]| &lt; r[0]\)</span>, and the correlogram built from your lags should match the PSD of step 2 at <span class="arithmatex">\(\theta = 0\)</span> (for MA) or at least have the same shape.</li>
+</ol>
+</div>
+<h2 id="worked-exam-question-one-step-at-a-time">Worked exam question, one step at a time<a class="headerlink" href="#worked-exam-question-one-step-at-a-time" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">November 2022 · 3c + 3d + 3e · 0.15 + 0.35 + 0.5 p</p>
+<p>The random signal <span class="arithmatex">\(x[k]\)</span> is described by the following <abbr title="a rule giving x[n] from past samples and inputs.">difference equation</abbr>: <span class="arithmatex">\(x[k] = i[k] - i[k-1] + \frac34x[k-1]\)</span>, with <span class="arithmatex">\(i[k]\)</span> the <abbr title="the white-noise input of a linear signal model.">innovation</abbr> signal (zero mean and <span class="arithmatex">\(\sigma_i^2 = \frac78\)</span>).</p>
+<p><strong>3c</strong> Which kind of process does <span class="arithmatex">\(x[k]\)</span> represent? <strong>3d</strong> Calculate the power spectral density <span class="arithmatex">\(P_x(e^{j\theta})\)</span> of <span class="arithmatex">\(x[k]\)</span>. <strong>3e</strong> Calculate the autocorrelation <span class="arithmatex">\(r[\tau]\)</span> of <span class="arithmatex">\(x[k]\)</span>.</p>
+</div>
+<div class="stepper">
+<p><strong>Step 1 · Name it.</strong> Past kick <span class="arithmatex">\(i[k-1]\)</span> (so <span class="arithmatex">\(q = 1\)</span>) and past signal <span class="arithmatex">\(x[k-1]\)</span> (so <span class="arithmatex">\(p = 1\)</span>): <strong><abbr title="autoregressive moving-average: past outputs and past inputs both enter the equation.">ARMA</abbr>(1,1)</strong>. In the course convention <span class="arithmatex">\(b_1 = -1\)</span>, <span class="arithmatex">\(a_1 = -\frac34\)</span> (because <span class="arithmatex">\(-a_1x[k-1] = +\frac34x[k-1]\)</span>). <span class="arithmatex">\(H(z) = \dfrac{1 - z^{-1}}{1 - \frac34z^{-1}}\)</span>.</p>
+<p><strong>Now do step 2 yourself:</strong> PSD <span class="arithmatex">\(= \sigma_i^2|H(e^{j\theta})|^2\)</span>, expand numerator and denominator.</p>
+<hr />
+<p><strong>Step 2 · PSD.</strong> Numerator: <span class="arithmatex">\(|1 - e^{-j\theta}|^2 = 1 + 1 - 2\cos\theta = 2 - 2\cos\theta\)</span>. Denominator: <span class="arithmatex">\(|1 - \frac34e^{-j\theta}|^2 = 1 + \frac{9}{16} - \frac32\cos\theta = \frac{25}{16} - \frac32\cos\theta\)</span>.</p>
+<div class="arithmatex">\[P_x(e^{j\theta}) = \frac78\cdot\frac{2 - 2\cos\theta}{\frac{25}{16} - \frac32\cos\theta}.\]</div>
+<p>Multiply top and bottom by 16: <span class="arithmatex">\(\frac78\cdot\frac{32 - 32\cos\theta}{25 - 24\cos\theta} = \frac{28(1 - \cos\theta)}{25 - 24\cos\theta}\)</span>. At <span class="arithmatex">\(\theta = 0\)</span>: <span class="arithmatex">\(0\)</span> (the zero of <span class="arithmatex">\(1 - z^{-1}\)</span> at <span class="arithmatex">\(z = 1\)</span> kills DC). At <span class="arithmatex">\(\pi\)</span>: <span class="arithmatex">\(\frac{56}{49} = 1.143\)</span>.</p>
+<p><strong>Now do step 3 yourself:</strong> <span class="arithmatex">\(r[0]\)</span>. Square the equation, take <span class="arithmatex">\(E\)</span>, remember <span class="arithmatex">\(E[x[k-1]\,i[k-1]] = \sigma_i^2\)</span> and <span class="arithmatex">\(E[x[k-1]\,i[k]] = 0\)</span>.</p>
+<hr />
+<p><strong>Step 3 · <span class="arithmatex">\(r[0]\)</span>.</strong> <span class="arithmatex">\(x = i - i_1 + \frac34x_1\)</span> (short names: <span class="arithmatex">\(i_1 = i[k-1]\)</span>, <span class="arithmatex">\(x_1 = x[k-1]\)</span>). Square: <span class="arithmatex">\(x^2 = i^2 + i_1^2 + \frac{9}{16}x_1^2 - 2ii_1 + \frac32ix_1 - \frac32i_1x_1\)</span>. Expectations: <span class="arithmatex">\(E[i^2] = E[i_1^2] = \frac78\)</span>; <span class="arithmatex">\(E[x_1^2] = r[0]\)</span>; <span class="arithmatex">\(E[ii_1] = 0\)</span>; <span class="arithmatex">\(E[ix_1] = 0\)</span> (future kick); <span class="arithmatex">\(E[i_1x_1] = \sigma_i^2 = \frac78\)</span> (the coefficient of <span class="arithmatex">\(i_1\)</span> inside <span class="arithmatex">\(x_1\)</span> is <span class="arithmatex">\(b_0 = 1\)</span>).</p>
+<p><span class="arithmatex">\(r[0] = \frac78 + \frac78 + \frac{9}{16}r[0] - 0 + 0 - \frac32\cdot\frac78 = \frac{14}{8} - \frac{21}{16} + \frac{9}{16}r[0] = \frac{28 - 21}{16} + \frac{9}{16}r[0] = \frac{7}{16} + \frac{9}{16}r[0]\)</span>.</p>
+<p>So <span class="arithmatex">\(\frac{7}{16}r[0] = \frac{7}{16} \Rightarrow r[0] = 1\)</span>.</p>
+<p><strong>Now do step 4 yourself:</strong> <span class="arithmatex">\(r[1] = E[x\,x_1]\)</span>.</p>
+<hr />
+<p><strong>Step 4 · <span class="arithmatex">\(r[1]\)</span>.</strong> <span class="arithmatex">\(E[(i - i_1 + \frac34x_1)x_1] = E[ix_1] - E[i_1x_1] + \frac34E[x_1^2] = 0 - \frac78 + \frac34\cdot1 = -\frac78 + \frac68 = -\frac18\)</span>.</p>
+<p><strong>Step 5 · <span class="arithmatex">\(r[\tau]\)</span> for <span class="arithmatex">\(\tau\ge2\)</span>.</strong> <span class="arithmatex">\(E[x\,x_\tau] = E[ix_\tau] - E[i_1x_\tau] + \frac34E[x_1x_\tau]\)</span>. For <span class="arithmatex">\(\tau\ge2\)</span> both kicks are later than <span class="arithmatex">\(x_\tau\)</span>, so the first two vanish: <span class="arithmatex">\(r[\tau] = \frac34r[\tau-1]\)</span>. Hence <span class="arithmatex">\(r[2] = -\frac18\cdot\frac34\)</span>, <span class="arithmatex">\(r[3] = -\frac18(\frac34)^2\)</span>, in general <span class="arithmatex">\(r[\tau] = -\frac18\left(\frac34\right)^{|\tau|-1}\)</span> for <span class="arithmatex">\(|\tau|\ge1\)</span>.</p>
+<p><strong>Check.</strong> <span class="arithmatex">\(|r[1]| = \frac18 &lt; r[0] = 1\)</span>. The correlogram from lags <span class="arithmatex">\(0,\pm1\)</span> is <span class="arithmatex">\(1 - \frac14\cos\theta\)</span>: <span class="arithmatex">\(0.75\)</span> at <span class="arithmatex">\(\theta=0\)</span> versus the true <span class="arithmatex">\(0\)</span>; the <abbr title="autoregressive moving-average: past outputs and past inputs both enter the equation.">ARMA</abbr>'s deep null needs the infinite tail of lags.</p>
+<figure>
+<p><img alt="True ARMA PSD vs AR(1) and MA(1) fits" src="img/u14_nov22.svg" /></p>
+<figcaption><b>How to read it.</b> Solid: true ARMA(1,1) PSD, zero at $\theta = 0$, 1.14 at $\pm\pi$. Dashed: the AR(1) fit of 3f (0.78 at 0, 1.29 at $\pi$). Dotted: the MA(1) fit of 3g (0.75 at 0, 1.25 at $\pi$). Neither one-parameter model can produce the null.</figcaption>
+</figure>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p>3c: <abbr title="autoregressive moving-average: past outputs and past inputs both enter the equation.">ARMA</abbr>(1,1). 3d: <span class="arithmatex">\(P_x(e^{j\theta}) = 28\dfrac{1-\cos\theta}{25 - 24\cos\theta}\)</span>. 3e: <span class="arithmatex">\(r[0] = 1\)</span>, <span class="arithmatex">\(r[\tau] = -\frac18(\frac34)^{|\tau|-1}\)</span> for <span class="arithmatex">\(|\tau|\ge1\)</span>.</p>
+</div>
+</div>
+<h2 id="do-it-cold-1-ma3-the-sliding-products">Do it cold · 1 (MA(3), the sliding products)<a class="headerlink" href="#do-it-cold-1-ma3-the-sliding-products" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">April 2024 · 3b + 3c · 0.1 + 0.5 p</p>
+<p>A random signal is described by <span class="arithmatex">\(x[n] = i[n] - \frac12 i[n-1] + \frac14 i[n-2] - \frac12 i[n-3]\)</span> (<span class="arithmatex">\(i[n]\)</span> white, unit variance). <strong>3b</strong> Which kind of signal model does this signal represent? <strong>3c</strong> Calculate the autocorrelation function of <span class="arithmatex">\(x[n]\)</span>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><strong>3b.</strong> Only kicks, oldest is <span class="arithmatex">\(i[n-3]\)</span>: <strong>MA(3)</strong>. Coefficients <span class="arithmatex">\([b_0, b_1, b_2, b_3] = [1, -\frac12, \frac14, -\frac12]\)</span>.</p>
+<p><strong>3c.</strong> Slide the list over itself by <span class="arithmatex">\(k\)</span> and add products of overlaps (<span class="arithmatex">\(\sigma_i^2 = 1\)</span>):</p>
+<ul>
+<li><span class="arithmatex">\(r[0] = 1^2 + (\frac12)^2 + (\frac14)^2 + (\frac12)^2 = 1 + \frac14 + \frac1{16} + \frac14 = \frac{16 + 4 + 1 + 4}{16} = \frac{25}{16}\)</span>.</li>
+<li><span class="arithmatex">\(r[1] = b_0b_1 + b_1b_2 + b_2b_3 = (1)(-\frac12) + (-\frac12)(\frac14) + (\frac14)(-\frac12) = -\frac12 - \frac18 - \frac18 = -\frac34\)</span>.</li>
+<li><span class="arithmatex">\(r[2] = b_0b_2 + b_1b_3 = \frac14 + (-\frac12)(-\frac12) = \frac14 + \frac14 = \frac12\)</span>.</li>
+<li><span class="arithmatex">\(r[3] = b_0b_3 = -\frac12\)</span>.</li>
+<li><span class="arithmatex">\(r[k] = 0\)</span> for <span class="arithmatex">\(|k|\ge4\)</span>; <span class="arithmatex">\(r[-k] = r[k]\)</span>.</li>
+</ul>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p>MA(3); <span class="arithmatex">\(r[0] = \frac{25}{16}\)</span>, <span class="arithmatex">\(r[\pm1] = -\frac34\)</span>, <span class="arithmatex">\(r[\pm2] = \frac12\)</span>, <span class="arithmatex">\(r[\pm3] = -\frac12\)</span>, zero beyond. (Then U11 gives the correlogram <span class="arithmatex">\(\frac{25}{16} - \frac32\cos\theta + \cos2\theta - \cos3\theta\)</span> and U12 the AR(2) fit.)</p>
+</div>
+</details>
+<h2 id="do-it-cold-2-filter-given-as-hz">Do it cold · 2 (filter given as <span class="arithmatex">\(H(z)\)</span>)<a class="headerlink" href="#do-it-cold-2-filter-given-as-hz" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">October 2021 · 3a · 0.75 p</p>
+<p>Calculate the autocorrelation function of the random signal <span class="arithmatex">\(x[k]\)</span> generated by filtering <abbr title="the white-noise input of a linear signal model.">innovation</abbr> <span class="arithmatex">\(i[k]\)</span> (white, zero mean, <span class="arithmatex">\(\sigma_i^2 = 1\)</span>) with the filter <span class="arithmatex">\(H(z) = \dfrac{1 - \frac23z^{-1}}{1 - \frac12z^{-1}}\)</span>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><strong>Step 1.</strong> <span class="arithmatex">\(X(z)(1 - \frac12z^{-1}) = I(z)(1 - \frac23z^{-1})\)</span>, so <span class="arithmatex">\(x[k] = i[k] - \frac23i[k-1] + \frac12x[k-1]\)</span>: <abbr title="autoregressive moving-average: past outputs and past inputs both enter the equation.">ARMA</abbr>(1,1).</p>
+<p><strong><span class="arithmatex">\(r[0]\)</span>.</strong> Square and take <span class="arithmatex">\(E\)</span>: <span class="arithmatex">\(r[0] = 1 + \frac49 + \frac14r[0] + 2\cdot\frac12\left(E[ix_1] - \frac23E[i_1x_1]\right) = \frac{13}{9} + \frac14r[0] + (0 - \frac23\cdot1)\)</span>. So <span class="arithmatex">\(\frac34r[0] = \frac{13}{9} - \frac69 = \frac79 \Rightarrow r[0] = \frac{7}{9}\cdot\frac43 = \frac{28}{27}\)</span>.</p>
+<p><strong><span class="arithmatex">\(r[1]\)</span>.</strong> <span class="arithmatex">\(E[(i - \frac23i_1 + \frac12x_1)x_1] = 0 - \frac23 + \frac12\cdot\frac{28}{27} = -\frac{18}{27} + \frac{14}{27} = -\frac{4}{27}\)</span>.</p>
+<p><strong>Tail.</strong> <span class="arithmatex">\(r[\tau] = \frac12r[\tau-1]\)</span> for <span class="arithmatex">\(\tau\ge2\)</span>: <span class="arithmatex">\(r[\tau] = -\frac{4}{27}\left(\frac12\right)^{|\tau|-1}\)</span>.</p>
+<p>(The review deck also shows a second route via the general Yule–Walker formula with <span class="arithmatex">\(h[1] = -\frac16\)</span> from polynomial division of <span class="arithmatex">\(H(z)\)</span>; same numbers.)</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(r[0] = \frac{28}{27}\)</span>, <span class="arithmatex">\(r[\pm1] = -\frac4{27}\)</span>, <span class="arithmatex">\(r[\tau] = (\frac12)^{|\tau|-1}r[1]\)</span> for <span class="arithmatex">\(|\tau|\ge2\)</span>. PSD: <span class="arithmatex">\(P = \dfrac{|1 - \frac23e^{-j\theta}|^2}{|1 - \frac12e^{-j\theta}|^2} = \dfrac{\frac{13}{9} - \frac43\cos\theta}{\frac54 - \cos\theta}\)</span>.</p>
+</div>
+</details>
+<h2 id="do-it-cold-3-ar1-closed-form-used-by-the-wiener-aside-and-by-sanity-checks">Do it cold · 3 (AR(1) closed form, used by the Wiener aside and by sanity checks)<a class="headerlink" href="#do-it-cold-3-ar1-closed-form-used-by-the-wiener-aside-and-by-sanity-checks" title="Permanent link">#</a></h2>
+<div class="admonition question">
+<p class="admonition-title">AR(1): <span class="arithmatex">\(x[n] = i[n] + \alpha x[n-1]\)</span>, variance <span class="arithmatex">\(\sigma_i^2\)</span>. Find <span class="arithmatex">\(r[0]\)</span> and <span class="arithmatex">\(r[k]\)</span>.</p>
+<p>Multiply by <span class="arithmatex">\(x[n]\)</span>: <span class="arithmatex">\(r[0] = \sigma_i^2 + \alpha r[1]\)</span>. Multiply by <span class="arithmatex">\(x[n-1]\)</span>: <span class="arithmatex">\(r[1] = \alpha r[0]\)</span>. Combine.</p>
+<details class="solution" open="open">
+<summary>Answer</summary>
+<p><span class="arithmatex">\(r[0] = \sigma_i^2 + \alpha^2r[0] \Rightarrow r[0] = \dfrac{\sigma_i^2}{1 - \alpha^2}\)</span>, and <span class="arithmatex">\(r[k] = \alpha^{|k|}r[0]\)</span>. Example Jan 2019: <span class="arithmatex">\(\alpha = \frac12\)</span>, <span class="arithmatex">\(\sigma_i^2 = \frac14\)</span>: <span class="arithmatex">\(r[0] = \frac{1/4}{3/4} = \frac13\)</span>, <span class="arithmatex">\(r[1] = \frac16\)</span>.</p>
+</details>
+</div>
+<h2 id="where-points-get-lost">Where points get lost<a class="headerlink" href="#where-points-get-lost" title="Permanent link">#</a></h2>
+<div class="admonition trap key">
+<p class="admonition-title">Where points get lost</p>
+<table>
+<thead>
+<tr>
+<th>Wrong line</th>
+<th>Right line</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(E[x[k-1]\,i[k-1]] = 0\)</span></td>
+<td><span class="arithmatex">\(= \sigma_i^2\)</span>: the past signal contains the past kick with coefficient 1. Only <em>future</em> kicks are uncorrelated with the past signal.</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(r[1]\)</span> for MA(3) <span class="arithmatex">\(= b_1 = -\frac12\)</span></td>
+<td><span class="arithmatex">\(r[1] = b_0b_1 + b_1b_2 + b_2b_3\)</span>: all overlapping pairs.</td>
+</tr>
+<tr>
+<td>$</td>
+<td>1 - e^{-j\theta}</td>
+</tr>
+<tr>
+<td>Calling <span class="arithmatex">\(x = i - i_1 + \frac34x_1\)</span> an AR(1)</td>
+<td>A past kick is present: <abbr title="autoregressive moving-average: past outputs and past inputs both enter the equation.">ARMA</abbr>(1,1). (Officially 0.15 p for the name.)</td>
+</tr>
+<tr>
+<td>PSD <span class="arithmatex">\(= \sigma_i^2H(e^{j\theta})\)</span></td>
+<td>Squared magnitude: <span class="arithmatex">\(\sigma_i^2\lvert H(e^{j\theta})\rvert^2\)</span>.</td>
+</tr>
+<tr>
+<td>Forgetting <span class="arithmatex">\(\sigma_i^2 = \frac78\)</span> in <span class="arithmatex">\(r[0]\)</span></td>
+<td>Every <span class="arithmatex">\(E[i^2]\)</span> is <span class="arithmatex">\(\sigma_i^2\)</span>, not 1, unless the question says unit variance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="true-or-false-from-real-mc-options">True or false (from real MC options)<a class="headerlink" href="#true-or-false-from-real-mc-options" title="Permanent link">#</a></h2>
+<div class="tf">
+<table>
+<thead>
+<tr>
+<th>statement</th>
+<th>T or F</th>
+<th>why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The PSD of the output of a stable LTI filter driven by white noise of variance <span class="arithmatex">\(\sigma_i^2\)</span> is <span class="arithmatex">\(\sigma_i^2\lvert H(e^{j\theta})\rvert^2\)</span>.</td>
+<td>True</td>
+<td>Definition used in Nov 2022 3d, Apr 2024 1e.</td>
+</tr>
+<tr>
+<td>The autocorrelation of an <abbr title="autoregressive moving-average: past outputs and past inputs both enter the equation.">ARMA</abbr>(1,1) process is zero beyond lag 1.</td>
+<td>False</td>
+<td>Only MA processes have finite autocorrelation; the AR part gives a geometric tail (<span class="arithmatex">\(r[\tau] = \frac34 r[\tau-1]\)</span> in Nov 2022).</td>
+</tr>
+<tr>
+<td>Each picture of an infinite set of pictures is a realisation of a random process, hence a random signal.</td>
+<td>True</td>
+<td>Jan 2022 1b (b). (A single pixel's colour is a random variable, not a signal.)</td>
+</tr>
+<tr>
+<td>White noise has an autocorrelation that is zero at every nonzero lag.</td>
+<td>True</td>
+<td><span class="arithmatex">\(E[i[n]i[n-k]] = \sigma_i^2\delta[k]\)</span>: the fact every derivation on this page uses.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>You can leave this page when you can:</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> convert <span class="arithmatex">\(H(z)\)</span> to a <abbr title="a rule giving x[n] from past samples and inputs.">difference equation</abbr> and back, and name the model.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> write <span class="arithmatex">\(\sigma_i^2|H|^2\)</span> in cosines for a first-order numerator and denominator.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> compute MA lags by sliding products.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> set up the two equations for <span class="arithmatex">\(r[0]\)</span>, <span class="arithmatex">\(r[1]\)</span> of an <abbr title="autoregressive moving-average: past outputs and past inputs both enter the equation.">ARMA</abbr>(1,1), stating which expectations are <span class="arithmatex">\(\sigma_i^2\)</span> and which are <span class="arithmatex">\(0\)</span>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> write the geometric tail <span class="arithmatex">\(r[\tau] = -a_1r[\tau-1]\)</span>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="u13-ma.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: U13 · MA model">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                U13 · MA model
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="u15-spectral-mc.html" class="md-footer__link md-footer__link--next" aria-label="Next: U15 · Spectral estimation theory (MC)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                U15 · Spectral estimation theory (MC)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.top", "navigation.footer", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "toc.follow", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js?v=1794380413"></script>
+      
+        <script src="javascripts/katex.js?v=1794380413"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="javascripts/quiz.js?v=1794380413"></script>
+      
+        <script src="javascripts/ask.js?v=1794380413"></script>
+      
+        <script src="javascripts/video.js?v=1794380413"></script>
+      
+        <script src="javascripts/layout.js?v=1794380413"></script>
+      
+        <script src="javascripts/keypoints.js?v=1794380413"></script>
+      
+        <script src="javascripts/progress.js?v=1794380413"></script>
+      
+        <script src="javascripts/widgets.js?v=1794380413"></script>
+      
+        <script src="javascripts/navsections.js?v=1794380413"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1965 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Active study guide and cheat sheet for 5CTA0 Statistical Signal Processing (TU/e), built from every past exam.">
+      
+      
+      
+        <link rel="canonical" href="https://dkealvaro.github.io/5cta0-study-guide/u15-spectral-mc.html">
+      
+      
+        <link rel="prev" href="u14-model-autocorr.html">
+      
+      
+        <link rel="next" href="u16-lrt.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>U15 · Spectral estimation theory (MC) - 5CTA0 · pass the exam</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css?v=1794380413">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css?v=1794380413">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+4:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Serif 4";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.11/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap">
+    
+      <link rel="stylesheet" href="stylesheets/extra.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/ask.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/layout.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/keypoints.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/widgets.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/cheat-print.css?v=1794380413">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#u15-spectral-estimation-theory-methods-bias-variance-windows-energy-order-plots" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="5CTA0 · pass the exam" class="md-header__button md-logo" aria-label="5CTA0 · pass the exam" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            5CTA0 · pass the exam
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              U15 · Spectral estimation theory (MC)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DKeAlvaro/5cta0-study-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DKeAlvaro/5cta0-study-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="5CTA0 · pass the exam" class="md-nav__button md-logo" aria-label="5CTA0 · pass the exam" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    5CTA0 · pass the exam
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DKeAlvaro/5cta0-study-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DKeAlvaro/5cta0-study-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inventory.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Every exam question + ranking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="maths.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M · Maths the course assumes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cheatsheet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat sheet (2 A4 sides)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="battle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battle table (every question with the sheet)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 · Probability and random signals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 · Probability and random signals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u01-bayes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U1 · Total probability and Bayes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u02-joint.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U2 · Joint pdf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u03-process-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U3 · Random variables and processes (MC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u04-factorisation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U4 · Spectral factorisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 · Estimation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 · Estimation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u05-mle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U5 · Maximum likelihood
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u06-map.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U6 · Posterior and MAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u07-mmse.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U7 · MMSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u08-crlb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U8 · Fisher information and CRLB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u09-ls.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U9 · Least squares
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u10-estimation-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U10 · Estimation theory MC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 · Spectral estimation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 · Spectral estimation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u11-correlogram.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U11 · Correlogram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u12-ar.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U12 · AR model (Yule–Walker)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u13-ma.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U13 · MA model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u14-model-autocorr.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U14 · From a difference equation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U15 · Spectral estimation theory (MC)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="u15-spectral-mc.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U15 · Spectral estimation theory (MC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-idea-in-plain-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea in plain words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-five-non-parametric-methods-nov-2019-1c-apr-2025-3c-apr-2024-3a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 · The five non-parametric methods (Nov 2019 1c, Apr 2025 3c, Apr 2024 3a)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-welch-how-many-segments-how-much-variance-jun-2026-3b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 · Welch: how many segments, how much variance (Jun 2026 3b)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-windows-resolution-leakage-zero-padding-nov-2022-3b-jan-2020-1c-jan-2022-3a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 · Windows, resolution, leakage, zero padding (Nov 2022 3b, Jan 2020 1c, Jan 2022 3a)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-energy-signals-and-power-signals-apr-2025-3a-resit-q2-2023-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 · Energy signals and power signals (Apr 2025 3a, resit Q2 2023-24)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ar-model-order-jun-2026-3e-075-p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 · AR model order (Jun 2026 3e · 0.75 p)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-plot-matching-apr-2025-3g-apr-2024-3f-nov-2019-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 · Plot matching (Apr 2025 3g, Apr 2024 3f, Nov 2019 2)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-every-past-mc-with-each-option-judged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 · Every past MC, with each option judged
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-points-get-lost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where points get lost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#true-or-false-fresh-wording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        True or false (fresh wording)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4 · Detection
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 4 · Detection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u16-lrt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U16 · Likelihood ratio test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u17-pfa-pd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U17 · P_FA, P_D, P_M
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u18-bayes-detector.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U18 · Bayesian detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u19-detection-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U19 · Detection theory MC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-idea-in-plain-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea in plain words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-five-non-parametric-methods-nov-2019-1c-apr-2025-3c-apr-2024-3a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 · The five non-parametric methods (Nov 2019 1c, Apr 2025 3c, Apr 2024 3a)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-welch-how-many-segments-how-much-variance-jun-2026-3b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 · Welch: how many segments, how much variance (Jun 2026 3b)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-windows-resolution-leakage-zero-padding-nov-2022-3b-jan-2020-1c-jan-2022-3a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 · Windows, resolution, leakage, zero padding (Nov 2022 3b, Jan 2020 1c, Jan 2022 3a)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-energy-signals-and-power-signals-apr-2025-3a-resit-q2-2023-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 · Energy signals and power signals (Apr 2025 3a, resit Q2 2023-24)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ar-model-order-jun-2026-3e-075-p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 · AR model order (Jun 2026 3e · 0.75 p)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-plot-matching-apr-2025-3g-apr-2024-3f-nov-2019-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 · Plot matching (Apr 2025 3g, Apr 2024 3f, Nov 2019 2)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-every-past-mc-with-each-option-judged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 · Every past MC, with each option judged
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-points-get-lost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where points get lost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#true-or-false-fresh-wording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        True or false (fresh wording)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="u15-spectral-estimation-theory-methods-bias-variance-windows-energy-order-plots">U15 · Spectral estimation theory: methods, bias, variance, windows, energy, order, plots<a class="headerlink" href="#u15-spectral-estimation-theory-methods-bias-variance-windows-energy-order-plots" title="Permanent link">#</a></h1>
+<div class="meta"><span class="hot">Rank 3 · 8.6 points over 9 sittings</span><span>1.4 to 1.5 p in each of the last three exams</span><span>90 min</span></div>
+
+<div class="admonition need">
+<p class="admonition-title">Before this page</p>
+<p><a href="u11-correlogram.html">U11</a> and <a href="u12-ar.html">U12</a> (what a correlogram and an AR PSD are), <a href="maths.html#m4-geometric-sums">M4 geometric sums</a>, <a href="maths.html#m3-complex-exponentials-and-cosine-identities">M3 the <span class="arithmatex">\(\cos^2\)</span> identity</a>. This page is mostly facts; each fact is tied to the exam line that tests it.</p>
+</div>
+<h2 id="the-idea-in-plain-words">The idea in plain words<a class="headerlink" href="#the-idea-in-plain-words" title="Permanent link">#</a></h2>
+<p>A PSD is an average over infinitely many realisations and infinitely long time. You have one finite record. Every method is a different compromise between two errors: <strong>bias</strong> (the estimate is systematically smeared or shifted) and <strong>variance</strong> (the estimate jumps around from record to record). Chopping the record into pieces and averaging lowers the variance but shortens each piece, which raises the bias. Windows trade a wider main lobe (worse <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr>) for lower side lobes (less <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr>). Every MC in this part is one of those two trade-offs in disguise.</p>
+<div class="admonition idea">
+<p class="admonition-title">The thing that confused me</p>
+<p>"Consistent" sounded like a compliment. It is technical: an estimator is <strong><abbr title="an estimator whose variance tends to zero as the record length grows.">consistent</abbr></strong> when its variance goes to zero as the record length <span class="arithmatex">\(N\to\infty\)</span>. The raw <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr> is <strong>not</strong> <abbr title="an estimator whose variance tends to zero as the record length grows.">consistent</abbr>: more data gives finer frequency detail but the wobble at each frequency stays as large as the spectrum itself. Averaging or smoothing is what buys consistency.</p>
+</div>
+<h2 id="1-the-five-non-parametric-methods-nov-2019-1c-apr-2025-3c-apr-2024-3a">1 · The five non-parametric methods (Nov 2019 1c, Apr 2025 3c, Apr 2024 3a)<a class="headerlink" href="#1-the-five-non-parametric-methods-nov-2019-1c-apr-2025-3c-apr-2024-3a" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Basic idea</th>
+<th>Bias</th>
+<th>Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Periodogram</strong></td>
+<td><span class="arithmatex">\(\hat P = \frac1N\left\lvert\sum_{n=0}^{N-1}x[n]e^{-jn\theta}\right\rvert^2\)</span>: squared magnitude of the DFT of the record, divided by <span class="arithmatex">\(N\)</span></td>
+<td>asymptotically unbiased (bias → 0 as <span class="arithmatex">\(N\to\infty\)</span>); for finite <span class="arithmatex">\(N\)</span> it is the FT of the <strong>biased</strong> autocorrelation estimate, i.e. the true PSD smeared by a triangular (Bartlett) window</td>
+<td><strong>proportional to the square of the true PSD</strong>; does not decrease with <span class="arithmatex">\(N\)</span>: not <abbr title="an estimator whose variance tends to zero as the record length grows.">consistent</abbr></td>
+</tr>
+<tr>
+<td><strong>Correlogram</strong></td>
+<td>FT of the estimated autocorrelation <span class="arithmatex">\(\hat r[k]\)</span> over the available lags</td>
+<td>same as the <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr> when the biased <span class="arithmatex">\(\hat r\)</span> is used (they are the same estimator); with the unbiased <span class="arithmatex">\(\hat r\)</span> it can go negative</td>
+<td>same as the <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr>; large</td>
+</tr>
+<tr>
+<td><strong>Bartlett</strong> (averaged <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr>)</td>
+<td>cut the record into <span class="arithmatex">\(K\)</span> <strong>non-overlapping</strong> segments of length <span class="arithmatex">\(M = N/K\)</span>, <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr> of each, average</td>
+<td>bias <strong>increases</strong> (each segment is shorter → wider main lobe → poorer <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr>)</td>
+<td>reduced by a factor <span class="arithmatex">\(1/K\)</span></td>
+</tr>
+<tr>
+<td><strong>Welch / <abbr title="weighted overlapped segment averaging, Welch's method.">WOSA</abbr></strong> (weighted overlapped segment averaging)</td>
+<td>like Bartlett but segments <strong>overlap</strong> (typically 50 %) and each is windowed before its <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr></td>
+<td>similar to Bartlett (the window adds a little bias)</td>
+<td>reduced roughly as <span class="arithmatex">\(1/K\)</span>, but <strong>not exactly</strong> <span class="arithmatex">\(1/K\)</span> because overlapping segments are correlated; for a fixed <span class="arithmatex">\(N\)</span>, overlap gives more segments than Bartlett, so a lower variance</td>
+</tr>
+<tr>
+<td><strong>Blackman–Tukey</strong></td>
+<td>window (smooth) the estimated autocorrelation with a lag window of length <span class="arithmatex">\(M &lt; N\)</span>, then FT</td>
+<td>increases with a shorter lag window (smoothing)</td>
+<td>decreases as <span class="arithmatex">\(M/N\)</span>; <abbr title="an estimator whose variance tends to zero as the record length grows.">consistent</abbr></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rows the exam likes.</strong> "Consistent estimator": Bartlett, Welch, Blackman–Tukey (not the raw <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr> or correlogram). "FT of the autocorrelation": correlogram, Blackman–Tukey. "Averages multiple periodograms": Bartlett, Welch. "Allows overlap": Welch. "Variance proportional to the square of the true spectrum": <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr> (and raw correlogram). "Linear random signal model": parametric (AR, MA, ARMA).</p>
+<div class="admonition question">
+<p class="admonition-title">Your turn</p>
+<p>You have <span class="arithmatex">\(N = 1000\)</span> samples and a very wobbly <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr>. A friend says "use zero padding to 4000 points, it will smooth it". Right or wrong, and what would you do instead?</p>
+<details class="solution" open="open">
+<summary>Answer</summary>
+<p>Wrong: zero padding only interpolates the same wobbly curve on a finer grid; it changes neither bias nor variance. Average segments (Bartlett or Welch) or smooth the autocorrelation (Blackman–Tukey).</p>
+</details>
+</div>
+<h2 id="2-welch-how-many-segments-how-much-variance-jun-2026-3b">2 · Welch: how many segments, how much variance (Jun 2026 3b)<a class="headerlink" href="#2-welch-how-many-segments-how-much-variance-jun-2026-3b" title="Permanent link">#</a></h2>
+<div class="key">
+<div class="arithmatex">\[K = \frac{N - L}{L(1 - \text{overlap})} + 1,\qquad \frac{\operatorname{Var}(\hat P_{Welch})}{\operatorname{Var}(\hat P_{L})}\approx\frac1K\ \text{(independent segments)}\]</div>
+</div>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(N\)</span></td>
+<td>total record length</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(L\)</span></td>
+<td>segment length</td>
+</tr>
+<tr>
+<td>overlap</td>
+<td>fraction shared by consecutive segments (0.5 for 50 %)</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(K\)</span></td>
+<td>number of segments; the hop between segment starts is <span class="arithmatex">\(L(1-\text{overlap})\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition exam">
+<p class="admonition-title">June 2026 resit · 3b · 0.5 p</p>
+<p>You are given a data record of <span class="arithmatex">\(N = 1000\)</span> samples. You want to estimate the power spectral density using Welch's method to reduce the variance of your estimate. You choose a segment length of <span class="arithmatex">\(L = 200\)</span> samples and an overlap of 50%. <strong>Provide only the final answer.</strong> (1) How many segments <span class="arithmatex">\(K\)</span> will be averaged? (2) With the simplifying assumption that the segments are statistically independent, what is the ratio of the variance of your Welch estate to the variance of a single standard <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr> of length <span class="arithmatex">\(L\)</span>?</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p>Hop <span class="arithmatex">\(= L(1 - 0.5) = 100\)</span> samples. Starts at <span class="arithmatex">\(0, 100, 200, \ldots\)</span>; the last segment must end by sample 1000, so its start is <span class="arithmatex">\(800\)</span>: starts <span class="arithmatex">\(0..800\)</span> in steps of 100 → <span class="arithmatex">\(9\)</span> segments. Formula: <span class="arithmatex">\(K = \frac{1000 - 200}{100} + 1 = 8 + 1 = 9\)</span>. Averaging <span class="arithmatex">\(K\)</span> independent estimates divides the variance by <span class="arithmatex">\(K\)</span>: ratio <span class="arithmatex">\(1/9\approx0.111\)</span>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(K = 9\)</span>; variance ratio <span class="arithmatex">\(1/9\)</span>.</p>
+</div>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Your turn</p>
+<p><span class="arithmatex">\(N = 1200\)</span>, <span class="arithmatex">\(L = 300\)</span>, no overlap (Bartlett). <span class="arithmatex">\(K\)</span>? And with 50 % overlap?</p>
+<details class="solution" open="open">
+<summary>Answer</summary>
+<p>Bartlett: <span class="arithmatex">\(K = 1200/300 = 4\)</span> (formula: <span class="arithmatex">\(\frac{900}{300} + 1 = 4\)</span>). Welch 50 %: <span class="arithmatex">\(\frac{900}{150} + 1 = 7\)</span>.</p>
+</details>
+</div>
+<h2 id="3-windows-resolution-leakage-zero-padding-nov-2022-3b-jan-2020-1c-jan-2022-3a">3 · Windows, <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr>, <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr>, zero padding (Nov 2022 3b, Jan 2020 1c, Jan 2022 3a)<a class="headerlink" href="#3-windows-resolution-leakage-zero-padding-nov-2022-3b-jan-2020-1c-jan-2022-3a" title="Permanent link">#</a></h2>
+<figure>
+<p><img alt="Three windows and their spectra" src="img/u15_windows.svg" /></p>
+<figcaption><b>How to read it.</b> Left: rectangular (solid), triangular (dashed), Hanning (dotted) windows in time. Right: their magnitude spectra in dB. The rectangular window has the narrowest main lobe (best resolution) but the highest side lobes (most leakage, first one at −13 dB). The tapered windows have wider main lobes and much lower side lobes.</figcaption>
+</figure>
+<div class="key">
+<ul>
+<li><strong>Main-lobe width</strong> of the window's transform sets the <strong><abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr></strong>: two tones closer than the main lobe merge. Wider main lobe = worse <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr>.</li>
+<li><strong>Side-lobe height</strong> sets the <strong><abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr></strong>: power of a strong tone spilling into other frequencies. Higher side lobes = more <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr>.</li>
+<li>For the <strong>same length</strong>, the rectangular window has the narrowest main lobe (best <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr>) and the highest side lobes (worst <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr>). Tapered windows (triangular, Hanning, Hamming) widen the main lobe and lower the side lobes.</li>
+<li><strong>Longer window</strong> (more samples): main lobe narrower → better <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr>. The <em>relative</em> side-lobe level does not change with length: <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr> is a property of the window <strong>shape</strong>.</li>
+<li><strong>Zero padding</strong> before the DFT: the DFT becomes a finer sampling of the same FTD (samples at <span class="arithmatex">\(\theta = 2\pi k/L\)</span> with <span class="arithmatex">\(L\)</span> the padded length). It interpolates the picture; it does <strong>not</strong> improve <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr> (the main lobe is set by the number of real samples).</li>
+</ul>
+</div>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FTD</td>
+<td>Fourier transform for discrete-time signals: a continuous function of <span class="arithmatex">\(\theta\)</span></td>
+</tr>
+<tr>
+<td>DFT</td>
+<td>the FTD sampled at <span class="arithmatex">\(N\)</span> (or <span class="arithmatex">\(L\)</span> after padding) equally spaced frequencies <span class="arithmatex">\(\theta_k = 2\pi k/L\)</span></td>
+</tr>
+<tr>
+<td>main lobe</td>
+<td>the central bump of the window's transform</td>
+</tr>
+<tr>
+<td>side lobes</td>
+<td>the ripples beside it</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition exam">
+<p class="admonition-title">January 2022 resit · 3a · 0.3 p</p>
+<p><span class="arithmatex">\(x[n] = 20\cos(2\pi\frac{f}{f_s}n)\)</span>, <span class="arithmatex">\(f = 25\)</span> Hz, <span class="arithmatex">\(f_s = 50\)</span> Hz, windowed with a rectangular window of length <span class="arithmatex">\(N\)</span> to obtain <span class="arithmatex">\(\tilde x[n]\)</span>. The plots show: 1. the FTD of <span class="arithmatex">\(x[n]\)</span>; 2. the FTD of <span class="arithmatex">\(\tilde x[n]\)</span>; 3. the DFT of <span class="arithmatex">\(\tilde x[n]\)</span> for <span class="arithmatex">\(N = 24\)</span> with zero padding of <span class="arithmatex">\(M = 12\)</span> samples; 4. the DFT of <span class="arithmatex">\(\tilde x[n]\)</span> for <span class="arithmatex">\(N = 24\)</span> with no zero padding. Series: A (squares), B (solid line), C (circles), D (dashed). Which is the correct association? (a) 1B, 2D, 3A, 3C (b) 1B, 2D, 3C, 4A (c) 1C, 2A, 3D, 4B (d) 1D, 2B, 3C, 4A.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<ol>
+<li>The FTD of an infinitely long cosine is two sharp lines at <span class="arithmatex">\(\pm25\)</span> Hz: the <strong>solid line B</strong> (two spikes). 2. Windowing smears each line into a sinc-shaped main lobe with side lobes: the <strong>dashed continuous curve D</strong>. 3 and 4 are DFTs: sets of <strong>points</strong>. With zero padding the points sample the dashed curve on a finer grid (36 points), so you see the side lobes: <strong>circles C</strong>. Without padding, <span class="arithmatex">\(N = 24\)</span> at <span class="arithmatex">\(f_s = 50\)</span> Hz gives bins every <span class="arithmatex">\(50/24 = 2.083\)</span> Hz, and <span class="arithmatex">\(25\)</span> Hz is exactly bin <span class="arithmatex">\(12\)</span>: the samples fall on the peak and on the zeros of the sinc, so only the two peaks show: <strong>squares A</strong>. Association 1B, 2D, 3C, 4A: <strong>(b)</strong>.</li>
+</ol>
+<p><figure markdown>
+<img alt="FTD vs DFT with and without zero padding" src="img/u15_jan22_3a.svg" />
+<figcaption><b>How to read it.</b> Orange lines B: FTD of the infinite cosine. Purple dashed D: FTD of the 24-sample window, with side lobes. Yellow circles C: DFT with 12 zeros padded (36 points) sampling the dashed curve. Blue squares A: 24-point DFT, hitting only the peaks and the zeros.</figcaption>
+</figure></p>
+</details>
+<h2 id="4-energy-signals-and-power-signals-apr-2025-3a-resit-q2-2023-24">4 · Energy signals and power signals (Apr 2025 3a, resit Q2 2023-24)<a class="headerlink" href="#4-energy-signals-and-power-signals-apr-2025-3a-resit-q2-2023-24" title="Permanent link">#</a></h2>
+<div class="key">
+<div class="arithmatex">\[E = \int_{-\infty}^{\infty}|x(t)|^2dt\ \text{ or }\ \sum_n|x[n]|^2,\qquad P = \lim_{T\to\infty}\frac1T\int_{-T/2}^{T/2}|x(t)|^2dt\ \text{ or }\ \lim_{N\to\infty}\frac{1}{2N+1}\sum_{n=-N}^{N}|x[n]|^2\]</div>
+<p>Finite <span class="arithmatex">\(E\)</span> (and so <span class="arithmatex">\(P = 0\)</span>): <strong>energy signal</strong>. Infinite <span class="arithmatex">\(E\)</span> but finite nonzero <span class="arithmatex">\(P\)</span>: <strong>power signal</strong>. Periodic signals are power signals. Decaying signals (exponentials, finite pulses) are energy signals.</p>
+</div>
+<div class="admonition exam">
+<p class="admonition-title">April 2025 · 3a · 0.5 p</p>
+<p>For each signal indicate whether it is an energy or a power signal, and provide its total energy and average power. <strong>Provide only the final answer.</strong> 1. <span class="arithmatex">\(x(t) = A\sin(\omega t)\)</span>. 2. <span class="arithmatex">\(x[n] = e^{-n}\)</span> for <span class="arithmatex">\(n\ge0\)</span>, <span class="arithmatex">\(0\)</span> elsewhere.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><strong>1.</strong> Periodic → power signal, <span class="arithmatex">\(E = \infty\)</span>. Power: <span class="arithmatex">\(\frac1T\int_{-T/2}^{T/2}A^2\sin^2(\omega t)dt\)</span>; use <span class="arithmatex">\(\sin^2 u = \frac{1 - \cos 2u}{2}\)</span>: <span class="arithmatex">\(= \frac{A^2}{T}\int\frac{1 - \cos(2\omega t)}{2}dt = \frac{A^2}{2T}\left[t\right]_{-T/2}^{T/2} - \frac{A^2}{2T}\left[\frac{\sin 2\omega t}{2\omega}\right]_{-T/2}^{T/2}\)</span>. First bracket <span class="arithmatex">\(= T\)</span>, giving <span class="arithmatex">\(\frac{A^2}{2}\)</span>; the second is bounded and divided by <span class="arithmatex">\(T\to\infty\)</span> gives <span class="arithmatex">\(0\)</span>. <span class="arithmatex">\(P = A^2/2\)</span>.</p>
+<p><strong>2.</strong> <span class="arithmatex">\(E = \sum_{n\ge0}|e^{-n}|^2 = \sum_{n\ge0}(e^{-2})^n = \frac{1}{1 - e^{-2}} = \frac{1}{1 - 0.1353} = \frac{1}{0.8647} = 1.1565\)</span> (<a href="maths.html#m4-geometric-sums">M4</a>). Finite → energy signal, <span class="arithmatex">\(P = 0\)</span>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p>1: power signal, <span class="arithmatex">\(E = \infty\)</span>, <span class="arithmatex">\(P = A^2/2\)</span>. 2: energy signal, <span class="arithmatex">\(E = 1/(1 - e^{-2}) \approx 1.16\)</span>, <span class="arithmatex">\(P = 0\)</span>.</p>
+</div>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Your turn (resit Q2 2023-24 table)</p>
+<p>Classify and compute: (a) <span class="arithmatex">\(x(t) = e^{-t}u(t)\)</span>; (b) <span class="arithmatex">\(x(t) = \cos(t)u(t)\)</span>; (c) <span class="arithmatex">\(x(t) = 5\)</span> for <span class="arithmatex">\(-2\le t\le2\)</span>, 0 elsewhere; (d) <span class="arithmatex">\(x(t) = 5e^{-2|t|}\)</span>.</p>
+<details class="solution" open="open">
+<summary>Answer</summary>
+<p>(a) <span class="arithmatex">\(E = \int_0^\infty e^{-2t}dt = [-\frac12e^{-2t}]_0^\infty = 0 - (-\frac12) = \frac12\)</span>: energy. (b) <span class="arithmatex">\(E = \infty\)</span>; <span class="arithmatex">\(P = \lim\frac{1}{2T}\int_0^T\cos^2t\,dt = \lim\frac{1}{2T}\left(\frac T2 + \frac{\sin2T}{4}\right) = \frac14\)</span>: power. (c) <span class="arithmatex">\(E = \int_{-2}^{2}25\,dt = 100\)</span>: energy. (d) <span class="arithmatex">\(E = 2\int_0^\infty25e^{-4t}dt = 2\cdot\frac{25}{4} = \frac{25}{2}\)</span>: energy.</p>
+</details>
+</div>
+<h2 id="5-ar-model-order-jun-2026-3e-075-p">5 · AR model order (Jun 2026 3e · 0.75 p)<a class="headerlink" href="#5-ar-model-order-jun-2026-3e-075-p" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">June 2026 resit · 3e</p>
+<p>You fit an AR model of order <span class="arithmatex">\(p\)</span> to a record of length <span class="arithmatex">\(N\)</span>. (1) If you judge the fit by the variance of the residual error, what happens as <span class="arithmatex">\(p\)</span> increases, and what is the primary risk of an excessively high <span class="arithmatex">\(p\)</span>? (2) Name a model selection criterion from the course that prevents this and explain its mechanism. (3) Any arbitrary power spectrum (even one from an MA process with deep nulls) can be approximated with an AR model. What is required?</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p>(1) The residual (prediction-error) variance <span class="arithmatex">\(\hat\sigma_p^2\)</span> <strong>decreases monotonically</strong> with <span class="arithmatex">\(p\)</span> (a bigger model always fits at least as well), so it can never tell you where to stop. The risk is <strong>overfitting</strong>: the model starts fitting the noise of this particular record, producing spurious peaks in the PSD and poor generalisation; also more parameters estimated from the same <span class="arithmatex">\(N\)</span> samples means larger variance of each.</p>
+<p>(2) Akaike's information criterion <span class="arithmatex">\(\text{AIC}(p) = N\ln\hat\sigma_p^2 + 2p\)</span>, or the minimum description length <span class="arithmatex">\(\text{MDL}(p) = N\ln\hat\sigma_p^2 + p\ln N\)</span>, or the final prediction error <span class="arithmatex">\(\text{FPE}(p) = \hat\sigma_p^2\frac{N+p+1}{N-p-1}\)</span>. Mechanism: the first term rewards fit (it falls with <span class="arithmatex">\(p\)</span>); the second is a <strong>penalty that grows with <span class="arithmatex">\(p\)</span></strong>; choose the <span class="arithmatex">\(p\)</span> that minimises the sum. The penalty stops the order from growing once the fit improvement is smaller than the cost of one more parameter.</p>
+<p>(3) A sufficiently <strong>high order <span class="arithmatex">\(p\)</span></strong>: by the Wold / Kolmogorov representation any regular spectrum can be written as an AR(<span class="arithmatex">\(\infty\)</span>); a spectral null (an MA zero on the unit circle) needs many poles to approximate, so <span class="arithmatex">\(p\)</span> must grow as the required accuracy grows.</p>
+</details>
+<h2 id="6-plot-matching-apr-2025-3g-apr-2024-3f-nov-2019-2">6 · Plot matching (Apr 2025 3g, Apr 2024 3f, Nov 2019 2)<a class="headerlink" href="#6-plot-matching-apr-2025-3g-apr-2024-3f-nov-2019-2" title="Permanent link">#</a></h2>
+<div class="admonition recipe">
+<p class="admonition-title">U15 · Which plot?</p>
+<ol>
+<li>Evaluate every PSD you computed at <span class="arithmatex">\(\theta = 0\)</span> (all cosines <span class="arithmatex">\(= 1\)</span>) and at <span class="arithmatex">\(\theta = \pi\)</span> (alternating signs). Add <span class="arithmatex">\(\theta = \pi/2\)</span> if the first two tie.</li>
+<li>Note which curves must coincide (an exact MA(1) fit equals the correlogram; AR(1) and MA(1) fitted to the same two lags are close).</li>
+<li>Note sign: a parametric PSD (<span class="arithmatex">\(\sigma^2|H|^2\)</span>) is never negative; a correlogram can dip below zero.</li>
+<li>Pick the panel whose values at <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(\pi\)</span> match. Say the two numbers in your answer.</li>
+</ol>
+</div>
+<div class="admonition exam">
+<p class="admonition-title">April 2025 · 3g · 0.25 p</p>
+<p>Given the four plots, which option represents the correct PSDs found in 3d, 3e and 3f? (a) Plot D (b) Plot C (c) Plot B (d) Plot A.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p>From U11–U13: <span class="arithmatex">\(P_{corr}(0) = 1.125\)</span>, <span class="arithmatex">\(P_{corr}(\pi) = 2.125\)</span>, peak <span class="arithmatex">\(\approx2.46\)</span> near <span class="arithmatex">\(\pm0.61\pi\)</span>; <span class="arithmatex">\(P_{AR}(0) = 1.556\)</span>, <span class="arithmatex">\(P_{AR}(\pi) = 2.571\)</span>; <span class="arithmatex">\(P_{MA}(0) = 1.5\)</span>, <span class="arithmatex">\(P_{MA}(\pi) = 2.5\)</span>. We need a panel where AR and MA overlap with minimum <span class="arithmatex">\(\approx1.5\)</span> at 0 and maximum <span class="arithmatex">\(\approx2.5\)</span> at <span class="arithmatex">\(\pm\pi\)</span>, and a correlogram slightly lower at 0 and at <span class="arithmatex">\(\pi\)</span> with bumps in between. Panel D's table: <span class="arithmatex">\(P_{corr}\)</span> <span class="arithmatex">\(1.1\)</span> at 0, <span class="arithmatex">\(2.0\)</span> at <span class="arithmatex">\(\pi\)</span>, <span class="arithmatex">\(2.3\)</span> at <span class="arithmatex">\(\pm\frac34\pi\)</span>; <span class="arithmatex">\(P_{AR}, P_{MA}\)</span> <span class="arithmatex">\(1.5\)</span> at 0, <span class="arithmatex">\(2.4\)</span> at <span class="arithmatex">\(\pi\)</span>. Match: <strong>plot D, option (a)</strong>. (Panel A has a negative correlogram at 0; B has a correlogram at 0.8; C has everything negative at 0.)</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p>(a) Plot D.</p>
+</div>
+</details>
+<div class="admonition exam">
+<p class="admonition-title">April 2024 · 3f · 0.4 p</p>
+<p>Which figure gives the correct plots of <span class="arithmatex">\(P_{corr}\)</span> (from 3d) and <span class="arithmatex">\(P_{AR}\)</span> (from 3e)? Options: (a) C (b) A (c) B (d) D.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><span class="arithmatex">\(P_{corr}(0) = 0.0625\approx0\)</span>, <span class="arithmatex">\(P_{corr}(\pi) = 5.06\)</span>; <span class="arithmatex">\(P_{AR}(0) = 0.69\)</span>, <span class="arithmatex">\(P_{AR}(\pi) = 5.6\)</span>. Panel B: <span class="arithmatex">\(P_{corr}\)</span> <span class="arithmatex">\(0\)</span> at 0 and <span class="arithmatex">\(5\)</span> at <span class="arithmatex">\(\pm\pi\)</span>; <span class="arithmatex">\(P_{AR}\)</span> <span class="arithmatex">\(0.65\)</span> at 0 and <span class="arithmatex">\(5.5\)</span> at <span class="arithmatex">\(\pm\pi\)</span>. <strong>Plot B, option (c)</strong>. (A has both <span class="arithmatex">\(\approx7\)</span> at <span class="arithmatex">\(\pi\)</span> and 2 at 0; C and D have negative values and peaks at 0.)</p>
+<p><figure markdown>
+<img alt="Correlogram and AR(2) PSD for the MA(3) of Apr 2024" src="img/u12_apr24.svg" />
+<figcaption><b>How to read it.</b> Solid: correlogram, almost zero at <span class="arithmatex">\(\theta=0\)</span>, 5.06 at <span class="arithmatex">\(\pm\pi\)</span>, small ripples. Dashed: AR(2) fit, 0.69 at 0, 5.6 at <span class="arithmatex">\(\pm\pi\)</span>, smooth.</figcaption>
+</figure></p>
+</details>
+<div class="admonition exam">
+<p class="admonition-title">November 2019 · 2 (sketch)</p>
+<p>Sketch the correlogram <span class="arithmatex">\(1 + 1.4\cos\theta + \cos2\theta + 0.6\cos3\theta\)</span> and the AR(2) estimate.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p>Correlogram: <span class="arithmatex">\(4\)</span> at 0, <span class="arithmatex">\(0\)</span> at <span class="arithmatex">\(\pm\pi/2\)</span> and <span class="arithmatex">\(\pm\pi\)</span>. AR(2): <span class="arithmatex">\(\frac{0.5098}{|1 - 0.6863 - 0.0196|^2} = \frac{0.5098}{0.0865} = 5.9\)</span> at 0; at <span class="arithmatex">\(\pi\)</span>: <span class="arithmatex">\(\frac{0.5098}{|1 + 0.6863 - 0.0196|^2} = \frac{0.5098}{2.778} = 0.18\)</span>. Both low-pass, the AR peak taller and narrower.</p>
+<p><figure markdown>
+<img alt="Correlogram and AR(2) for Nov 2019" src="img/u12_nov19.svg" />
+<figcaption><b>How to read it.</b> Solid correlogram peaks at 4 with side bumps near <span class="arithmatex">\(\pm2.2\)</span>; dashed AR(2) peaks at 5.9 and stays positive.</figcaption>
+</figure></p>
+</details>
+<h2 id="7-every-past-mc-with-each-option-judged">7 · Every past MC, with each option judged<a class="headerlink" href="#7-every-past-mc-with-each-option-judged" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">June 2026 resit · 3a · 0.25 p</p>
+<p>TRUE about the standard <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr>: (a) increasing the data window length decreases spectral <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr>; (b) the <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr> is not a <abbr title="an estimator whose variance tends to zero as the record length grows.">consistent</abbr> estimator because its variance does not tend to zero as <span class="arithmatex">\(N\to\infty\)</span>; (c) applying a data window (e.g. Hamming) improves the frequency <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr> (main lobe width); (d) Bartlett's method decreases the variance by zero-padding.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p>(a) False: length narrows the main lobe (<abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr>), the relative side lobes (<abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr>) depend on the window shape. (b) <strong>True</strong>. (c) False: tapered windows <em>widen</em> the main lobe. (d) False: Bartlett averages segments; zero padding changes no variance.</p>
+</details>
+<div class="admonition exam">
+<p class="admonition-title">April 2025 · 3b · 0.25 p</p>
+<p>TRUE: (a) the problem of bias in the spectral estimate affects both deterministic and stochastic signals; (b) zero-padding before the DFT improves spectral <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr>; (c) the raw <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr> has better bias but worse variance than the raw correlogram; (d) the window type affects both bias and variance of the raw <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p>(a) <strong>True</strong>: windowing (finite record) smears any spectrum, deterministic or random. (b) False: interpolation only. (c) False: they are the same estimator. (d) False per the key: the window shape governs the bias (smearing, <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr>); the raw <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr>'s variance is set by the random fluctuations of the record, proportional to <span class="arithmatex">\(P^2\)</span>, whatever the window.</p>
+</details>
+<div class="admonition exam">
+<p class="admonition-title">April 2025 · 3c · 0.5 p (table)</p>
+<ol>
+<li>Non-overlapping segments, average periodograms → <strong>Bartlett</strong>. 2. <span class="arithmatex">\(|\)</span>N-point DFT<span class="arithmatex">\(|^2/N\)</span> → <strong><abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr></strong>. 3. <span class="arithmatex">\(\sigma_i^2|(1+\sum b_qe^{-jq\theta})/(1+\sum a_pe^{-jp\theta})|^2\)</span> → <strong>ARMA modelling</strong>. 4. <span class="arithmatex">\(L\)</span>-point DFT of the windowed autocorrelation (<span class="arithmatex">\(M&lt;L\)</span>) → <strong>Blackman–Tukey</strong>. 5. Overlapping segments, average → <strong><abbr title="weighted overlapped segment averaging, Welch's method.">WOSA</abbr> / Welch</strong>.</li>
+</ol>
+</div>
+<div class="admonition exam">
+<p class="admonition-title">April 2024 · 3a · 0.9 p (table, multiple answers)</p>
+<ol>
+<li>Models the signal as a linear random signal model → <strong>AR, MA, ARMA (parametric)</strong>. 2. Segments with overlap → <strong>Welch/<abbr title="weighted overlapped segment averaging, Welch's method.">WOSA</abbr></strong>. 3. Consistent estimator → <strong>Bartlett, Welch, Blackman–Tukey</strong> (also the parametric methods). 4. FT of the autocorrelation → <strong>correlogram, Blackman–Tukey</strong>. 5. "Bias proportional to the square of the true spectrum" → the known property is the <strong>variance</strong> of the <strong><abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr>/correlogram</strong> <span class="arithmatex">\(\propto P^2\)</span>; as printed, no method has such a bias, so answer "<abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr> (correlogram)" and note the word should be variance. 6. Averages multiple periodograms → <strong>Bartlett, Welch</strong>.</li>
+</ol>
+</div>
+<div class="admonition exam">
+<p class="admonition-title">November 2022 · 3a + 3b · 0.25 p each</p>
+<p><strong>3a</strong> (a) Bartlett with <span class="arithmatex">\(K\)</span> segments: variance <span class="arithmatex">\(\propto1/K\)</span>, bias increases; (b) same for <abbr title="weighted overlapped segment averaging, Welch's method.">WOSA</abbr>; (c) Bartlett: variance <span class="arithmatex">\(1/K\)</span>, bias also decreases; (d) <abbr title="weighted overlapped segment averaging, Welch's method.">WOSA</abbr>: variance <span class="arithmatex">\(1/K\)</span>, bias decreases.</p>
+<p><strong>3b</strong> (a) same length, triangular window gives higher <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr> than rectangular; (b) main-lobe width determines <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr>, side-lobe height determines <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr>; (c) with a rectangular window <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr> can be reduced by increasing the window length; (d) zero padding to length <span class="arithmatex">\(L\)</span> samples the FTD at steps <span class="arithmatex">\(\theta = k2\pi/N\)</span>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p>3a: <strong>(a)</strong>. Shorter segments → more bias, so (c) and (d) are out; <abbr title="weighted overlapped segment averaging, Welch's method.">WOSA</abbr>'s reduction is not exactly <span class="arithmatex">\(1/K\)</span>, so (b) is out. 3b: <strong>(b)</strong>. (a) backwards (triangular has a wider main lobe); (c) length does not change relative side lobes; (d) the step after padding is <span class="arithmatex">\(2\pi/L\)</span>, not <span class="arithmatex">\(2\pi/N\)</span>.</p>
+</details>
+<div class="admonition exam">
+<p class="admonition-title">January 2020 retake · 1b + 1c · 0.25 p each</p>
+<p><strong>1b</strong> Welch/<abbr title="weighted overlapped segment averaging, Welch's method.">WOSA</abbr>: (1) no overlap, variance <span class="arithmatex">\(\propto1/K\)</span>; (2) overlap allowed, variance lower than Bartlett's but not proportionally <span class="arithmatex">\(1/K\)</span>; (3) no overlap, variance larger than Bartlett's; (4) overlap allowed, variance larger than Bartlett's but lower than the <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr>.</p>
+<p><strong>1c</strong> Windowing: (1) higher side lobes → worse <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr>; (2) higher side lobes → less <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr>; (3) wider main lobe → worse <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr>; (4) wider main lobe → more <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p>1b: <strong>(2)</strong>. 1c: <strong>(3)</strong>; side lobes govern <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr>, main lobe governs <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr>; higher side lobes mean <em>more</em> <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr>.</p>
+</details>
+<div class="admonition exam">
+<p class="admonition-title">January 2019 · 1c · 0.5 p (two answers possible)</p>
+<p>A. In Bartlett's method the bias increases as the segment length <span class="arithmatex">\(M\)</span> decreases. B. In Welch's <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr> with 50 % overlap the variance decreases as <span class="arithmatex">\(1/K\)</span>. C. The Blackman–Tukey correlogram is a <abbr title="an estimator whose variance tends to zero as the record length grows.">consistent</abbr> estimator. D. In general, zero padding increases spectral <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><strong>A and C</strong> true. B: not exactly <span class="arithmatex">\(1/K\)</span> (correlated segments). D: no.</p>
+</details>
+<div class="admonition exam">
+<p class="admonition-title">November 2019 · 1b · 0.5 p (T/F)</p>
+<p>A. Bayes' theorem is obtained from the total law of probability and the conditional probability. B. 50 % chance of rain here and 25 % on Mars, so 75 % that it rains here or on Mars. C. For discrete RVs the relative frequency tends to the PMF as the number of trials tends to infinity. D. For any RV the CDF at <span class="arithmatex">\(-\infty\)</span> and <span class="arithmatex">\(\infty\)</span> is 0 and 1. E. The Wiener FIR filter for 1-step linear prediction can be used for MA parametric spectral estimation.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p>Key: A removed (ambiguous; Bayes follows from the definition of conditional probability, total probability only rewrites the denominator), B <strong>F</strong> (<span class="arithmatex">\(P(A\cup B) = P(A) + P(B) - P(A\cap B)\)</span>, and the events are not disjoint), C <strong>T</strong>, D <strong>T</strong>, E <strong>F</strong> (linear prediction gives <strong>AR</strong> coefficients).</p>
+</details>
+<h2 id="where-points-get-lost">Where points get lost<a class="headerlink" href="#where-points-get-lost" title="Permanent link">#</a></h2>
+<div class="admonition trap key">
+<p class="admonition-title">Where points get lost</p>
+<table>
+<thead>
+<tr>
+<th>Wrong line</th>
+<th>Right line</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Longer window → less <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr>"</td>
+<td>Longer window → <strong>better <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr></strong>; <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr> depends on the window <strong>shape</strong>.</td>
+</tr>
+<tr>
+<td>"Hamming window → better <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr>"</td>
+<td>Tapered windows widen the main lobe: <strong>worse</strong> <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr>, less <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr>.</td>
+</tr>
+<tr>
+<td>"Zero padding improves <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr>"</td>
+<td>It only interpolates the DFT.</td>
+</tr>
+<tr>
+<td>"Averaging segments reduces bias and variance"</td>
+<td>Variance down by <span class="arithmatex">\(\approx1/K\)</span>, <strong>bias up</strong> (shorter segments).</td>
+</tr>
+<tr>
+<td>"Welch's variance is exactly <span class="arithmatex">\(1/K\)</span> of the <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr>'s"</td>
+<td>Overlapping segments are correlated: less than a <span class="arithmatex">\(1/K\)</span> reduction.</td>
+</tr>
+<tr>
+<td>"<span class="arithmatex">\(K = N/L\)</span>" for Welch with overlap</td>
+<td><span class="arithmatex">\(K = \frac{N-L}{L(1-\text{overlap})} + 1\)</span>: 9, not 5, for <span class="arithmatex">\(N=1000\)</span>, <span class="arithmatex">\(L=200\)</span>, 50 %.</td>
+</tr>
+<tr>
+<td>"A periodic signal has finite energy"</td>
+<td>Periodic → infinite energy, finite power.</td>
+</tr>
+<tr>
+<td>"Residual variance picks the AR order"</td>
+<td>It always decreases; use AIC/MDL/FPE with a penalty growing in <span class="arithmatex">\(p\)</span>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="true-or-false-fresh-wording">True or false (fresh wording)<a class="headerlink" href="#true-or-false-fresh-wording" title="Permanent link">#</a></h2>
+<div class="tf" markdown>
+<table>
+<thead>
+<tr>
+<th>statement</th>
+<th>T or F</th>
+<th>why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Doubling the record length halves the variance of the raw <abbr title="|DFT|²/N of the record; the basic non-parametric PSD estimate.">periodogram</abbr>.</td>
+<td>False</td>
+<td>Its variance stays proportional to <span class="arithmatex">\(P^2\)</span> whatever <span class="arithmatex">\(N\)</span>: not <abbr title="an estimator whose variance tends to zero as the record length grows.">consistent</abbr>.</td>
+</tr>
+<tr>
+<td>For a fixed <span class="arithmatex">\(N\)</span>, Welch with 50 % overlap averages more segments than Bartlett with the same segment length.</td>
+<td>True</td>
+<td>Hop is <span class="arithmatex">\(L/2\)</span> instead of <span class="arithmatex">\(L\)</span>: about twice as many segments.</td>
+</tr>
+<tr>
+<td>Two sinusoids closer in frequency than the window's main-lobe width cannot be resolved, no matter how much zero padding is used.</td>
+<td>True</td>
+<td>Resolution is set by the window; padding interpolates.</td>
+</tr>
+<tr>
+<td>Blackman–Tukey with a very short lag window has low variance and high bias.</td>
+<td>True</td>
+<td>Strong smoothing of the autocorrelation.</td>
+</tr>
+<tr>
+<td>An energy signal has zero average power.</td>
+<td>True</td>
+<td>Finite energy divided by <span class="arithmatex">\(T\to\infty\)</span>.</td>
+</tr>
+<tr>
+<td>AIC adds a penalty <span class="arithmatex">\(2p\)</span> to <span class="arithmatex">\(N\ln\hat\sigma_p^2\)</span> so that the chosen order stops growing.</td>
+<td>True</td>
+<td>Section 5.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>You can leave this page when you can:</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> fill the five-method table (idea, bias, variance) from memory.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> compute Welch's <span class="arithmatex">\(K\)</span> for any <span class="arithmatex">\(N\)</span>, <span class="arithmatex">\(L\)</span>, overlap.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> state which of main lobe / side lobes governs <abbr title="the smallest frequency separation at which two tones remain distinguishable; set by the main-lobe width.">resolution</abbr> / <abbr title="power from one frequency appearing at other frequencies because of the window's side lobes.">leakage</abbr>, and what window length and zero padding do.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> classify a signal as energy or power and compute <span class="arithmatex">\(E\)</span> or <span class="arithmatex">\(P\)</span> (geometric sum, <span class="arithmatex">\(\sin^2\)</span> identity).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> explain AR order selection in three sentences.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> match PSD plots by their values at <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(\pi\)</span>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="u14-model-autocorr.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: U14 · From a difference equation">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                U14 · From a difference equation
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="u16-lrt.html" class="md-footer__link md-footer__link--next" aria-label="Next: U16 · Likelihood ratio test">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                U16 · Likelihood ratio test
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.top", "navigation.footer", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "toc.follow", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js?v=1794380413"></script>
+      
+        <script src="javascripts/katex.js?v=1794380413"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="javascripts/quiz.js?v=1794380413"></script>
+      
+        <script src="javascripts/ask.js?v=1794380413"></script>
+      
+        <script src="javascripts/video.js?v=1794380413"></script>
+      
+        <script src="javascripts/layout.js?v=1794380413"></script>
+      
+        <script src="javascripts/keypoints.js?v=1794380413"></script>
+      
+        <script src="javascripts/progress.js?v=1794380413"></script>
+      
+        <script src="javascripts/widgets.js?v=1794380413"></script>
+      
+        <script src="javascripts/navsections.js?v=1794380413"></script>
+      
+    
+  </body>
+</html>

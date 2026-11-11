@@ -1,0 +1,1922 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Active study guide and cheat sheet for 5CTA0 Statistical Signal Processing (TU/e), built from every past exam.">
+      
+      
+      
+        <link rel="canonical" href="https://dkealvaro.github.io/5cta0-study-guide/u16-lrt.html">
+      
+      
+        <link rel="prev" href="u15-spectral-mc.html">
+      
+      
+        <link rel="next" href="u17-pfa-pd.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>U16 · Likelihood ratio test - 5CTA0 · pass the exam</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css?v=1794380413">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css?v=1794380413">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+4:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Serif 4";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.11/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap">
+    
+      <link rel="stylesheet" href="stylesheets/extra.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/ask.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/layout.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/keypoints.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/widgets.css?v=1794380413">
+    
+      <link rel="stylesheet" href="stylesheets/cheat-print.css?v=1794380413">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#u16-the-likelihood-ratio-test-from-two-pdfs-to-decide-h1-when-x" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="5CTA0 · pass the exam" class="md-header__button md-logo" aria-label="5CTA0 · pass the exam" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            5CTA0 · pass the exam
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              U16 · Likelihood ratio test
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DKeAlvaro/5cta0-study-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DKeAlvaro/5cta0-study-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="5CTA0 · pass the exam" class="md-nav__button md-logo" aria-label="5CTA0 · pass the exam" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+
+    </a>
+    5CTA0 · pass the exam
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DKeAlvaro/5cta0-study-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DKeAlvaro/5cta0-study-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inventory.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Every exam question + ranking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="maths.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M · Maths the course assumes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cheatsheet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat sheet (2 A4 sides)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="battle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battle table (every question with the sheet)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 · Probability and random signals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 · Probability and random signals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u01-bayes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U1 · Total probability and Bayes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u02-joint.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U2 · Joint pdf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u03-process-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U3 · Random variables and processes (MC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u04-factorisation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U4 · Spectral factorisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 · Estimation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 · Estimation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u05-mle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U5 · Maximum likelihood
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u06-map.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U6 · Posterior and MAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u07-mmse.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U7 · MMSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u08-crlb.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U8 · Fisher information and CRLB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u09-ls.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U9 · Least squares
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u10-estimation-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U10 · Estimation theory MC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 · Spectral estimation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 · Spectral estimation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u11-correlogram.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U11 · Correlogram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u12-ar.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U12 · AR model (Yule–Walker)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u13-ma.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U13 · MA model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u14-model-autocorr.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U14 · From a difference equation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u15-spectral-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U15 · Spectral estimation theory (MC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4 · Detection
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 4 · Detection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U16 · Likelihood ratio test
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="u16-lrt.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U16 · Likelihood ratio test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-idea-in-plain-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea in plain words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-tiny-example-with-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A tiny example with numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-formula-every-symbol-named" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The formula, every symbol named
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-exam-asks-in-its-own-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the exam asks, in its own words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-exam-question-one-step-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked exam question, one step at a time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-4-from-the-review-deck-resit-q1-2023-4d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 4 (from the review deck, resit Q1 2023 4d)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitions-question-january-2019-3a-125-p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions question (January 2019 · 3a · 1.25 p)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-points-get-lost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where points get lost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#true-or-false-from-real-mc-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        True or false (from real MC options)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u17-pfa-pd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U17 · P_FA, P_D, P_M
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u18-bayes-detector.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U18 · Bayesian detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="u19-detection-mc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    U19 · Detection theory MC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-idea-in-plain-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea in plain words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-tiny-example-with-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A tiny example with numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-formula-every-symbol-named" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The formula, every symbol named
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-exam-asks-in-its-own-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the exam asks, in its own words
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-exam-question-one-step-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked exam question, one step at a time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-it-cold-4-from-the-review-deck-resit-q1-2023-4d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do it cold · 4 (from the review deck, resit Q1 2023 4d)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitions-question-january-2019-3a-125-p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions question (January 2019 · 3a · 1.25 p)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-points-get-lost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where points get lost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#true-or-false-from-real-mc-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        True or false (from real MC options)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="u16-the-likelihood-ratio-test-from-two-pdfs-to-decide-h1-when-x">U16 · The <abbr title="p(x;H1)/p(x;H0): how many times more likely the data is under H1 than under H0.">likelihood ratio</abbr> test: from two pdfs to "decide H1 when x &gt; γ′"<a class="headerlink" href="#u16-the-likelihood-ratio-test-from-two-pdfs-to-decide-h1-when-x" title="Permanent link">#</a></h1>
+<div class="meta"><span class="hot">Rank 5 · 5.25 points over 6 sittings</span><span>1 p in Jun 2026</span><span>60 min</span></div>
+
+<div class="admonition need">
+<p class="admonition-title">Before this page</p>
+<p><a href="maths.html#m1-exponents-and-logarithms">M1 exponents and ln</a> (the <span class="arithmatex">\(e^a/e^b\)</span> rule and taking <span class="arithmatex">\(\ln\)</span> of an inequality), <a href="maths.html#m8-argmax-set-the-derivative-to-zero-quadratics">M8 inequalities</a>. Pairs with <a href="u17-pfa-pd.html">U17</a>: this page finds the threshold, U17 uses it.</p>
+</div>
+<h2 id="the-idea-in-plain-words">The idea in plain words<a class="headerlink" href="#the-idea-in-plain-words" title="Permanent link">#</a></h2>
+<p>You have one number <span class="arithmatex">\(x\)</span> and two candidate stories, <span class="arithmatex">\(H_0\)</span> and <span class="arithmatex">\(H_1\)</span>. Ask: "how many times more likely is <span class="arithmatex">\(x\)</span> under <span class="arithmatex">\(H_1\)</span> than under <span class="arithmatex">\(H_0\)</span>?". That ratio is the <strong><abbr title="p(x;H1)/p(x;H0): how many times more likely the data is under H1 than under H0.">likelihood ratio</abbr></strong> <span class="arithmatex">\(L(x)\)</span>. If it is bigger than some bar <span class="arithmatex">\(\gamma\)</span> you say <span class="arithmatex">\(H_1\)</span>. All the algebra in this unit is just rewriting "<span class="arithmatex">\(L(x) &gt; \gamma\)</span>" as "<span class="arithmatex">\(x &gt; \text{some number}\)</span>" so you can apply it by looking at <span class="arithmatex">\(x\)</span>.</p>
+<div class="admonition idea">
+<p class="admonition-title">The thing that confused me</p>
+<p>Two different thresholds carry similar names. <span class="arithmatex">\(\gamma\)</span> (also <span class="arithmatex">\(\lambda\)</span> or <span class="arithmatex">\(\eta\)</span>) is the bar on the <strong>ratio</strong>, usually given. <span class="arithmatex">\(\gamma'\)</span> (or <span class="arithmatex">\(x_{th}\)</span>, <span class="arithmatex">\(\lambda'\)</span>) is the bar on the <strong>observation axis</strong>, which you compute. The exam asks for the second one.</p>
+</div>
+<h2 id="a-tiny-example-with-numbers">A tiny example with numbers<a class="headerlink" href="#a-tiny-example-with-numbers" title="Permanent link">#</a></h2>
+<p><span class="arithmatex">\(H_0\)</span>: <span class="arithmatex">\(p_0(x) = e^{-x}\)</span>, <span class="arithmatex">\(H_1\)</span>: <span class="arithmatex">\(p_1(x) = 2e^{-2x}\)</span>, <span class="arithmatex">\(x\ge0\)</span>, bar <span class="arithmatex">\(\gamma = 1\)</span>.</p>
+<p><span class="arithmatex">\(L(x) = \dfrac{2e^{-2x}}{e^{-x}} = 2e^{-2x-(-x)} = 2e^{-x}\)</span> (rule <span class="arithmatex">\(e^a/e^b = e^{a-b}\)</span>).
+<span class="arithmatex">\(L(x) &gt; 1 \Leftrightarrow 2e^{-x} &gt; 1 \Leftrightarrow e^{-x} &gt; \tfrac12 \Leftrightarrow -x &gt; \ln\tfrac12 = -0.6931 \Leftrightarrow x &lt; 0.6931\)</span>.
+Read the last step carefully: I multiplied by <span class="arithmatex">\(-1\)</span>, so <span class="arithmatex">\(&gt;\)</span> became <span class="arithmatex">\(&lt;\)</span>. <strong>Decide <span class="arithmatex">\(H_1\)</span> when <span class="arithmatex">\(x &lt; 0.693\)</span>.</strong></p>
+<div class="admonition question">
+<p class="admonition-title">Your turn</p>
+<p>Same pdfs, but <span class="arithmatex">\(\gamma = 4\)</span>. For which <span class="arithmatex">\(x\)</span> do we decide <span class="arithmatex">\(H_1\)</span>?</p>
+<details class="solution" open="open">
+<summary>Answer</summary>
+<p><span class="arithmatex">\(2e^{-x} &gt; 4 \Leftrightarrow e^{-x} &gt; 2 \Leftrightarrow -x &gt; \ln 2 = 0.693 \Leftrightarrow x &lt; -0.693\)</span>. No <span class="arithmatex">\(x\ge0\)</span> satisfies it: with such a high bar we never decide <span class="arithmatex">\(H_1\)</span>. (That is allowed; it just means <span class="arithmatex">\(P_D = P_{FA} = 0\)</span>.)</p>
+</details>
+</div>
+<h2 id="the-formula-every-symbol-named">The formula, every symbol named<a class="headerlink" href="#the-formula-every-symbol-named" title="Permanent link">#</a></h2>
+<div class="key">
+<div class="arithmatex">\[L(\mathbf x) = \frac{p(\mathbf x; H_1)}{p(\mathbf x; H_0)} \;\underset{H_0}{\overset{H_1}{\gtrless}}\; \gamma\]</div>
+</div>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\mathbf x\)</span></td>
+<td>the observation: one number <span class="arithmatex">\(x\)</span>, or a vector <span class="arithmatex">\(x_0,\ldots,x_{N-1}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(p(\mathbf x;H_i)\)</span></td>
+<td>the pdf of the data if <span class="arithmatex">\(H_i\)</span> is the truth. For <span class="arithmatex">\(N\)</span> independent samples it is the <strong>product</strong> <span class="arithmatex">\(\prod_{n}p(x_n;H_i)\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(L\)</span></td>
+<td><abbr title="p(x;H1)/p(x;H0): how many times more likely the data is under H1 than under H0.">likelihood ratio</abbr>, <span class="arithmatex">\(H_1\)</span> on top</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\gtrless\)</span> with labels</td>
+<td>"if the left side is bigger, decide the top label (<span class="arithmatex">\(H_1\)</span>); if smaller, the bottom one"</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\gamma\)</span></td>
+<td>the bar on the ratio. <abbr title="the test that maximises P_D for a fixed P_FA; it is always a threshold on the likelihood ratio.">Neyman–Pearson</abbr> picks it to hit a target <span class="arithmatex">\(P_{FA}\)</span>; Bayes sets <span class="arithmatex">\(\gamma = \frac{P_0(C_{10}-C_{00})}{P_1(C_{01}-C_{11})}\)</span> (<a href="u18-bayes-detector.html">U18</a>); <span class="arithmatex">\(\gamma=1\)</span> is "pick the more likely story"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why it is the right test.</strong> <abbr title="the test that maximises P_D for a fixed P_FA; it is always a threshold on the likelihood ratio.">Neyman–Pearson</abbr> theorem: for a fixed <span class="arithmatex">\(P_{FA}\)</span>, thresholding <span class="arithmatex">\(L\)</span> gives the largest possible <span class="arithmatex">\(P_D\)</span>. You never have to prove it; you have to apply it.</p>
+<h2 id="what-the-exam-asks-in-its-own-words">What the exam asks, in its own words<a class="headerlink" href="#what-the-exam-asks-in-its-own-words" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>IF YOU SEE</th>
+<th>It means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"construct the likelihood-ratio test for a threshold <span class="arithmatex">\(\eta\)</span>"</td>
+<td>write <span class="arithmatex">\(L(x)\)</span>, simplify, take <span class="arithmatex">\(\ln\)</span>, isolate <span class="arithmatex">\(x\)</span> (or <span class="arithmatex">\(x^2\)</span>, or <span class="arithmatex">\(\sum x_n^2\)</span>), state "decide <span class="arithmatex">\(H_1\)</span> when …"</td>
+</tr>
+<tr>
+<td>"show that the LRT takes the form <span class="arithmatex">\(\sum \lvert x_n\rvert \gtrless \gamma'\)</span> and determine <span class="arithmatex">\(\gamma'\)</span>"</td>
+<td>same recipe for <span class="arithmatex">\(N\)</span> samples; <span class="arithmatex">\(\gamma'\)</span> will contain <span class="arithmatex">\(N\)</span> and <span class="arithmatex">\(\ln\gamma\)</span></td>
+</tr>
+<tr>
+<td>"what is the value of <span class="arithmatex">\(x\)</span> for which <span class="arithmatex">\(H_1\)</span> should be accepted"</td>
+<td>the answer is a <em>range</em> (<span class="arithmatex">\(x \ge\)</span> number), not a single number</td>
+</tr>
+<tr>
+<td>"derive the log-<abbr title="p(x;H1)/p(x;H0): how many times more likely the data is under H1 than under H0.">likelihood ratio</abbr> test"</td>
+<td>stop after taking <span class="arithmatex">\(\ln\)</span> and collecting the data term; no numbers</td>
+</tr>
+<tr>
+<td>"pay special attention to the inequality"</td>
+<td>you will divide by a negative number or the <span class="arithmatex">\(H_1\)</span> region is on the left</td>
+</tr>
+<tr>
+<td>"discuss how the separation between <span class="arithmatex">\(\sigma_0\)</span> and <span class="arithmatex">\(\sigma_1\)</span> affects detection"</td>
+<td>closer parameters → the two pdfs overlap more → for any threshold <span class="arithmatex">\(P_D\)</span> drops toward <span class="arithmatex">\(P_{FA}\)</span>, ROC moves toward the diagonal</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recipe">Recipe<a class="headerlink" href="#recipe" title="Permanent link">#</a></h2>
+<div class="admonition recipe key">
+<p class="admonition-title">U16 · From the ratio to the axis</p>
+<ol>
+<li><strong>Write the ratio</strong> <span class="arithmatex">\(L = p(\cdot;H_1)/p(\cdot;H_0)\)</span> with <span class="arithmatex">\(H_1\)</span> on top. For <span class="arithmatex">\(N\)</span> samples write each side as a product; the product of exponentials is an exponential of the sum (<span class="arithmatex">\(\prod e^{a_n} = e^{\sum a_n}\)</span>) and constants come out as a power (<span class="arithmatex">\(\prod_{n=1}^N c = c^N\)</span>).</li>
+<li><strong>Cancel what cancels.</strong> Same factor top and bottom (like the <span class="arithmatex">\(x\)</span> in the Rayleigh pdf, or <span class="arithmatex">\(k_1\)</span>): gone. Exponentials: <span class="arithmatex">\(e^a/e^b = e^{a-b}\)</span>. Powers: <span class="arithmatex">\(x^a/x^b = x^{a-b}\)</span>.</li>
+<li><strong>Write the test</strong> <span class="arithmatex">\(L \gtrless \gamma\)</span> and <strong>take <span class="arithmatex">\(\ln\)</span></strong> of both sides. Direction unchanged.</li>
+<li><strong>Isolate the data term</strong> (<span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(x^2\)</span>, <span class="arithmatex">\(|x|\)</span>, <span class="arithmatex">\(\sum x_n^2\)</span>, <span class="arithmatex">\(\sum|x_n|\)</span>): move constants to the right. Every time you multiply or divide by a negative number, flip the inequality <strong>and swap the labels</strong>.</li>
+<li><strong>Finish the inversion.</strong> If you have <span class="arithmatex">\(x^2 &gt; c\)</span> with <span class="arithmatex">\(x &gt; 0\)</span>, then <span class="arithmatex">\(x &gt; \sqrt c\)</span>. If <span class="arithmatex">\(e^{x} &gt; c\)</span>, then <span class="arithmatex">\(x &gt; \ln c\)</span>. If <span class="arithmatex">\(-x &gt; c\)</span>, then <span class="arithmatex">\(x &lt; -c\)</span>.</li>
+<li><strong>Say it in words</strong>: "decide <span class="arithmatex">\(H_1\)</span> when <span class="arithmatex">\(x &gt; \gamma'\)</span> where <span class="arithmatex">\(\gamma' = \ldots\)</span>". Plug numbers if the question gives them.</li>
+<li><strong>Check with a test point</strong>: pick an <span class="arithmatex">\(x\)</span> far on the <span class="arithmatex">\(H_1\)</span> side and verify <span class="arithmatex">\(p_1(x) &gt; \gamma\,p_0(x)\)</span>.</li>
+</ol>
+</div>
+<h2 id="worked-exam-question-one-step-at-a-time">Worked exam question, one step at a time<a class="headerlink" href="#worked-exam-question-one-step-at-a-time" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">June 2026 resit · 4b · 1 p</p>
+<p>A wireless sensor detects the presence of a transmitting device by measuring the received signal envelope <span class="arithmatex">\(X\)</span> (in mV). Under normal operating conditions the envelope follows a Rayleigh distribution due to multipath fading. Two hypotheses are proposed:</p>
+<ol>
+<li>Under <span class="arithmatex">\(H_0\)</span> (no device present), <span class="arithmatex">\(X \sim \text{Rayleigh}(\sigma_0)\)</span>.</li>
+<li>Under <span class="arithmatex">\(H_1\)</span> (device present), <span class="arithmatex">\(X \sim \text{Rayleigh}(\sigma_1)\)</span>,</li>
+</ol>
+<p>with <span class="arithmatex">\(\sigma_1 &gt; \sigma_0 &gt; 0\)</span>, both known. The Rayleigh pdf with scale parameter <span class="arithmatex">\(\sigma\)</span> is <span class="arithmatex">\(p(x \mid \sigma) = \frac{x}{\sigma^2} \exp\left(-\frac{x^2}{2\sigma^2}\right)\)</span>, <span class="arithmatex">\(x \geq 0\)</span>.</p>
+<ul>
+<li>Construct the likelihood-ratio test for a threshold <span class="arithmatex">\(\eta\)</span>.</li>
+<li>Discuss how the separation between <span class="arithmatex">\(\sigma_0\)</span> and <span class="arithmatex">\(\sigma_1\)</span> affects detection performance.</li>
+</ul>
+</div>
+<div class="stepper">
+<p><strong>Step 1 · Write the ratio.</strong> <span class="arithmatex">\(L(x) = \dfrac{\frac{x}{\sigma_1^2}\exp\!\left(-\frac{x^2}{2\sigma_1^2}\right)}{\frac{x}{\sigma_0^2}\exp\!\left(-\frac{x^2}{2\sigma_0^2}\right)}\)</span>.</p>
+<p><strong>Now do step 2 yourself:</strong> cancel the common factor and merge the two exponentials into one, using <span class="arithmatex">\(e^a/e^b = e^{a-b}\)</span>.</p>
+<hr />
+<p><strong>Step 2 · Cancel.</strong> The <span class="arithmatex">\(x\)</span> cancels. <span class="arithmatex">\(\frac{1/\sigma_1^2}{1/\sigma_0^2} = \frac{\sigma_0^2}{\sigma_1^2}\)</span>. Exponent: <span class="arithmatex">\(-\frac{x^2}{2\sigma_1^2} - \left(-\frac{x^2}{2\sigma_0^2}\right) = \frac{x^2}{2}\left(\frac{1}{\sigma_0^2} - \frac{1}{\sigma_1^2}\right)\)</span>. So</p>
+<div class="arithmatex">\[L(x) = \frac{\sigma_0^2}{\sigma_1^2}\exp\!\left[\frac{x^2}{2}\left(\frac{1}{\sigma_0^2}-\frac{1}{\sigma_1^2}\right)\right].\]</div>
+<p>Note the bracket is <strong>positive</strong> because <span class="arithmatex">\(\sigma_1 &gt; \sigma_0\)</span> means <span class="arithmatex">\(1/\sigma_0^2 &gt; 1/\sigma_1^2\)</span>. So <span class="arithmatex">\(L\)</span> grows with <span class="arithmatex">\(x\)</span>: large envelopes point to <span class="arithmatex">\(H_1\)</span>.</p>
+<p><strong>Now do step 3 yourself:</strong> write <span class="arithmatex">\(L(x)\gtrless\eta\)</span> and take <span class="arithmatex">\(\ln\)</span> of both sides.</p>
+<hr />
+<p><strong>Step 3 · Take ln.</strong> <span class="arithmatex">\(\ln L = \ln\frac{\sigma_0^2}{\sigma_1^2} + \frac{x^2}{2}\left(\frac{1}{\sigma_0^2}-\frac{1}{\sigma_1^2}\right) \;\underset{H_0}{\overset{H_1}{\gtrless}}\; \ln\eta\)</span>.</p>
+<p><strong>Now do step 4 yourself:</strong> isolate <span class="arithmatex">\(x^2\)</span>. Is the number you divide by positive or negative?</p>
+<hr />
+<p><strong>Step 4 · Isolate.</strong> Move the constant: <span class="arithmatex">\(\frac{x^2}{2}\left(\frac{1}{\sigma_0^2}-\frac{1}{\sigma_1^2}\right) \gtrless \ln\eta - \ln\frac{\sigma_0^2}{\sigma_1^2} = \ln\eta + \ln\frac{\sigma_1^2}{\sigma_0^2} = \ln\!\left(\eta\frac{\sigma_1^2}{\sigma_0^2}\right)\)</span>. Divide by the positive bracket (no flip) and multiply by 2:</p>
+<div class="arithmatex">\[x^2 \;\underset{H_0}{\overset{H_1}{\gtrless}}\; \frac{2\ln\!\left(\eta\,\sigma_1^2/\sigma_0^2\right)}{\frac{1}{\sigma_0^2}-\frac{1}{\sigma_1^2}} = \frac{2\sigma_0^2\sigma_1^2}{\sigma_1^2-\sigma_0^2}\ln\!\left(\eta\frac{\sigma_1^2}{\sigma_0^2}\right).\]</div>
+<p>(The last form: multiply top and bottom by <span class="arithmatex">\(\sigma_0^2\sigma_1^2\)</span>.)</p>
+<p><strong>Now do step 5 yourself:</strong> <span class="arithmatex">\(x \ge 0\)</span>, so take the square root and write the final sentence.</p>
+<hr />
+<p><strong>Step 5 · Finish.</strong> Decide <span class="arithmatex">\(H_1\)</span> when</p>
+<div class="arithmatex">\[x &gt; \gamma' = \sqrt{\frac{2\sigma_0^2\sigma_1^2}{\sigma_1^2-\sigma_0^2}\ln\!\left(\eta\frac{\sigma_1^2}{\sigma_0^2}\right)}.\]</div>
+<p><strong>Step 6 · Separation discussion.</strong> If <span class="arithmatex">\(\sigma_1 \to \sigma_0\)</span> the two Rayleigh curves become the same curve: the denominator <span class="arithmatex">\(\sigma_1^2 - \sigma_0^2 \to 0\)</span>, <span class="arithmatex">\(\gamma'\)</span> blows up, and for any threshold <span class="arithmatex">\(P_D \approx P_{FA}\)</span> (ROC on the diagonal: the test is a coin flip). If <span class="arithmatex">\(\sigma_1 \gg \sigma_0\)</span> the <span class="arithmatex">\(H_1\)</span> curve is spread far to the right of the <span class="arithmatex">\(H_0\)</span> curve, a threshold between them gives <span class="arithmatex">\(P_D\)</span> near 1 with <span class="arithmatex">\(P_{FA}\)</span> near 0 (ROC hugs the top-left corner). Detection performance improves monotonically with the separation <span class="arithmatex">\(\sigma_1/\sigma_0\)</span>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(L(x) = \frac{\sigma_0^2}{\sigma_1^2}\exp\!\left[\frac{x^2}{2}\left(\frac1{\sigma_0^2}-\frac1{\sigma_1^2}\right)\right] \gtrless \eta\)</span>; equivalently decide <span class="arithmatex">\(H_1\)</span> when <span class="arithmatex">\(x &gt; \sqrt{\frac{2\sigma_0^2\sigma_1^2}{\sigma_1^2-\sigma_0^2}\ln(\eta\sigma_1^2/\sigma_0^2)}\)</span>. Larger separation → better ROC; equal scales → useless test.</p>
+</div>
+</div>
+<h2 id="do-it-cold-1">Do it cold · 1<a class="headerlink" href="#do-it-cold-1" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">April 2025 · 4a · 0.5 p</p>
+<p>You are conducting a <abbr title="p(x;H1)/p(x;H0): how many times more likely the data is under H1 than under H0.">likelihood ratio</abbr> test using a single datapoint <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(0 &lt; x &lt; 1\)</span> whereby <span class="arithmatex">\(p(x) = k_1 \theta x^{k_2 \theta - 1}\)</span>. Two hypothesis can be distinguished: <span class="arithmatex">\(\mathcal{H}_0 : \theta = 3\)</span>, <span class="arithmatex">\(\mathcal{H}_1 : \theta = 6\)</span>. If <span class="arithmatex">\(\lambda = 0.2\)</span>, <span class="arithmatex">\(k_1 = 1\)</span>, and <span class="arithmatex">\(k_2 = 2\)</span>, what is the value for <span class="arithmatex">\(x\)</span> for which <span class="arithmatex">\(\mathcal{H}_1\)</span> should be accepted?</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><strong>Step 1.</strong> Under <span class="arithmatex">\(H_1\)</span>: <span class="arithmatex">\(p = k_1\cdot6\cdot x^{2\cdot6-1} = 6k_1x^{11}\)</span>. Under <span class="arithmatex">\(H_0\)</span>: <span class="arithmatex">\(p = 3k_1x^{5}\)</span>. <span class="arithmatex">\(L(x) = \dfrac{6k_1x^{11}}{3k_1x^{5}}\)</span>.</p>
+<p><strong>Step 2.</strong> <span class="arithmatex">\(k_1\)</span> cancels; <span class="arithmatex">\(6/3 = 2\)</span>; <span class="arithmatex">\(x^{11}/x^5 = x^{6}\)</span>. <span class="arithmatex">\(L(x) = 2x^6\)</span>.</p>
+<p><strong>Step 3.</strong> <span class="arithmatex">\(2x^6 \ge 0.2\)</span>.</p>
+<p><strong>Step 4.</strong> Divide by 2: <span class="arithmatex">\(x^6 \ge 0.1\)</span>.</p>
+<p><strong>Step 5.</strong> Sixth root (both sides positive, direction kept): <span class="arithmatex">\(x \ge 0.1^{1/6}\)</span>. <span class="arithmatex">\(0.1^{1/6} = e^{\ln(0.1)/6} = e^{-2.3026/6} = e^{-0.3838} = 0.6813\)</span>.</p>
+<p><strong>Step 7 check.</strong> <span class="arithmatex">\(x = 0.9\)</span>: <span class="arithmatex">\(L = 2\cdot0.9^6 = 2\cdot0.531 = 1.06 &gt; 0.2\)</span>. Yes, <span class="arithmatex">\(H_1\)</span>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p>Accept <span class="arithmatex">\(H_1\)</span> for <span class="arithmatex">\(x \ge 0.1^{1/6} \approx 0.68\)</span> (a range, as the official clarification says).</p>
+</div>
+</details>
+<h2 id="do-it-cold-2">Do it cold · 2<a class="headerlink" href="#do-it-cold-2" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">November 2022 · 4c · 0.5 p</p>
+<p>Under the two hypotheses, a single observation <span class="arithmatex">\(x\)</span> admits a zero mean Laplacian distribution, but with different variances which are given as <span class="arithmatex">\(\mathcal{H}_0 : p(x; \mathcal{H}_0) = \frac{1}{2}e^{-|x|}\)</span> and <span class="arithmatex">\(\mathcal{H}_1 : p(x; \mathcal{H}_1) = e^{-2|x|}\)</span>. Assume that each observation <span class="arithmatex">\(x_n\)</span> of the observation vector <span class="arithmatex">\(\mathbf{x}\)</span> is independent and identically distributed. Show that the <abbr title="p(x;H1)/p(x;H0): how many times more likely the data is under H1 than under H0.">likelihood ratio</abbr> test for deciding between these two hypotheses takes the form <span class="arithmatex">\(\sum_{n=0}^{N-1} |x_n| \underset{\mathcal{H}_1}{\overset{\mathcal{H}_0}{\gtrless}} \gamma'\)</span>. Additionally, determine the threshold <span class="arithmatex">\(\gamma'\)</span>. <strong>Hint:</strong> Pay special attention to the inequality in the decision criteria.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><strong>Step 1.</strong> <span class="arithmatex">\(L(\mathbf x) = \dfrac{\prod_{n=0}^{N-1}e^{-2|x_n|}}{\prod_{n=0}^{N-1}\frac12 e^{-|x_n|}}\)</span>. Products: top <span class="arithmatex">\(= e^{-2\sum|x_n|}\)</span>; bottom <span class="arithmatex">\(= \left(\frac12\right)^N e^{-\sum|x_n|}\)</span>.</p>
+<p><strong>Step 2.</strong> <span class="arithmatex">\(1/(1/2)^N = 2^N\)</span>. Exponent: <span class="arithmatex">\(-2\sum|x_n| + \sum|x_n| = -\sum|x_n|\)</span>. <span class="arithmatex">\(L = 2^N e^{-\sum|x_n|}\)</span>.</p>
+<p><strong>Step 3.</strong> <span class="arithmatex">\(\ln L = N\ln2 - \sum|x_n| \;\underset{H_0}{\overset{H_1}{\gtrless}}\; \ln\gamma\)</span>.</p>
+<p><strong>Step 4.</strong> <span class="arithmatex">\(-\sum|x_n| \gtrless \ln\gamma - N\ln 2\)</span>. Multiply by <span class="arithmatex">\(-1\)</span>: <strong>flip and swap labels</strong>: <span class="arithmatex">\(\sum|x_n| \;\underset{H_1}{\overset{H_0}{\gtrless}}\; N\ln2 - \ln\gamma\)</span>.</p>
+<p><strong>Step 6.</strong> <span class="arithmatex">\(\gamma' = N\ln 2 - \ln\gamma\)</span>. A <em>small</em> sum of magnitudes points to <span class="arithmatex">\(H_1\)</span> (its pdf is narrower). That is the hint.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(\sum|x_n| \underset{H_1}{\overset{H_0}{\gtrless}} \gamma'\)</span> with <span class="arithmatex">\(\gamma' = N\ln2 - \ln\gamma\)</span>.</p>
+</div>
+</details>
+<h2 id="do-it-cold-3">Do it cold · 3<a class="headerlink" href="#do-it-cold-3" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">November 2019 · 4c · 1 p (also October 2021 · 4b · 1 p)</p>
+<p><span class="arithmatex">\(\mathcal{H}_0 : x[n] \sim \mathcal{N}(0, \sigma_0^2)\)</span>, <span class="arithmatex">\(\mathcal{H}_1 : x[n] \sim \mathcal{N}(0, \sigma_1^2)\)</span>, <span class="arithmatex">\(\sigma_1 &gt; \sigma_0\)</span>, <span class="arithmatex">\(N\)</span> i.i.d. samples. Derive the log-<abbr title="p(x;H1)/p(x;H0): how many times more likely the data is under H1 than under H0.">likelihood ratio</abbr> test that uses the observed data <span class="arithmatex">\(x[0], \ldots, x[n]\)</span>, starting from the <abbr title="p(x;H1)/p(x;H0): how many times more likely the data is under H1 than under H0.">likelihood ratio</abbr> formulation <span class="arithmatex">\(\mathcal{L}(x) = \frac{p(\mathbf{x}; \mathcal{H}_1)}{p(\mathbf{x}; \mathcal{H}_0)} &gt; \gamma\)</span>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><strong>Step 1.</strong> <span class="arithmatex">\(p(\mathbf x;H_i) = \prod_n\frac{1}{\sqrt{2\pi\sigma_i^2}}e^{-x[n]^2/(2\sigma_i^2)} = (2\pi\sigma_i^2)^{-N/2}\exp\!\left(-\frac{\sum_n x[n]^2}{2\sigma_i^2}\right)\)</span>.</p>
+<p><strong>Step 2.</strong> Ratio of the constants: <span class="arithmatex">\(\left(\frac{\sigma_0^2}{\sigma_1^2}\right)^{N/2} = \left(\frac{\sigma_0}{\sigma_1}\right)^N\)</span>. Exponent: <span class="arithmatex">\(-\frac{\sum x^2}{2\sigma_1^2} + \frac{\sum x^2}{2\sigma_0^2}\)</span>.</p>
+<p><strong>Step 3.</strong> <span class="arithmatex">\(\ln\mathcal L = N\ln\frac{\sigma_0}{\sigma_1} - \frac{\sum x[n]^2}{2\sigma_1^2} + \frac{\sum x[n]^2}{2\sigma_0^2} &gt; \ln\gamma\)</span>. That is the log-<abbr title="p(x;H1)/p(x;H0): how many times more likely the data is under H1 than under H0.">likelihood ratio</abbr> test the exam asks for.</p>
+<p><strong>Step 4 (one step further, for full clarity).</strong> <span class="arithmatex">\(\sum x[n]^2\left(\frac{1}{2\sigma_0^2}-\frac{1}{2\sigma_1^2}\right) &gt; \ln\gamma + N\ln\frac{\sigma_1}{\sigma_0}\)</span>. The bracket is positive, so <span class="arithmatex">\(\sum_n x[n]^2 &gt; \dfrac{2\sigma_0^2\sigma_1^2}{\sigma_1^2-\sigma_0^2}\left(\ln\gamma + N\ln\frac{\sigma_1}{\sigma_0}\right)\)</span>: large energy → <span class="arithmatex">\(H_1\)</span>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(\ln\mathcal L(\mathbf x) = N\ln\frac{\sigma_0}{\sigma_1} - \frac{\sum x[n]^2}{2\sigma_1^2} + \frac{\sum x[n]^2}{2\sigma_0^2} &gt; \ln\gamma\)</span>.</p>
+</div>
+</details>
+<h2 id="do-it-cold-4-from-the-review-deck-resit-q1-2023-4d">Do it cold · 4 (from the review deck, resit Q1 2023 4d)<a class="headerlink" href="#do-it-cold-4-from-the-review-deck-resit-q1-2023-4d" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">Resit Q1 2023 · 4d (review deck)</p>
+<p><span class="arithmatex">\(p(x;\mathcal H_0) = xe^{-x^2/2}\)</span>, <span class="arithmatex">\(p(x;\mathcal H_1) = \frac x4 e^{-x^2/8}\)</span>, <span class="arithmatex">\(x&gt;0\)</span>. Show that the LRT can be written as <span class="arithmatex">\(x \underset{\mathcal H_0}{\overset{\mathcal H_1}{\gtrless}}\lambda'\)</span>, find <span class="arithmatex">\(\lambda'\)</span> and its value for <span class="arithmatex">\(\lambda = 1\)</span>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><span class="arithmatex">\(L = \dfrac{\frac x4 e^{-x^2/8}}{xe^{-x^2/2}} = \frac14 e^{-x^2/8 + x^2/2} = \frac14 e^{3x^2/8}\)</span> (since <span class="arithmatex">\(-\frac18 + \frac12 = \frac{-1+4}{8} = \frac38\)</span>). <span class="arithmatex">\(\frac14 e^{3x^2/8} &gt; \lambda \Rightarrow \frac{3x^2}{8} &gt; \ln(4\lambda) \Rightarrow x^2 &gt; \frac83\ln(4\lambda) \Rightarrow x &gt; \lambda' = \sqrt{\frac83\ln(4\lambda)}\)</span>. For <span class="arithmatex">\(\lambda = 1\)</span>: <span class="arithmatex">\(\ln 4 = 1.3863\)</span>, <span class="arithmatex">\(\frac83\cdot1.3863 = 3.6968\)</span>, <span class="arithmatex">\(\sqrt{3.6968} = 1.923\)</span>.</p>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p><span class="arithmatex">\(\lambda' = \sqrt{\tfrac83\ln(4\lambda)} \approx 1.92\)</span> for <span class="arithmatex">\(\lambda=1\)</span> (valid for <span class="arithmatex">\(\lambda &gt; 1/4\)</span>; below that we always decide <span class="arithmatex">\(H_1\)</span>).</p>
+</div>
+</details>
+<h2 id="definitions-question-january-2019-3a-125-p">Definitions question (January 2019 · 3a · 1.25 p)<a class="headerlink" href="#definitions-question-january-2019-3a-125-p" title="Permanent link">#</a></h2>
+<div class="admonition exam">
+<p class="admonition-title">January 2019 · 3a</p>
+<p>Formulate the <abbr title="p(x;H1)/p(x;H0): how many times more likely the data is under H1 than under H0.">likelihood ratio</abbr> test, probability of false alarm and probability of detection. Represent the distributions under <span class="arithmatex">\(\mathcal{H}_0\)</span> and <span class="arithmatex">\(\mathcal{H}_1\)</span> as <span class="arithmatex">\(p(\mathbf{x}; \mathcal{H}_0)\)</span> and <span class="arithmatex">\(p(\mathbf{x}; \mathcal{H}_1)\)</span>.</p>
+</div>
+<details class="solution" open="open">
+<summary>Solution</summary>
+<p><span class="arithmatex">\(\mathcal L(\mathbf x) = \dfrac{p(\mathbf x;\mathcal H_1)}{p(\mathbf x;\mathcal H_0)} \underset{\mathcal H_0}{\overset{\mathcal H_1}{\gtrless}} \gamma\)</span>. <span class="arithmatex">\(P_{fa} = \int_{\{\mathbf x:\,\mathcal L(\mathbf x)&gt;\gamma\}}p(\mathbf x;\mathcal H_0)\,d\mathbf x\)</span>. <span class="arithmatex">\(P_d = \int_{\{\mathbf x:\,\mathcal L(\mathbf x)&gt;\gamma\}}p(\mathbf x;\mathcal H_1)\,d\mathbf x\)</span>. In words: integrate the <span class="arithmatex">\(H_0\)</span> pdf (for <span class="arithmatex">\(P_{fa}\)</span>) or the <span class="arithmatex">\(H_1\)</span> pdf (for <span class="arithmatex">\(P_d\)</span>) over the region where you decide <span class="arithmatex">\(H_1\)</span>.</p>
+</details>
+<h2 id="where-points-get-lost">Where points get lost<a class="headerlink" href="#where-points-get-lost" title="Permanent link">#</a></h2>
+<div class="admonition trap key">
+<p class="admonition-title">Where points get lost</p>
+<table>
+<thead>
+<tr>
+<th>Wrong line</th>
+<th>Right line</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(L = p(x;H_0)/p(x;H_1)\)</span></td>
+<td><span class="arithmatex">\(H_1\)</span> on top. (The 2019 key once wrote it the other way; every exam since 2021 uses <span class="arithmatex">\(H_1\)</span> on top.)</td>
+</tr>
+<tr>
+<td>Dividing by <span class="arithmatex">\(-1\)</span> and keeping <span class="arithmatex">\(&gt;\)</span></td>
+<td><span class="arithmatex">\(-\sum\lvert x_n\rvert &gt; c \Rightarrow \sum\lvert x_n\rvert &lt; -c\)</span>: flip, and swap the <span class="arithmatex">\(H_0/H_1\)</span> labels.</td>
+</tr>
+<tr>
+<td>Dropping <span class="arithmatex">\(k_1\)</span> or the <span class="arithmatex">\(x\)</span> factor without saying so</td>
+<td>Write "cancels (same factor top and bottom)". It is the step that earns the mark.</td>
+</tr>
+<tr>
+<td>Answering "<span class="arithmatex">\(x = 0.68\)</span>"</td>
+<td>The answer is "<span class="arithmatex">\(x \ge 0.68\)</span>": a region.</td>
+</tr>
+<tr>
+<td>Treating <span class="arithmatex">\((1/\sigma_0^2 - 1/\sigma_1^2)\)</span> as negative because <span class="arithmatex">\(\sigma_1 &gt; \sigma_0\)</span></td>
+<td>Larger <span class="arithmatex">\(\sigma\)</span> means <strong>smaller</strong> <span class="arithmatex">\(1/\sigma^2\)</span>; the bracket is positive. Write the sign check.</td>
+</tr>
+<tr>
+<td>Forgetting <span class="arithmatex">\(N\)</span> in the constant for <span class="arithmatex">\(N\)</span> samples</td>
+<td><span class="arithmatex">\(\prod_{n=1}^N c = c^N\)</span>, so <span class="arithmatex">\(\ln\)</span> gives <span class="arithmatex">\(N\ln c\)</span>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="true-or-false-from-real-mc-options">True or false (from real MC options)<a class="headerlink" href="#true-or-false-from-real-mc-options" title="Permanent link">#</a></h2>
+<div class="tf">
+<table>
+<thead>
+<tr>
+<th>statement</th>
+<th>T or F</th>
+<th>why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>With the <abbr title="the test that maximises P_D for a fixed P_FA; it is always a threshold on the likelihood ratio.">Neyman–Pearson</abbr> test, for a fixed probability of false alarm, the probability of detection is maximised.</td>
+<td>True</td>
+<td>Nov 2022 4b (b), Apr 2024 4a option c says "minimised", which is the swapped lie.</td>
+</tr>
+<tr>
+<td>The <abbr title="the test that maximises P_D for a fixed P_FA; it is always a threshold on the likelihood ratio.">Neyman–Pearson</abbr> test partitions the observation space so that <span class="arithmatex">\(P_{FA}\)</span> equals <span class="arithmatex">\(P_D\)</span>.</td>
+<td>False</td>
+<td>Nov 2022 4b (d): that would be the useless diagonal of the ROC.</td>
+</tr>
+<tr>
+<td>The matched filter can be implemented as a FIR filter with impulse response <span class="arithmatex">\(h[n] = s[n]\)</span>.</td>
+<td>False</td>
+<td>Jan 2022 4a: it is the time-reversed signal, <span class="arithmatex">\(h[n] = s[N-1-n]\)</span>.</td>
+</tr>
+<tr>
+<td>The signal-to-noise ratio at the output of the matched filter is maximised.</td>
+<td>True</td>
+<td>Jan 2022 4a (a).</td>
+</tr>
+<tr>
+<td>The matched filter can only be applied for uncorrelated noise samples.</td>
+<td>False</td>
+<td>Jan 2022 4a: with correlated noise, prewhiten first (generalised matched filter).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>You can leave this page when you can:</strong></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> write <span class="arithmatex">\(L\)</span> for one sample and for <span class="arithmatex">\(N\)</span> i.i.d. samples (products → sums in the exponent, constants → <span class="arithmatex">\(c^N\)</span>).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> take <span class="arithmatex">\(\ln\)</span> of an inequality and isolate <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(x^2\)</span>, <span class="arithmatex">\(|x|\)</span> or <span class="arithmatex">\(\sum x_n^2\)</span>, flipping when you divide by a negative.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> state the final test as a sentence with "decide <span class="arithmatex">\(H_1\)</span> when".</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> explain in two lines what happens to detection when <span class="arithmatex">\(\sigma_1 \to \sigma_0\)</span>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="u15-spectral-mc.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: U15 · Spectral estimation theory (MC)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                U15 · Spectral estimation theory (MC)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="u17-pfa-pd.html" class="md-footer__link md-footer__link--next" aria-label="Next: U17 · P_FA, P_D, P_M">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                U17 · P_FA, P_D, P_M
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.top", "navigation.footer", "navigation.tracking", "navigation.instant", "navigation.instant.progress", "toc.follow", "content.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js?v=1794380413"></script>
+      
+        <script src="javascripts/katex.js?v=1794380413"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="javascripts/quiz.js?v=1794380413"></script>
+      
+        <script src="javascripts/ask.js?v=1794380413"></script>
+      
+        <script src="javascripts/video.js?v=1794380413"></script>
+      
+        <script src="javascripts/layout.js?v=1794380413"></script>
+      
+        <script src="javascripts/keypoints.js?v=1794380413"></script>
+      
+        <script src="javascripts/progress.js?v=1794380413"></script>
+      
+        <script src="javascripts/widgets.js?v=1794380413"></script>
+      
+        <script src="javascripts/navsections.js?v=1794380413"></script>
+      
+    
+  </body>
+</html>
