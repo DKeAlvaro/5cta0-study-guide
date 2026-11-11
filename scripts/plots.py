@@ -88,8 +88,8 @@ def psd_plot(name, curves, ylim=None, ylabel="PSD"):
     for (lab, f), st in zip(curves, styles):
         ax.plot(th, f(th), st, color=INK, lw=1.8, label=lab)
     ax.set_xticks([-np.pi, -np.pi / 2, 0, np.pi / 2, np.pi])
-    ax.set_xticklabels(["$-\pi$", "$-\pi/2$", "0", "$\pi/2$", "$\pi$"])
-    ax.set_xlabel("$\theta$"); ax.set_ylabel(ylabel); ax.axhline(0, color="#999", lw=.6)
+    ax.set_xticklabels([r"$-\pi$", r"$-\pi/2$", "0", r"$\pi/2$", r"$\pi$"])
+    ax.set_xlabel(r"$\theta$"); ax.set_ylabel(ylabel); ax.axhline(0, color="#999", lw=.6)
     if ylim: ax.set_ylim(*ylim)
     ax.legend(frameon=False, fontsize=8)
     save(fig, name)
