@@ -109,3 +109,34 @@ psd_plot("u13_jan20.svg", [("correlogram = MA(1)", lambda t: 1 / 21 + 4 / 105 * 
 psd_plot("u14_nov22.svg", [("ARMA(1,1) true PSD", lambda t: 28 * (1 - np.cos(t)) / (25 - 24 * np.cos(t))), ("AR(1) fit", ar_psd(63 / 64, [1 / 8])),
                            ("MA(1) fit", lambda t: 1 - .25 * np.cos(t))])
 print("ok part3")
+
+# ---------------- U15: FTD vs DFT with and without zero padding (Jan 2022 3a) ----------------
+fs, f0, N = 50.0, 25.0, 24
+fig, ax = plt.subplots(figsize=(6.4, 3.4))
+fgrid = np.linspace(-fs / 2, fs / 2, 2001)
+w = 2 * np.pi * fgrid / fs
+n = np.arange(N)
+X = np.array([np.sum(20 * np.cos(2 * np.pi * f0 / fs * n) * np.exp(-1j * wk * n)) for wk in w]) / N * 2  # FTD of windowed, scaled to peak 10
+ax.plot(fgrid, np.abs(X) / 2, "--", color="#6a3d9a", lw=1.4, label="D: FTD of windowed $\\tilde x[n]$")
+ax.vlines([-f0, f0], 0, 10, color="#e07b00", lw=2.5, label="B: FTD of $x[n]$ (two lines)")
+for L, mk, lab, col in [(36, "o", "C: DFT, $N=24$, 12 zeros padded", "#c9a800"), (24, "s", "A: DFT, $N=24$, no padding", BLUE)]:
+    k = np.arange(L); fk = (k - L // 2) * fs / L
+    xp = np.concatenate([20 * np.cos(2 * np.pi * f0 / fs * n), np.zeros(L - N)])
+    Xk = np.fft.fftshift(np.fft.fft(xp)) / N * 2 / 2
+    ax.plot(fk, np.abs(Xk), mk, color=col, ms=5, mfc="none", label=lab)
+ax.set_xlabel("frequency (Hz)"); ax.set_ylabel("magnitude"); ax.set_xlim(-fs / 2, fs / 2); ax.set_ylim(0, 11)
+ax.legend(frameon=False, fontsize=7.5)
+save(fig, "u15_jan22_3a.svg")
+
+# ---------------- U15: window shapes and spectra ----------------
+fig, (a1, a2) = plt.subplots(1, 2, figsize=(7.2, 3.0))
+M = 32; nn = np.arange(M)
+wins = {"rectangular": np.ones(M), "triangular": 1 - np.abs((nn - (M - 1) / 2) / ((M - 1) / 2)), "Hanning": 0.5 - 0.5 * np.cos(2 * np.pi * nn / (M - 1))}
+for (lab, wv), st in zip(wins.items(), ["-", "--", ":"]):
+    a1.plot(nn, wv, st, color=INK, label=lab)
+    W = np.abs(np.fft.fftshift(np.fft.fft(wv, 1024))); W = 20 * np.log10(W / W.max() + 1e-9)
+    a2.plot(np.linspace(-np.pi, np.pi, 1024), W, st, color=INK, label=lab)
+a1.set_xlabel("n"); a1.set_ylabel("w[n]"); a1.legend(frameon=False, fontsize=7)
+a2.set_xlabel(r"$\theta$"); a2.set_ylabel("|W| (dB)"); a2.set_ylim(-80, 2); a2.set_xlim(-1.2, 1.2)
+save(fig, "u15_windows.svg")
+print("ok u15")
